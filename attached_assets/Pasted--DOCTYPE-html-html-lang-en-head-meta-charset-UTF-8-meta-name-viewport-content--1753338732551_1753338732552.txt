@@ -1,0 +1,1139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Enhanced SEO Meta Tags -->
+  <meta name="description"
+    content="NVH Agri Green - Direct farmer wholesale supplier in India. Fresh organic produce, microgreens, vetiver, aloe vera direct from our farms. Bulk discounts available.">
+  <meta name="keywords"
+    content="organic produce wholesale India, microgreens bulk supplier, vetiver wholesale, aloe vera direct farm, cucumber wholesale Maharashtra, bulk organic vegetables India, farm direct supply, wholesale produce Mumbai">
+  <meta name="author" content="NVH Agri Green">
+  <meta name="geo.region" content="IN">
+  <meta name="geo.placename" content="India">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="NVH Agri Green - Direct Farm Wholesale Organic Produce Supplier">
+  <meta property="og:description" content="Get fresh organic produce directly from our farms. Wholesale rates, bulk discounts, consistent supply across India.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&h=630&fit=crop">
+  <meta property="og:url" content="https://nvh-agri-green.replit.app">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NVH Agri Green">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NVH Agri Green - Farm Direct Wholesale Supplier">
+  <meta name="twitter:description" content="Fresh organic produce directly from Indian farms - wholesale rates and bulk discounts available.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&h=630&fit=crop">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://nvh-agri-green.replit.app">
+  
+  <title>NVH Agri Green - Direct Farm Wholesale Organic Produce Supplier</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Scripts -->
+  <script defer src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script defer src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script defer src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      scroll-behavior: smooth;
+    }
+    
+    .jute-texture {
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f7fafc' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .floating-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .ripple-effect {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .ripple-effect::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .ripple-effect:hover::before {
+      left: 100%;
+    }
+    
+    .scroll-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #22c55e, #eab308);
+      transform-origin: left;
+      transform: scaleX(0);
+      z-index: 9999;
+      transition: transform 0.3s ease;
+    }
+    
+    .microgreen-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border: 2px solid #bbf7d0;
+      transition: all 0.3s ease;
+    }
+    
+    .microgreen-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
+      border-color: #22c55e;
+    }
+    
+    .blog-card {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      transition: all 0.3s ease;
+    }
+    
+    .blog-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 35px rgba(234, 179, 8, 0.2);
+    }
+  </style>
+</head>
+
+<body class="jute-texture">
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+  
+  <!-- Scroll to Top Button -->
+  <button 
+    id="scrollToTop" 
+    class="fixed bottom-6 right-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-green-500/25 transform hover:scale-110 transition-all duration-300 z-50 opacity-0 pointer-events-none"
+    aria-label="Scroll to top"
+  >
+    <i class="fas fa-arrow-up text-xl"></i>
+  </button>
+
+  <!-- WhatsApp Floating Button -->
+  <a 
+    href="https://wa.me/919841565965" 
+    target="_blank"
+    class="fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:shadow-green-500/25 transform hover:scale-110 transition-all duration-300 z-50"
+    aria-label="Contact us on WhatsApp"
+  >
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <div id="root"></div>
+  
+  <script type="text/babel">
+    const {useState, useEffect, useRef} = React;
+
+    // Enhanced microgreens data with detailed pricing
+    const microgreens = [
+      {
+        name: "Pea Shoots",
+        price: "₹150/100g",
+        wholesale: "₹120/100g (5kg+)",
+        bulk: "₹100/100g (25kg+)",
+        retail: "₹180/100g",
+        benefits: ["High protein content", "Rich in vitamins A, C, K", "Supports immune system", "Easy to digest"],
+        image: "https://images.unsplash.com/photo-1628773822990-202d530ac35c?w=400&h=300&fit=crop",
+        icon: "🌱"
+      },
+      {
+        name: "Radish Microgreens",
+        price: "₹200/100g",
+        wholesale: "₹160/100g (5kg+)",
+        bulk: "₹140/100g (25kg+)",
+        retail: "₹220/100g",
+        benefits: ["Spicy flavor enhancer", "Detoxifying properties", "Rich in antioxidants", "Supports liver health"],
+        image: "https://images.unsplash.com/photo-1571740437509-0d1b7c2e5a2b?w=400&h=300&fit=crop",
+        icon: "🥬"
+      },
+      {
+        name: "Sunflower Microgreens",
+        price: "₹180/100g",
+        wholesale: "₹140/100g (5kg+)",
+        bulk: "₹120/100g (25kg+)",
+        retail: "₹200/100g",
+        benefits: ["Complete protein source", "High in healthy fats", "Vitamin E powerhouse", "Heart-healthy"],
+        image: "https://images.unsplash.com/photo-1631207750959-e07af3d8d566?w=400&h=300&fit=crop",
+        icon: "🌻"
+      },
+      {
+        name: "Broccoli Microgreens",
+        price: "₹250/100g",
+        wholesale: "₹200/100g (5kg+)",
+        bulk: "₹180/100g (25kg+)",
+        retail: "₹280/100g",
+        benefits: ["Sulforaphane rich", "Cancer-fighting compounds", "Brain health support", "Anti-inflammatory"],
+        image: "https://images.unsplash.com/photo-1609501676725-7186f660c994?w=400&h=300&fit=crop",
+        icon: "🥦"
+      },
+      {
+        name: "Arugula Microgreens",
+        price: "₹220/100g",
+        wholesale: "₹180/100g (5kg+)",
+        bulk: "₹160/100g (25kg+)",
+        retail: "₹250/100g",
+        benefits: ["Peppery flavor profile", "Calcium rich", "Folate source", "Bone health support"],
+        image: "https://images.unsplash.com/photo-1612966748896-5c5b2b1e5b2b?w=400&h=300&fit=crop",
+        icon: "🌿"
+      },
+      {
+        name: "Kale Microgreens",
+        price: "₹280/100g",
+        wholesale: "₹220/100g (5kg+)",
+        bulk: "₹200/100g (25kg+)",
+        retail: "₹320/100g",
+        benefits: ["Superfood nutrients", "Iron rich", "Vitamin K abundance", "Eye health support"],
+        image: "https://images.unsplash.com/photo-1622286346003-c3d9c4d4e1e5?w=400&h=300&fit=crop",
+        icon: "🥬"
+      }
+    ];
+
+    // Enhanced products data
+    const products = [
+      {
+        name: "Fresh Cucumbers",
+        description: "Crisp, organic cucumbers perfect for salads and fresh consumption",
+        image: "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=400&h=300&fit=crop",
+        icon: "🥒",
+        retailPrice: "₹40/kg",
+        wholesalePrice: "₹30/kg (50kg+)",
+        bulkPrice: "₹25/kg (500kg+)",
+        benefits: ["95% water content for hydration", "Natural cooling properties", "Rich in silica for skin health", "Low calorie healthy snack"]
+      },
+      {
+        name: "Aloe Vera Plants",
+        description: "Fresh aloe vera plants for medicinal and cosmetic use",
+        image: "https://images.unsplash.com/photo-1598944572623-b345b4f59a5a?w=400&h=300&fit=crop",
+        icon: "🌿",
+        retailPrice: "₹150/plant",
+        wholesalePrice: "₹120/plant (50+)",
+        bulkPrice: "₹100/plant (200+)",
+        benefits: ["Natural skin healer", "Anti-inflammatory properties", "Digestive health support", "Air purifying qualities"]
+      },
+      {
+        name: "Vetiver Roots",
+        description: "Aromatic vetiver roots for natural cooling and fragrance",
+        image: "https://images.unsplash.com/photo-1594736797933-d0c0c5d6b9d8?w=400&h=300&fit=crop",
+        icon: "🌾",
+        retailPrice: "₹200/bundle",
+        wholesalePrice: "₹160/bundle (25+)",
+        bulkPrice: "₹140/bundle (100+)",
+        benefits: ["Natural air conditioning", "Stress relief aromatherapy", "Soil erosion control", "Premium perfume ingredient"]
+      },
+      {
+        name: "Bell Peppers",
+        description: "Colorful, sweet bell peppers rich in vitamins",
+        image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=300&fit=crop",
+        icon: "🫑",
+        retailPrice: "₹80/kg",
+        wholesalePrice: "₹65/kg (25kg+)",
+        bulkPrice: "₹55/kg (100kg+)",
+        benefits: ["Vitamin C powerhouse", "Antioxidant rich", "Eye health support", "Immune system booster"]
+      }
+    ];
+
+    // Blog data
+    const blogPosts = [
+      {
+        title: "Why Choose Microgreens? The Superfood Revolution",
+        excerpt: "Discover how microgreens pack 40x more nutrients than their mature counterparts and why they're becoming the go-to choice for health-conscious consumers.",
+        date: "January 15, 2024",
+        author: "Dr. Priya Sharma",
+        image: "https://images.unsplash.com/photo-1628773822990-202d530ac35c?w=400&h=250&fit=crop",
+        readTime: "5 min read",
+        category: "Nutrition"
+      },
+      {
+        title: "From Farm to Table: Our Sustainable Growing Process",
+        excerpt: "Take a behind-the-scenes look at how we grow our organic produce using sustainable farming methods that protect both your health and the environment.",
+        date: "January 10, 2024",
+        author: "Rajesh Kumar",
+        image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=250&fit=crop",
+        readTime: "7 min read",
+        category: "Farming"
+      },
+      {
+        title: "Starting Your Restaurant? Why Direct Farm Sourcing Matters",
+        excerpt: "Learn how partnering directly with farms can reduce your costs by 30% while ensuring the freshest ingredients for your customers.",
+        date: "January 5, 2024",
+        author: "Chef Anita Menon",
+        image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop",
+        readTime: "6 min read",
+        category: "Business"
+      }
+    ];
+
+    // Subscription plans
+    const subscriptionPlans = [
+      {
+        name: "Home Fresh",
+        price: "₹1,200/month",
+        description: "Perfect for families",
+        items: ["2kg Mixed Microgreens", "5kg Seasonal Vegetables", "2 Aloe Vera Plants", "Weekly Delivery"],
+        popular: false
+      },
+      {
+        name: "Restaurant Pro",
+        price: "₹8,500/month",
+        description: "Ideal for restaurants",
+        items: ["15kg Mixed Microgreens", "50kg Fresh Vegetables", "Daily Delivery", "Priority Support"],
+        popular: true
+      },
+      {
+        name: "Bulk Supply",
+        price: "₹25,000/month",
+        description: "For large businesses",
+        items: ["100kg+ Custom Selection", "Flexible Delivery", "Dedicated Account Manager", "Custom Packaging"],
+        popular: false
+      }
+    ];
+
+    // Main App Component
+    function App() {
+      const [currentProduct, setCurrentProduct] = useState(0);
+      const [activeSection, setActiveSection] = useState('home');
+      const [formData, setFormData] = useState({
+        name: '', email: '', phone: '', message: '', productType: '', quantity: ''
+      });
+      const [showThankYou, setShowThankYou] = useState(false);
+
+      // Auto-rotate product carousel
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentProduct(prev => (prev + 1) % products.length);
+        }, 5000);
+        return () => clearInterval(interval);
+      }, []);
+
+      // Scroll indicator and scroll to top functionality
+      useEffect(() => {
+        const handleScroll = () => {
+          const scrollTop = window.pageYOffset;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = scrollTop / docHeight;
+          
+          // Update scroll indicator
+          const indicator = document.getElementById('scrollIndicator');
+          if (indicator) {
+            indicator.style.transform = `scaleX(${scrollPercent})`;
+          }
+          
+          // Show/hide scroll to top button
+          const scrollBtn = document.getElementById('scrollToTop');
+          if (scrollBtn) {
+            if (scrollTop > 300) {
+              scrollBtn.style.opacity = '1';
+              scrollBtn.style.pointerEvents = 'auto';
+            } else {
+              scrollBtn.style.opacity = '0';
+              scrollBtn.style.pointerEvents = 'none';
+            }
+          }
+          
+          // Update active section
+          const sections = ['home', 'products', 'microgreens', 'blog', 'subscriptions', 'contact'];
+          sections.forEach(section => {
+            const element = document.getElementById(section);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              if (rect.top <= 100 && rect.bottom >= 100) {
+                setActiveSection(section);
+              }
+            }
+          });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      const scrollToSection = (sectionId) => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      const handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', formData);
+        setShowThankYou(true);
+        setFormData({ name: '', email: '', phone: '', message: '', productType: '', quantity: '' });
+        setTimeout(() => setShowThankYou(false), 5000);
+      };
+
+      const handleInputChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value
+        });
+      };
+
+      return (
+        <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+          {/* Enhanced Header with Social Media */}
+          <header className="bg-gradient-to-r from-green-600 to-green-700 text-white sticky top-0 z-40 shadow-2xl">
+            <div className="container mx-auto px-4">
+              {/* Top Bar with Social Media */}
+              <div className="flex justify-between items-center py-2 border-b border-green-500">
+                <div className="flex items-center space-x-4 text-sm">
+                  <span><i className="fas fa-phone mr-1"></i> +91 9841565965</span>
+                  <span><i className="fas fa-envelope mr-1"></i> info@nvhagrigreen.com</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-sm mr-3">Follow Us:</span>
+                  <a href="#" className="hover:text-yellow-300 transition-colors duration-300" aria-label="Facebook">
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" className="hover:text-yellow-300 transition-colors duration-300" aria-label="Instagram">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" className="hover:text-yellow-300 transition-colors duration-300" aria-label="WhatsApp">
+                    <i className="fab fa-whatsapp"></i>
+                  </a>
+                  <a href="#" className="hover:text-yellow-300 transition-colors duration-300" aria-label="YouTube">
+                    <i className="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+              
+              {/* Main Navigation */}
+              <div className="flex justify-between items-center py-4">
+                <div className="flex items-center space-x-3">
+                  <div className="text-3xl">🌱</div>
+                  <div>
+                    <h1 className="text-2xl font-bold">NVH Agri Green</h1>
+                    <p className="text-green-200 text-sm">Direct Farm to Table</p>
+                  </div>
+                </div>
+                <nav className="hidden md:flex space-x-6">
+                  {['home', 'products', 'microgreens', 'blog', 'subscriptions', 'contact'].map(section => (
+                    <button 
+                      key={section}
+                      onClick={() => scrollToSection(section)}
+                      className={`hover:text-yellow-300 transition-colors duration-300 capitalize px-3 py-2 rounded ${
+                        activeSection === section ? 'bg-green-500 text-white' : ''
+                      }`}
+                    >
+                      {section}
+                    </button>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          </header>
+
+          {/* Hero Section */}
+          <section id="home" className="relative bg-gradient-to-br from-green-100 to-blue-100 py-20 overflow-hidden">
+            <div className="absolute inset-0 bg-white/30"></div>
+            <div className="container mx-auto px-4 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="text-center lg:text-left">
+                  <h2 className="text-5xl lg:text-7xl font-bold gradient-text mb-6">
+                    Fresh Direct From Our <span className="text-yellow-600">Farms</span>
+                  </h2>
+                  <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                    NVH Agri Green brings you the freshest organic produce directly from our sustainable farms in Maharashtra. 
+                    Wholesale, retail, and bulk supply options available across India.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <button
+                      onClick={() => scrollToSection('products')}
+                      className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg ripple-effect"
+                    >
+                      <i className="fas fa-leaf mr-2"></i>
+                      Explore Products
+                    </button>
+                    <button
+                      onClick={() => scrollToSection('contact')}
+                      className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-full hover:bg-green-600 hover:text-white transition-all duration-300"
+                    >
+                      Get Wholesale Prices
+                    </button>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="floating-animation">
+                    <img 
+                      src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=600&h=400&fit=crop" 
+                      alt="Fresh organic produce from NVH Agri Green farms"
+                      className="rounded-2xl shadow-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Product Carousel Section */}
+          <section id="products" className="py-20 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-green-800 mb-4">Our Premium Products</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  From farm to your doorstep - discover our range of fresh, organic produce with dedicated benefits for your health and business
+                </p>
+              </div>
+
+              {/* Featured Product Carousel */}
+              <div className="relative max-w-6xl mx-auto mb-16">
+                <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-3xl p-8 text-white overflow-hidden">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <div className="flex items-center mb-4">
+                        <span className="text-5xl mr-4">{products[currentProduct].icon}</span>
+                        <h3 className="text-3xl font-bold">{products[currentProduct].name}</h3>
+                      </div>
+                      <p className="text-green-100 text-lg mb-6">{products[currentProduct].description}</p>
+                      
+                      {/* Benefits */}
+                      <div className="mb-6">
+                        <h4 className="text-xl font-semibold mb-3">Why Choose Our {products[currentProduct].name}?</h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {products[currentProduct].benefits.map((benefit, idx) => (
+                            <div key={idx} className="flex items-center">
+                              <i className="fas fa-check-circle text-yellow-400 mr-2"></i>
+                              <span className="text-sm">{benefit}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Pricing */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between">
+                          <span>Retail:</span>
+                          <span className="font-bold">{products[currentProduct].retailPrice}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Wholesale:</span>
+                          <span className="font-bold text-yellow-300">{products[currentProduct].wholesalePrice}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Bulk Supply:</span>
+                          <span className="font-bold text-yellow-300">{products[currentProduct].bulkPrice}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <img 
+                        src={products[currentProduct].image} 
+                        alt={products[currentProduct].name}
+                        className="rounded-2xl shadow-2xl w-full h-80 object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Carousel Controls */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  {products.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentProduct(idx)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        idx === currentProduct ? 'bg-green-600' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Quantity Categories */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+                <div className="bg-blue-50 p-6 rounded-2xl text-center border-2 border-blue-200">
+                  <div className="text-4xl text-blue-600 mb-3">🏪</div>
+                  <h3 className="text-xl font-bold text-blue-800 mb-2">Retail Customers</h3>
+                  <p className="text-blue-600 text-sm">Daily fresh needs • Small quantities • Home delivery</p>
+                  <p className="text-blue-800 font-semibold mt-2">1kg - 10kg</p>
+                </div>
+                <div className="bg-yellow-50 p-6 rounded-2xl text-center border-2 border-yellow-200">
+                  <div className="text-4xl text-yellow-600 mb-3">🏢</div>
+                  <h3 className="text-xl font-bold text-yellow-800 mb-2">Small Business</h3>
+                  <p className="text-yellow-600 text-sm">Restaurants • Cafes • Small retailers</p>
+                  <p className="text-yellow-800 font-semibold mt-2">10kg - 100kg</p>
+                </div>
+                <div className="bg-green-50 p-6 rounded-2xl text-center border-2 border-green-200">
+                  <div className="text-4xl text-green-600 mb-3">🚚</div>
+                  <h3 className="text-xl font-bold text-green-800 mb-2">Wholesale Orders</h3>
+                  <p className="text-green-600 text-sm">Bulk buyers • Distributors • Large retailers</p>
+                  <p className="text-green-800 font-semibold mt-2">100kg - 1000kg</p>
+                </div>
+                <div className="bg-purple-50 p-6 rounded-2xl text-center border-2 border-purple-200">
+                  <div className="text-4xl text-purple-600 mb-3">🏭</div>
+                  <h3 className="text-xl font-bold text-purple-800 mb-2">Industrial Supply</h3>
+                  <p className="text-purple-600 text-sm">Factories • Exporters • Processing units</p>
+                  <p className="text-purple-800 font-semibold mt-2">1000kg+</p>
+                </div>
+              </div>
+
+              {/* Product Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {products.map((product, idx) => (
+                  <div key={idx} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden border">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <div className="flex items-center mb-3">
+                        <span className="text-2xl mr-2">{product.icon}</span>
+                        <h3 className="text-xl font-bold text-green-800">{product.name}</h3>
+                      </div>
+                      <p className="text-gray-600 mb-4 text-sm">{product.description}</p>
+                      <div className="space-y-1 text-sm">
+                        <div className="flex justify-between">
+                          <span>Retail:</span>
+                          <span className="font-semibold">{product.retailPrice}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Wholesale:</span>
+                          <span className="font-semibold text-green-600">{product.wholesalePrice}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Microgreens Section */}
+          <section id="microgreens" className="py-20 bg-gradient-to-br from-green-50 to-green-100">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-green-800 mb-4">Premium Microgreens Collection</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Nutrient-dense microgreens with detailed pricing for every business size. 
+                  40x more nutrients than mature vegetables!
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {microgreens.map((microgreen, idx) => (
+                  <div key={idx} className="microgreen-card rounded-2xl shadow-lg overflow-hidden">
+                    <img 
+                      src={microgreen.image} 
+                      alt={microgreen.name}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <div className="flex items-center mb-3">
+                        <span className="text-2xl mr-2">{microgreen.icon}</span>
+                        <h3 className="text-xl font-bold text-green-800">{microgreen.name}</h3>
+                      </div>
+                      
+                      {/* Pricing Table */}
+                      <div className="bg-white rounded-lg p-4 mb-4 shadow-inner">
+                        <h4 className="font-semibold text-green-800 mb-3">Pricing Options:</h4>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between">
+                            <span>🏪 Retail:</span>
+                            <span className="font-semibold">{microgreen.retail}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>💰 Standard:</span>
+                            <span className="font-semibold">{microgreen.price}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>🏢 Wholesale:</span>
+                            <span className="font-semibold text-green-600">{microgreen.wholesale}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>🚚 Bulk:</span>
+                            <span className="font-semibold text-green-700">{microgreen.bulk}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Benefits */}
+                      <div>
+                        <h4 className="font-semibold text-green-800 mb-2">Health Benefits:</h4>
+                        <div className="space-y-1">
+                          {microgreen.benefits.map((benefit, bIdx) => (
+                            <div key={bIdx} className="flex items-center text-sm">
+                              <i className="fas fa-leaf text-green-500 mr-2"></i>
+                              <span>{benefit}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Microgreens Info Banner */}
+              <div className="mt-16 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-3xl p-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                  <div>
+                    <div className="text-4xl mb-3">🌱</div>
+                    <h3 className="text-xl font-bold mb-2">Fresh Daily Harvest</h3>
+                    <p className="text-green-100">Harvested every morning for maximum freshness and nutrition</p>
+                  </div>
+                  <div>
+                    <div className="text-4xl mb-3">📦</div>
+                    <h3 className="text-xl font-bold mb-2">Custom Packaging</h3>
+                    <p className="text-green-100">Tailored packaging options for retail, wholesale, and bulk orders</p>
+                  </div>
+                  <div>
+                    <div className="text-4xl mb-3">🚛</div>
+                    <h3 className="text-xl font-bold mb-2">Flexible Delivery</h3>
+                    <p className="text-green-100">Same-day delivery in Mumbai, 24-48 hours across Maharashtra</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Blog Section */}
+          <section id="blog" className="py-20 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-green-800 mb-4">Fresh Insights & Knowledge</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Stay updated with the latest in organic farming, nutrition science, and sustainable agriculture
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {blogPosts.map((post, idx) => (
+                  <article key={idx} className="blog-card rounded-2xl shadow-lg overflow-hidden border">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <div className="flex items-center mb-3">
+                        <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-semibold">
+                          {post.category}
+                        </span>
+                        <span className="text-gray-500 text-sm ml-3">{post.readTime}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-800 mb-3 hover:text-green-600 transition-colors duration-300">
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <p className="text-sm font-semibold text-gray-800">{post.author}</p>
+                          <p className="text-sm text-gray-500">{post.date}</p>
+                        </div>
+                        <button className="text-green-600 hover:text-green-700 font-semibold text-sm">
+                          Read More →
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="text-center mt-12">
+                <button className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-3 rounded-full hover:from-green-700 hover:to-green-800 transition-all duration-300">
+                  View All Articles
+                </button>
+              </div>
+            </div>
+          </section>
+
+          {/* Subscriptions Section */}
+          <section id="subscriptions" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-green-800 mb-4">Subscription Plans</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Never run out of fresh produce. Choose a plan that fits your needs and save up to 20%
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {subscriptionPlans.map((plan, idx) => (
+                  <div key={idx} className={`rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 ${
+                    plan.popular ? 'bg-gradient-to-br from-green-500 to-green-600 text-white scale-105' : 'bg-white'
+                  }`}>
+                    {plan.popular && (
+                      <div className="bg-yellow-400 text-green-800 text-center py-2 font-bold">
+                        MOST POPULAR
+                      </div>
+                    )}
+                    <div className="p-8">
+                      <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-green-800'}`}>
+                        {plan.name}
+                      </h3>
+                      <p className={`mb-4 ${plan.popular ? 'text-green-100' : 'text-gray-600'}`}>
+                        {plan.description}
+                      </p>
+                      <div className={`text-3xl font-bold mb-6 ${plan.popular ? 'text-white' : 'text-green-600'}`}>
+                        {plan.price}
+                      </div>
+                      <ul className="space-y-3 mb-8">
+                        {plan.items.map((item, itemIdx) => (
+                          <li key={itemIdx} className={`flex items-center ${plan.popular ? 'text-green-100' : 'text-gray-600'}`}>
+                            <i className={`fas fa-check-circle mr-3 ${plan.popular ? 'text-yellow-300' : 'text-green-500'}`}></i>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <button className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
+                        plan.popular 
+                          ? 'bg-white text-green-600 hover:bg-gray-100' 
+                          : 'bg-green-600 text-white hover:bg-green-700'
+                      }`}>
+                        Subscribe Now
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center mt-12">
+                <p className="text-gray-600 mb-4">Need a custom plan? We can create something just for you.</p>
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="border-2 border-green-600 text-green-600 px-6 py-2 rounded-full hover:bg-green-600 hover:text-white transition-all duration-300"
+                >
+                  Contact for Custom Plan
+                </button>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Section */}
+          <section id="contact" className="py-20 bg-gradient-to-br from-green-50 to-blue-50">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-green-800 mb-4">Get in Touch</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Ready to start your fresh journey? Contact us for quotes, bulk orders, or any questions about our produce
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                {/* Contact Form */}
+                <div className="bg-white rounded-3xl shadow-2xl p-8">
+                  {showThankYou && (
+                    <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded">
+                      <div className="flex items-center">
+                        <i className="fas fa-check-circle mr-3 text-xl"></i>
+                        <div>
+                          <p className="font-semibold">Thank you for your inquiry!</p>
+                          <p className="text-sm">We'll get back to you within 24 hours.</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  <form onSubmit={handleFormSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+                          placeholder="Enter your full name"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Phone Number *
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+                          placeholder="+91 9876543210"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Product Type
+                        </label>
+                        <select
+                          name="productType"
+                          value={formData.productType}
+                          onChange={handleInputChange}
+                          className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+                        >
+                          <option value="">Select Product</option>
+                          <option value="microgreens">Microgreens</option>
+                          <option value="cucumbers">Cucumbers</option>
+                          <option value="aloe-vera">Aloe Vera</option>
+                          <option value="vetiver">Vetiver</option>
+                          <option value="bell-peppers">Bell Peppers</option>
+                          <option value="mixed">Mixed Order</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Quantity Needed
+                        </label>
+                        <select
+                          name="quantity"
+                          value={formData.quantity}
+                          onChange={handleInputChange}
+                          className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+                        >
+                          <option value="">Select Quantity</option>
+                          <option value="retail">Retail (1-10kg)</option>
+                          <option value="small-business">Small Business (10-100kg)</option>
+                          <option value="wholesale">Wholesale (100-1000kg)</option>
+                          <option value="bulk">Industrial Bulk (1000kg+)</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Message *
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        rows="4"
+                        className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 resize-none"
+                        placeholder="Tell us about your requirements, delivery location, and any specific needs..."
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-xl font-semibold text-lg hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 shadow-lg ripple-effect"
+                    >
+                      <i className="fas fa-paper-plane mr-2"></i>
+                      Send Inquiry
+                    </button>
+                  </form>
+                </div>
+
+                {/* Contact Information */}
+                <div className="space-y-8">
+                  <div className="bg-white rounded-3xl shadow-2xl p-8">
+                    <h3 className="text-2xl font-bold text-green-800 mb-6">Contact Information</h3>
+                    <div className="space-y-4">
+                      <div className="flex items-center">
+                        <div className="bg-green-100 p-3 rounded-full mr-4">
+                          <i className="fas fa-phone text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-800">Phone</p>
+                          <p className="text-gray-600">+91 9841565965</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="bg-green-100 p-3 rounded-full mr-4">
+                          <i className="fas fa-envelope text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-800">Email</p>
+                          <p className="text-gray-600">info@nvhagrigreen.com</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="bg-green-100 p-3 rounded-full mr-4">
+                          <i className="fas fa-map-marker-alt text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-800">Location</p>
+                          <p className="text-gray-600">Maharashtra, India</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="bg-green-100 p-3 rounded-full mr-4">
+                          <i className="fas fa-clock text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-800">Business Hours</p>
+                          <p className="text-gray-600">Mon-Sun: 6:00 AM - 8:00 PM</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-3xl p-8">
+                    <h3 className="text-2xl font-bold mb-4">Why Choose NVH Agri Green?</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-center">
+                        <i className="fas fa-leaf text-yellow-300 mr-3"></i>
+                        <span>100% Organic & Fresh</span>
+                      </div>
+                      <div className="flex items-center">
+                        <i className="fas fa-truck text-yellow-300 mr-3"></i>
+                        <span>Direct Farm to Table</span>
+                      </div>
+                      <div className="flex items-center">
+                        <i className="fas fa-shield-alt text-yellow-300 mr-3"></i>
+                        <span>Quality Guaranteed</span>
+                      </div>
+                      <div className="flex items-center">
+                        <i className="fas fa-rupee-sign text-yellow-300 mr-3"></i>
+                        <span>Competitive Wholesale Rates</span>
+                      </div>
+                      <div className="flex items-center">
+                        <i className="fas fa-calendar-check text-yellow-300 mr-3"></i>
+                        <span>Regular Supply Schedule</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="bg-gradient-to-r from-green-800 to-green-900 text-white py-16">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="text-3xl">🌱</div>
+                    <div>
+                      <h3 className="text-2xl font-bold">NVH Agri Green</h3>
+                      <p className="text-green-200 text-sm">Farm Fresh, Always</p>
+                    </div>
+                  </div>
+                  <p className="text-green-200 leading-relaxed">
+                    Direct from our sustainable farms in Maharashtra to your table. 
+                    Quality produce, competitive prices, reliable supply.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+                  <div className="space-y-2">
+                    {['Products', 'Microgreens', 'Subscriptions', 'Blog', 'Contact'].map(link => (
+                      <button 
+                        key={link}
+                        onClick={() => scrollToSection(link.toLowerCase())}
+                        className="block text-green-200 hover:text-yellow-300 transition-colors duration-300"
+                      >
+                        {link}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-semibold mb-4">Our Products</h4>
+                  <div className="space-y-2 text-green-200">
+                    <p>🥒 Fresh Cucumbers</p>
+                    <p>🌿 Aloe Vera Plants</p>
+                    <p>🌾 Vetiver Roots</p>
+                    <p>🫑 Bell Peppers</p>
+                    <p>🌱 Premium Microgreens</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-xl font-semibold mb-4">Connect With Us</h4>
+                  <div className="flex space-x-4 mb-4">
+                    <a href="#" className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors duration-300">
+                      <i className="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors duration-300">
+                      <i className="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors duration-300">
+                      <i className="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors duration-300">
+                      <i className="fab fa-youtube"></i>
+                    </a>
+                  </div>
+                  <div className="space-y-2 text-green-200 text-sm">
+                    <p><i className="fas fa-phone mr-2"></i>+91 9841565965</p>
+                    <p><i className="fas fa-envelope mr-2"></i>info@nvhagrigreen.com</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="border-t border-green-600 pt-8 text-center">
+                <p className="text-green-200">
+                  © 2024 NVH Agri Green. All rights reserved. | Fresh from Farm to Your Table
+                </p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    // Add scroll to top functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      if (scrollToTopBtn) {
+        scrollToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+
+    // Render the app
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,918 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Enhanced SEO Meta Tags -->
+  <meta name="description"
+    content="FreshHarvest offers premium, whole produce including bell peppers, cucumbers, aloe vera, microgreens, and vetiver. Discover fresh, vibrant, and organic produce today.">
+  <meta name="keywords"
+    content="fresh produce, organic vegetables, bell peppers, cucumbers, aloe vera, microgreens, vetiver, healthy food, farm-fresh, organic bell peppers wholesale, fresh microgreens for restaurants, bulk produce supplier, sustainable farming, direct farm sourcing">
+  <meta name="author" content="FreshHarvest">
+  <meta name="geo.region" content="US-CA">
+  <meta name="geo.placename" content="California">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="FreshHarvest - Premium Whole Produce & Wholesale Supplier">
+  <meta property="og:description" content="Premium farm-fresh produce including bell peppers, cucumbers, aloe vera, microgreens, and vetiver. Bulk orders available for restaurants and retailers.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&h=630&fit=crop">
+  <meta property="og:url" content="https://freshharvest.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FreshHarvest">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FreshHarvest - Premium Whole Produce">
+  <meta name="twitter:description" content="Farm-fresh produce delivered straight from our sustainable gardens. Bulk orders available.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&h=630&fit=crop">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://freshharvest.com">
+  
+  <title>FreshHarvest - Premium Whole Produce & Wholesale Supplier</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Scripts -->
+  <script defer src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.9/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "FreshHarvest",
+    "description": "Premium whole produce supplier offering fresh bell peppers, cucumbers, aloe vera, microgreens, and vetiver",
+    "url": "https://freshharvest.com",
+    "telephone": "+91 9841565965",
+    "email": "info@freshharvest.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Fresh Produce",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "name": "Bell Peppers",
+          "description": "Vibrant, crunchy bell peppers in red, yellow, and green varieties",
+          "offers": {
+            "@type": "Offer",
+            "price": "3.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Microgreens",
+          "description": "Nutrient-dense baby greens packed with flavor and essential nutrients",
+          "offers": {
+            "@type": "Offer",
+            "price": "12.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .ripple { position: relative; overflow: hidden; }
+    .ripple::after { content: ''; position: absolute; border-radius: 50%; background: rgba(255,255,255,0.6); transform: scale(0); animation: ripple 0.6s linear; }
+    @keyframes ripple { to { transform: scale(4); opacity: 0; } }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  
+  <!-- Floating Action Button -->
+  <button 
+    id="fab"
+    aria-label="Quick inquiry form access"
+    className="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-50"
+    style="display: none;"
+  >
+    <i className="fas fa-comments text-xl"></i>
+  </button>
+  
+  <script type="text/babel">
+    const {useState, useEffect, useRef} = React;
+
+    // Enhanced product data
+    const products = [
+      {
+        name: "Bell Peppers",
+        description: "Vibrant, crunchy bell peppers in red, yellow, and green varieties, bursting with essential vitamins and natural sweetness.",
+        fact: "Rich in Vitamin C and antioxidants!",
+        image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=250&fit=crop",
+        price: "$3.99/lb",
+        bulkPrice: "$2.99/lb (50+ lbs)",
+        icon: "🫑",
+        availability: "Freshly Harvested – Limited Availability",
+        urgent: true
+      },
+      {
+        name: "Cucumbers",
+        description: "Crisp, refreshing cucumbers perfect for salads, snacks, or infused water. Naturally hydrating and delicious.",
+        fact: "95% water content - nature's hydration!",
+        image: "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=400&h=250&fit=crop",
+        price: "$2.49/lb",
+        bulkPrice: "$1.89/lb (25+ lbs)",
+        icon: "🥒",
+        availability: "In Stock"
+      },
+      {
+        name: "Aloe Vera",
+        description: "Fresh, organic aloe vera leaves harvested for natural skincare, wellness drinks, and therapeutic applications.",
+        fact: "Contains over 75 active compounds!",
+        image: "https://media.istockphoto.com/id/1345935119/photo/aloe-or-aloe-vera-fresh-leaves-and-slices-on-white-background.jpg?s=612x612&w=0&k=20&c=eIDRIhnKA8MaNQ9YZz4y2klBwFCuigIoCMH7vwQjaKg=",
+        price: "$8.99/plant",
+        bulkPrice: "$6.99/plant (10+ plants)",
+        icon: "🌿",
+        availability: "In Stock"
+      },
+      {
+        name: "Microgreens",
+        description: "Nutrient-dense baby greens packed with flavor and essential nutrients. Perfect for garnishing and health-conscious meals.",
+        fact: "40x more nutrients than mature greens!",
+        image: "https://oligo.in/cdn/shop/files/closeup-sprouted-arugula-grow-wet-linen-mat.jpg?v=1699173335&width=3840",
+        price: "$12.99/tray",
+        bulkPrice: "$9.99/tray (20+ trays)",
+        icon: "🌱",
+        availability: "Freshly Harvested – Limited Availability",
+        urgent: true
+      },
+      {
+        name: "Vetiver",
+        description: "Aromatic vetiver roots prized for their earthy fragrance, natural pest control, and soil conservation properties.",
+        fact: "Used in luxury perfumes worldwide!",
+        image: "https://www.kusharomaexports.com/uploadProductImages/Vetiver-oil---Certified-Organic.png",
+        price: "$15.99/bundle",
+        bulkPrice: "$12.99/bundle (5+ bundles)",
+        icon: "🌾",
+        availability: "In Stock"
+      }
+    ];
+
+    // Main App Component
+    function App() {
+      const [inquiries, setInquiries] = useState([]);
+      const [formData, setFormData] = useState({name: "", email: "", message: "", phone: "", product: ""});
+      const [showConfirmation, setShowConfirmation] = useState(false);
+      const [formErrors, setFormErrors] = useState({});
+      const [isSubmitting, setIsSubmitting] = useState(false);
+      const [activeNav, setActiveNav] = useState('home');
+      const [currentProductIndex, setCurrentProductIndex] = useState(0);
+      const carouselRef = useRef(null);
+
+      // Load inquiries from localStorage
+      useEffect(() => {
+        const savedInquiries = localStorage.getItem('freshHarvestInquiries');
+        if (savedInquiries) {
+          setInquiries(JSON.parse(savedInquiries));
+        }
+      }, []);
+
+      // Save inquiries to localStorage
+      useEffect(() => {
+        localStorage.setItem('freshHarvestInquiries', JSON.stringify(inquiries));
+      }, [inquiries]);
+
+      // Auto-rotate product carousel
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentProductIndex((prev) => (prev + 1) % products.length);
+        }, 4000);
+        return () => clearInterval(interval);
+      }, []);
+
+      // Handle scroll for active navigation and FAB visibility
+      useEffect(() => {
+        const handleScroll = () => {
+          const sections = ['home', 'products', 'business', 'contact'];
+          const scrollY = window.scrollY;
+          
+          sections.forEach(section => {
+            const element = document.getElementById(section);
+            if (element) {
+              const { offsetTop, offsetHeight } = element;
+              if (scrollY >= offsetTop - 100 && scrollY < offsetTop + offsetHeight - 100) {
+                setActiveNav(section);
+              }
+            }
+          });
+
+          // Show/hide FAB
+          const fab = document.getElementById('fab');
+          if (fab) {
+            if (scrollY > 300) {
+              fab.style.display = 'block';
+              fab.onclick = () => scrollToSection('contact');
+            } else {
+              fab.style.display = 'none';
+            }
+          }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      // Smooth scroll for navigation
+      const scrollToSection = (sectionId) => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      // Enhanced form validation
+      const validateForm = () => {
+        const errors = {};
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^[\+]?[\d\s\-\(\)]{10,}$/;
+
+        if (!formData.name.trim()) errors.name = "Name is required";
+        if (!formData.email.trim()) {
+          errors.email = "Email is required";
+        } else if (!emailRegex.test(formData.email)) {
+          errors.email = "Please enter a valid email";
+        }
+        if (!formData.message.trim()) errors.message = "Message is required";
+        if (formData.phone && !phoneRegex.test(formData.phone)) {
+          errors.phone = "Please enter a valid phone number";
+        }
+
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+      };
+
+      // Handle input changes with real-time validation clearing
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({...formData, [name]: value});
+        
+        // Clear error for this field when user starts typing
+        if (formErrors[name]) {
+          setFormErrors({...formErrors, [name]: ""});
+        }
+      };
+
+      // Enhanced form submission with analytics tracking
+      const handleSubmit = async () => {
+        if (!validateForm()) return;
+        
+        setIsSubmitting(true);
+        
+        // Track inquiry submission (placeholder for analytics)
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'inquiry_submitted', {
+            'product': formData.product || 'general',
+            'value': 1
+          });
+        }
+        
+        // Simulate API call
+        setTimeout(() => {
+          const newInquiry = {
+            ...formData, 
+            timestamp: new Date().toISOString(),
+            id: Date.now()
+          };
+          setInquiries([...inquiries, newInquiry]);
+          console.log("New Inquiry:", newInquiry);
+          setFormData({name: "", email: "", message: "", phone: "", product: ""});
+          setShowConfirmation(true);
+          setIsSubmitting(false);
+          setTimeout(() => setShowConfirmation(false), 5000);
+        }, 1000);
+      };
+
+      // Export inquiries as CSV
+      const exportInquiries = () => {
+        if (inquiries.length === 0) {
+          alert('No inquiries to export');
+          return;
+        }
+
+        const headers = ['Name', 'Email', 'Phone', 'Product', 'Message', 'Timestamp'];
+        const csvContent = [
+          headers.join(','),
+          ...inquiries.map(inquiry => [
+            `"${inquiry.name}"`,
+            `"${inquiry.email}"`,
+            `"${inquiry.phone || ''}"`,
+            `"${inquiry.product || 'General'}"`,
+            `"${inquiry.message.replace(/"/g, '""')}"`,
+            `"${new Date(inquiry.timestamp).toLocaleString()}"`
+          ].join(','))
+        ].join('\n');
+
+        const blob = new Blob([csvContent], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `freshharvest-inquiries-${new Date().toISOString().split('T')[0]}.csv`;
+        a.click();
+        window.URL.revokeObjectURL(url);
+      };
+
+      return (
+        <div className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50">
+          {/* Enhanced Header */}
+          <header className="bg-gradient-to-r from-green-600 to-green-700 text-white sticky top-0 z-50 shadow-xl backdrop-blur-sm">
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+              <div className="flex items-center space-x-3">
+                <div className="text-3xl">🌱</div>
+                <h1 className="text-2xl md:text-3xl font-bold tracking-tight">FreshHarvest</h1>
+              </div>
+              <nav className="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
+                {['home', 'products', 'business', 'contact'].map(section => (
+                  <button 
+                    key={section}
+                    onClick={() => scrollToSection(section)}
+                    className={`hover:text-yellow-300 transition-colors duration-300 font-medium capitalize focus:outline-none ${
+                      activeNav === section ? 'text-yellow-300 border-b-2 border-yellow-300' : ''
+                    }`}
+                    aria-label={`Navigate to ${section} section`}
+                  >
+                    {section === 'business' ? 'For Business' : section}
+                  </button>
+                ))}
+              </nav>
+              <div className="md:hidden">
+                <button aria-label="Open mobile menu" className="focus:outline-none">
+                  <i className="fas fa-bars text-xl"></i>
+                </button>
+              </div>
+            </div>
+          </header>
+
+          {/* Enhanced Hero Section */}
+          <main id="home" className="bg-gradient-to-br from-green-100 via-yellow-50 to-green-100 py-20 md:py-32 relative overflow-hidden">
+            <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
+            <div className="container mx-auto px-4 text-center relative z-10">
+              <div className="animate-fade-in-up">
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-green-800 mb-6 leading-tight">
+                  Fresh, Whole, <span className="text-yellow-600">Vibrant</span>
+                </h2>
+                <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Experience the taste of nature with our premium, farm-fresh produce delivered straight from our sustainable gardens to your table.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <button
+                    onClick={() => scrollToSection('products')}
+                    className="ripple bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-4 rounded-full hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold text-lg focus:outline-none"
+                    aria-label="Explore our fresh produce products"
+                  >
+                    <i className="fas fa-leaf mr-2"></i>
+                    Explore Our Products
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('business')}
+                    className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-full hover:bg-green-600 hover:text-white transition-all duration-300 font-semibold text-lg focus:outline-none"
+                    aria-label="Learn about wholesale business options"
+                  >
+                    Wholesale Inquiries
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Floating elements */}
+            <div className="absolute top-20 left-10 text-6xl opacity-20 animate-bounce-slow">🍃</div>
+            <div className="absolute bottom-20 right-10 text-4xl opacity-20 animate-pulse">🌿</div>
+          </main>
+
+          {/* Enhanced Products Section with Carousel */}
+          <section id="products" className="py-20 bg-white relative">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">Our Fresh Produce</h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  Carefully selected, sustainably grown, and delivered fresh to ensure the highest quality for your health and satisfaction.
+                </p>
+              </div>
+              
+              {/* Product Carousel */}
+              <div className="relative max-w-6xl mx-auto mb-12">
+                <div className="overflow-hidden rounded-2xl">
+                  <div 
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{transform: `translateX(-${currentProductIndex * 100}%)`}}
+                  >
+                    {products.map((product, index) => (
+                      <div key={index} className="w-full flex-shrink-0">
+                        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-8 md:p-12 rounded-2xl mx-2">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                              <div className="flex items-center mb-4">
+                                <span className="text-4xl mr-4">{product.icon}</span>
+                                <h3 className="text-3xl font-bold">{product.name}</h3>
+                              </div>
+                              <p className="text-green-100 mb-4 text-lg">{product.description}</p>
+                              <div className="bg-yellow-500 text-white px-4 py-2 rounded-full inline-block mb-4">
+                                <i className="fas fa-info-circle mr-2"></i>
+                                {product.fact}
+                              </div>
+                              <div className="space-y-2">
+                                <p className="text-2xl font-bold">{product.price}</p>
+                                <p className="text-green-200">Bulk: {product.bulkPrice}</p>
+                                {product.urgent && (
+                                  <p className="text-yellow-300 font-semibold animate-pulse">
+                                    <i className="fas fa-clock mr-2"></i>
+                                    {product.availability}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                            <div className="relative">
+                              <img
+                                src={product.image}
+                                alt={product.name}
+                                className="w-full h-64 object-cover rounded-xl shadow-lg"
+                                loading="lazy"
+                                onError={(e) => {
+                                  e.target.src = `https://via.placeholder.com/400x250/22c55e/ffffff?text=${product.icon}+${product.name}`;
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Carousel controls */}
+                <button 
+                  onClick={() => setCurrentProductIndex((prev) => (prev - 1 + products.length) % products.length)}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-green-600 p-3 rounded-full shadow-lg transition-all duration-300 focus:outline-none"
+                  aria-label="Previous product"
+                >
+                  <i className="fas fa-arrow-left"></i>
+                </button>
+                <button 
+                  onClick={() => setCurrentProductIndex((prev) => (prev + 1) % products.length)}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-green-600 p-3 rounded-full shadow-lg transition-all duration-300 focus:outline-none"
+                  aria-label="Next product"
+                >
+                  <i className="fas fa-arrow-right"></i>
+                </button>
+                
+                {/* Carousel indicators */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  {products.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentProductIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none ${
+                        index === currentProductIndex ? 'bg-green-600' : 'bg-gray-300'
+                      }`}
+                      aria-label={`Go to product ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Traditional Product Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                {products.map((product, index) => (
+                  <div
+                    key={index}
+                    className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 animate-slide-in border border-green-100"
+                    style={{animationDelay: `${index * 150}ms`}}
+                    onClick={() => {
+                      // Track product interest
+                      if (typeof gtag !== 'undefined') {
+                        gtag('event', 'product_viewed', {
+                          'product_name': product.name,
+                          'value': 1
+                        });
+                      }
+                    }}
+                  >
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.src = `https://via.placeholder.com/400x250/22c55e/ffffff?text=${product.icon}+${product.name}`;
+                        }}
+                      />
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
+                        <span className="text-2xl">{product.icon}</span>
+                      </div>
+                      <div className="absolute bottom-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full font-semibold">
+                        {product.price}
+                      </div>
+                      {product.urgent && (
+                        <div className="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-semibold animate-pulse">
+                          LIMITED
+                        </div>
+                      )}
+                    </div>
+                    
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold text-green-800 mb-3">{product.name}</h3>
+                      <p className="text-gray-600 mb-4 leading-relaxed">{product.description}</p>
+                      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <p className="text-sm text-yellow-700 font-medium">
+                          <i className="fas fa-info-circle mr-2"></i>
+                          {product.fact}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Call to Action for Bulk Orders */}
+              <div className="text-center mt-16">
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-full hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold text-lg focus:outline-none"
+                  aria-label="Request wholesale quote"
+                >
+                  <i className="fas fa-truck mr-2"></i>
+                  Request Wholesale Quote
+                </button>
+              </div>
+            </div>
+          </section>
+
+          {/* For Business Section */}
+          <section id="business" className="py-20 bg-gradient-to-br from-gray-50 to-green-50">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">For Businesses</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Partner with FreshHarvest for consistent, high-quality produce supply. We specialize in serving restaurants, retailers, and food service providers.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+                <div className="bg-white p-8 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-all duration-300">
+                  <div className="text-4xl text-green-600 mb-4">🏢</div>
+                  <h3 className="text-2xl font-bold text-green-800 mb-4">Bulk Discounts</h3>
+                  <p className="text-gray-600">Save up to 25% on wholesale orders. Volume pricing available for all products.</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-all duration-300">
+                  <div className="text-4xl text-green-600 mb-4">🚚</div>
+                  <h3 className="text-2xl font-bold text-green-800 mb-4">Consistent Supply</h3>
+                  <p className="text-gray-600">Reliable delivery schedules and guaranteed availability for your business needs.</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-all duration-300">
+                  <div className="text-4xl text-green-600 mb-4">🌱</div>
+                  <h3 className="text-2xl font-bold text-green-800 mb-4">Direct Farm Sourcing</h3>
+                  <p className="text-gray-600">Skip the middleman. Get the freshest produce directly from our sustainable farms.</p>
+                </div>
+              </div>
+
+              {/* Testimonials Placeholder */}
+              <div className="bg-white p-12 rounded-3xl shadow-xl max-w-4xl mx-auto mb-12">
+                <div className="text-center mb-8">
+                  <h3 className="text-3xl font-bold text-green-800 mb-4">What Our Partners Say</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="text-center">
+                    <div className="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p className="text-gray-600 italic mb-4">"FreshHarvest has been our go-to supplier for over 2 years. The quality is consistently excellent, and their delivery is always on time."</p>
+                    <p className="font-semibold text-green-800">- Maria Rodriguez, Chef at Verde Restaurant</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p className="text-gray-600 italic mb-4">"The bulk pricing has significantly reduced our costs while maintaining the highest quality standards for our customers."</p>
+                    <p className="font-semibold text-green-800">- David Chen, Owner of Fresh Market Co.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Certifications */}
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-green-800 mb-6">Our Certifications</h3>
+                <div className="flex justify-center space-x-8 opacity-60">
+                  <div className="text-center">
+                    <div className="text-3xl mb-2">🌿</div>
+                    <p className="text-sm font-semibold">USDA Organic</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl mb-2">✅</div>
+                    <p className="text-sm font-semibold">GAP Certified</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl mb-2">🏆</div>
+                    <p className="text-sm font-semibold">FDA Approved</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Enhanced Contact Section */}
+          <section id="contact" className="py-20 bg-gradient-to-br from-green-50 to-yellow-50">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">Get in Touch</h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  Ready to experience the freshest produce? We'd love to hear from you and discuss your needs.
+                </p>
+              </div>
+              
+              <div className="max-w-2xl mx-auto">
+                <div className="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-green-100">
+                  {/* Export Button for Admin */}
+                  {inquiries.length > 0 && (
+                    <div className="mb-6 text-right">
+                      <button
+                        onClick={exportInquiries}
+                        className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 focus:outline-none"
+                        aria-label="Export inquiries as CSV file"
+                      >
+                        <i className="fas fa-download mr-2"></i>
+                        Export Inquiries ({inquiries.length})
+                      </button>
+                    </div>
+                  )}
+
+                  {showConfirmation && (
+                    <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded animate-fade-in">
+                      <div className="flex items-center">
+                        <i className="fas fa-check-circle mr-3 text-xl"></i>
+                        <div>
+                          <p className="font-semibold">Thank you for your inquiry{formData.product ? ` about ${formData.product}` : ''}!</p>
+                          <p className="text-sm">We'll get back to you within 24 hours.</p>
+                          <button
+                            onClick={() => scrollToSection('products')}
+                            className="text-green-800 underline hover:text-green-600 transition-colors duration-300 text-sm mt-2 focus:outline-none"
+                          >
+                            Explore more products →
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        <i className="fas fa-user mr-2"></i>Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className={`w-full p-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all duration-300 ${
+                          formErrors.name ? 'border-red-500 bg-red-50' : 'border-gray-300 focus:border-yellow-500'
+                        }`}
+                        placeholder="Enter your full name"
+                        aria-label="Enter your full name"
+                        aria-required="true"
+                        aria-invalid={formErrors.name ? 'true' : 'false'}
+                      />
+                      {formErrors.name && <p className="text-red-500 text-sm mt-1" role="alert">{formErrors.name}</p>}
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        <i className="fas fa-phone mr-2"></i>Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className={`w-full p-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all duration-300 ${
+                          formErrors.phone ? 'border-red-500 bg-red-50' : 'border-gray-300 focus:border-yellow-500'
+                        }`}
+                        placeholder="(Optional) Your phone number"
+                        aria-label="Enter your phone number"
+                        aria-invalid={formErrors.phone ? 'true' : 'false'}
+                      />
+                      {formErrors.phone && <p className="text-red-500 text-sm mt-1" role="alert">{formErrors.phone}</p>}
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        <i className="fas fa-envelope mr-2"></i>Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className={`w-full p-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all duration-300 ${
+                          formErrors.email ? 'border-red-500 bg-red-50' : 'border-gray-300 focus:border-yellow-500'
+                        }`}
+                        placeholder="your@email.com"
+                        aria-label="Enter your email address"
+                        aria-required="true"
+                        aria-invalid={formErrors.email ? 'true' : 'false'}
+                      />
+                      {formErrors.email && <p className="text-red-500 text-sm mt-1" role="alert">{formErrors.email}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        <i className="fas fa-leaf mr-2"></i>Product Interest
+                      </label>
+                      <select
+                        name="product"
+                        value={formData.product}
+                        onChange={handleInputChange}
+                        className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all duration-300"
+                        aria-label="Select product of interest"
+                      >
+                        <option value="">General Inquiry</option>
+                        {products.map((product, index) => (
+                          <option key={index} value={product.name}>{product.name}</option>
+                        ))}
+                        <option value="Bulk Order">Bulk/Wholesale Order</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-8">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <i className="fas fa-message mr-2"></i>Your Message *
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      className={`w-full p-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all duration-300 resize-none ${
+                        formErrors.message ? 'border-red-500 bg-red-50' : 'border-gray-300 focus:border-yellow-500'
+                      }`}
+                      rows="5"
+                      placeholder="Tell us about your produce needs, quantities, delivery preferences, or any questions you have..."
+                      aria-label="Enter your message"
+                      aria-required="true"
+                      aria-invalid={formErrors.message ? 'true' : 'false'}
+                    ></textarea>
+                    {formErrors.message && <p className="text-red-500 text-sm mt-1" role="alert">{formErrors.message}</p>}
+                  </div>
+                  
+                  <button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className={`ripple w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300 transform focus:outline-none ${
+                      isSubmitting 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 hover:scale-105 shadow-lg hover:shadow-xl'
+                    } text-white`}
+                    aria-label="Submit inquiry form"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <i className="fas fa-spinner fa-spin mr-2"></i>
+                        Sending Message...
+                      </>
+                    ) : (
+                      <>
+                        <i className="fas fa-paper-plane mr-2"></i>
+                        Send Your Inquiry
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Enhanced Footer */}
+          <footer className="bg-gradient-to-r from-green-700 to-green-800 text-white py-16">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-8">
+                <div className="text-center md:text-left">
+                  <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
+                    <div className="text-3xl">🌱</div>
+                    <h3 className="text-2xl font-bold">FreshHarvest</h3>
+                  </div>
+                  <p className="text-green-200 leading-relaxed">
+                    Bringing nature's finest produce to your table with sustainable farming and exceptional quality.
+                  </p>
+                </div>
+                
+                <div className="text-center md:text-left">
+                  <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
+                  <div className="space-y-2 text-green-200">
+                    <p><i className="fas fa-envelope mr-2"></i>info@freshharvest.com</p>
+                    <p><i className="fas fa-phone mr-2"></i>+91 9841565965</p>
+                    <p><i className="fas fa-clock mr-2"></i>Mon-Fri: 8AM-6PM</p>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+                  <div className="space-y-2 text-green-200">
+                    <p><button onClick={() => scrollToSection('products')} className="hover:text-yellow-300 transition-colors duration-300 focus:outline-none">Products</button></p>
+                    <p><button onClick={() => scrollToSection('business')} className="hover:text-yellow-300 transition-colors duration-300 focus:outline-none">Wholesale</button></p>
+                    <p><button onClick={() => scrollToSection('contact')} className="hover:text-yellow-300 transition-colors duration-300 focus:outline-none">Contact</button></p>
+                  </div>
+                </div>
+                
+                <div className="text-center md:text-right">
+                  <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
+                  <div className="flex justify-center md:justify-end space-x-4">
+                    <a href="#" className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors duration-300 focus:outline-none" aria-label="Follow us on Facebook">
+                      <i className="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors duration-300 focus:outline-none" aria-label="Follow us on Instagram">
+                      <i className="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors duration-300 focus:outline-none" aria-label="Follow us on Twitter">
+                      <i className="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors duration-300 focus:outline-none" aria-label="Follow us on LinkedIn">
+                      <i className="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="border-t border-green-600 pt-8 text-center">
+                <p className="text-green-200">
+                  © 2024 FreshHarvest. All rights reserved. | Bringing Nature's Finest to You | <a href="#" className="hover:text-yellow-300 transition-colors duration-300 focus:outline-none">Privacy Policy</a> | <a href="#" className="hover:text-yellow-300 transition-colors duration-300 focus:outline-none">Terms of Service</a>
+                </p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    // Render the app
+    ReactDOM.render(<App />, document.getElementById("root"));
+
+    // Enhanced Tailwind animations
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            "fade-in": "fadeIn 1s ease-out",
+            "fade-in-up": "fadeInUp 1.2s ease-out",
+            "slide-in": "slideIn 0.6s ease-out",
+            "bounce-slow": "bounce 3s infinite",
+            "pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: "0" },
+              "100%": { opacity: "1" }
+            },
+            fadeInUp: {
+              "0%": { opacity: "0", transform: "translateY(30px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" }
+            },
+            slideIn: {
+              "0%": { transform: "translateY(30px)", opacity: "0" },
+              "100%": { transform: "translateY(0)", opacity: "1" }
+            }
+          }
+        }
+      }
+    };
+
+    // Google Analytics placeholder
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    // gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
+  <!-- Google Analytics placeholder script -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+</body>
+
+</html>
+
+
+css
+
+
+html {
+  height: 100%;
+  width: 100%;
+}
