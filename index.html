@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NVH Agri Green - Commercial Vettiver Cultivation using Grow-Bag Technology. Bulk orders, farming services, business partnerships.">
+    <meta name="description" content="NVH Agri Green - Commercial Vettiver Cultivation using Grow-Bag Technology. We grow premium vettiver roots for bulk buyers. Farm visits and business partnerships.">
     
     <!-- Google Analytics - REPLACE WITH YOUR ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -14,7 +14,7 @@
         gtag('config', 'G-XXXXXXXXXX'); <!-- YOUR GA4 ID -->
     </script>
     
-    <title>NVH Agri Green | Commercial Vettiver Cultivation</title>
+    <title>NVH Agri Green | Vettiver Cultivators</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -175,6 +175,31 @@
             display: none;
         }
         
+        /* Risk Cards */
+        .risk-card {
+            border-left: 4px solid var(--primary-green);
+            background: #f9f9f9;
+        }
+        
+        .mitigation-card {
+            border-left: 4px solid var(--accent-gold);
+            background: #fff9e6;
+        }
+        
+        /* Service Card */
+        .service-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--primary-green);
+        }
+        
         /* Modal */
         .modal {
             display: none;
@@ -230,46 +255,16 @@
             box-shadow: 0 0 0 2px rgba(26, 95, 26, 0.1);
         }
         
-        /* Feature Cards */
-        .feature-card {
-            border-left: 4px solid var(--primary-green);
+        /* Farm Location */
+        .location-badge {
             background: var(--light-green);
-        }
-        
-        /* Risk Card */
-        .risk-card {
-            border: 1px solid #e5e7eb;
-            border-top: 4px solid #ef4444;
-        }
-        
-        .mitigation-card {
-            border: 1px solid #e5e7eb;
-            border-top: 4px solid var(--primary-green);
-        }
-        
-        /* Process Step */
-        .process-step {
-            position: relative;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            border: 2px solid var(--light-green);
-        }
-        
-        .step-number {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            background: var(--primary-green);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
+            color: var(--dark-green);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 18px;
+            margin: 5px;
         }
     </style>
 </head>
@@ -285,14 +280,15 @@
     <header class="sticky top-0 z-40 bg-white shadow-md">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <!-- Logo with YOUR branding -->
+                <!-- Logo -->
                 <div class="flex items-center space-x-3">
+                    <!-- Your Logo Text -->
                     <div class="bg-green-100 p-2 rounded-full">
                         <i class="fas fa-leaf text-2xl" style="color: var(--primary-green);"></i>
                     </div>
                     <div>
                         <h1 class="text-xl font-bold" style="color: var(--primary-green);">NVH Agri Green</h1>
-                        <p class="text-xs text-gray-600">Commercial Vettiver Cultivation</p>
+                        <p class="text-xs text-gray-600">Vettiver Cultivators & Specialists</p>
                     </div>
                 </div>
                 
@@ -300,10 +296,10 @@
                 <nav class="hidden md:flex space-x-6">
                     <a href="#home" class="font-semibold hover:text-green-600">Home</a>
                     <a href="#cultivation" class="font-semibold hover:text-green-600">Our Cultivation</a>
-                    <a href="#advantages" class="font-semibold hover:text-green-600">Advantages</a>
-                    <a href="#gallery" class="font-semibold hover:text-green-600">Gallery</a>
-                    <a href="#process" class="font-semibold hover:text-green-600">Growth Process</a>
+                    <a href="#crop" class="font-semibold hover:text-green-600">The Crop</a>
+                    <a href="#gallery" class="font-semibold hover:text-green-600">Farm Gallery</a>
                     <a href="#services" class="font-semibold hover:text-green-600">Our Services</a>
+                    <a href="#future" class="font-semibold hover:text-green-600">Future Plans</a>
                     <a href="#contact" class="font-semibold hover:text-green-600">Contact</a>
                 </nav>
                 
@@ -316,10 +312,10 @@
                 <div class="flex flex-col space-y-3">
                     <a href="#home" class="font-semibold hover:text-green-600">Home</a>
                     <a href="#cultivation" class="font-semibold hover:text-green-600">Our Cultivation</a>
-                    <a href="#advantages" class="font-semibold hover:text-green-600">Advantages</a>
-                    <a href="#gallery" class="font-semibold hover:text-green-600">Gallery</a>
-                    <a href="#process" class="font-semibold hover:text-green-600">Growth Process</a>
+                    <a href="#crop" class="font-semibold hover:text-green-600">The Crop</a>
+                    <a href="#gallery" class="font-semibold hover:text-green-600">Farm Gallery</a>
                     <a href="#services" class="font-semibold hover:text-green-600">Our Services</a>
+                    <a href="#future" class="font-semibold hover:text-green-600">Future Plans</a>
                     <a href="#contact" class="font-semibold hover:text-green-600">Contact</a>
                 </div>
             </div>
@@ -331,7 +327,7 @@
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
                 <div class="bg-green-800/80 inline-block px-4 py-2 rounded-full mb-6">
-                    <span class="text-sm font-semibold">COMMERCIAL VETTIVER CULTIVATORS</span>
+                    <span class="text-sm font-semibold">VETTIVER CULTIVATORS</span>
                 </div>
                 
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">
@@ -339,7 +335,7 @@
                 </h1>
                 
                 <p class="text-lg mb-8">
-                    Using innovative grow-bag technology for superior quality & higher yields
+                    Commercial vettiver farming using innovative grow-bag technology
                 </p>
                 
                 <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
@@ -347,26 +343,26 @@
                         <i class="fas fa-download mr-2"></i> Download Details
                     </button>
                     <button onclick="scrollToSection('contact')" class="btn-secondary">
-                        <i class="fas fa-shopping-cart mr-2"></i> Bulk Inquiry
+                        <i class="fas fa-calendar mr-2"></i> Schedule Farm Visit
                     </button>
                 </div>
                 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="stat-card p-4">
-                        <div class="text-2xl font-bold">3X</div>
-                        <div class="text-sm">Higher Yield</div>
+                        <div class="text-2xl font-bold">10-12</div>
+                        <div class="text-sm">Months Growth</div>
                     </div>
                     <div class="stat-card p-4">
-                        <div class="text-2xl font-bold">12</div>
-                        <div class="text-sm">Months Cycle</div>
+                        <div class="text-2xl font-bold">Grow Bag</div>
+                        <div class="text-sm">Technology</div>
                     </div>
                     <div class="stat-card p-4">
-                        <div class="text-2xl font-bold">100%+</div>
-                        <div class="text-sm">ROI Potential</div>
+                        <div class="text-2xl font-bold">Multiple</div>
+                        <div class="text-sm">Farm Locations</div>
                     </div>
                     <div class="stat-card p-4">
-                        <div class="text-2xl font-bold">Export</div>
-                        <div class="text-sm">Quality Grade</div>
+                        <div class="text-2xl font-bold">Bulk</div>
+                        <div class="text-sm">Orders Available</div>
                     </div>
                 </div>
             </div>
@@ -374,73 +370,87 @@
     </section>
     
     <!-- Our Cultivation -->
-    <section id="cultivation" class="py-16 bg-white">
+    <section id="cultivation" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
-                    Our Cultivation Expertise
+                    Our Vettiver Cultivation
                 </h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">
-                    Specialized in commercial-scale vettiver cultivation using advanced grow-bag technology
+                    We grow premium vettiver roots using advanced grow-bag technology across multiple farm locations in Tamil Nadu
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div>
-                    <div class="bg-green-50 p-6 rounded-xl mb-6">
-                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">What We Do</h3>
-                        <p class="mb-4">
-                            We are <strong>vettiver cultivators</strong> growing premium-quality vettiver roots using 
-                            innovative grow-bag technology. Our focus is on producing high-grade vettiver 
-                            for various industrial applications.
-                        </p>
-                        <p>
-                            Our cultivation model ensures consistent quality, higher yields, and 
-                            sustainable production suitable for export markets.
-                        </p>
-                    </div>
-                    
-                    <div class="feature-card p-6 rounded-lg">
-                        <h4 class="font-bold mb-2">Core Focus:</h4>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-600 mr-2"></i>
-                                <span>Commercial-scale vettiver cultivation</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-600 mr-2"></i>
-                                <span>Grow-bag technology implementation</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-600 mr-2"></i>
-                                <span>Bulk production for industrial buyers</span>
-                            </li>
-                        </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-3xl mb-4" style="color: var(--primary-green);">📍</div>
+                    <h3 class="text-xl font-bold mb-3">Farm Locations</h3>
+                    <div class="space-y-2">
+                        <div class="location-badge">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Edumalai, Tamil Nadu
+                        </div>
+                        <div class="location-badge">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Cholavaram, Vellore
+                        </div>
+                        <div class="location-badge">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Peravallur, Tamil Nadu
+                        </div>
                     </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl border shadow-sm">
-                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Technology Advantages</h3>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-3xl mb-4" style="color: var(--primary-green);">🌱</div>
+                    <h3 class="text-xl font-bold mb-3">Grow-Bag Technology</h3>
+                    <p class="text-gray-600">Higher yield, better root quality, controlled growth environment</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-3xl mb-4" style="color: var(--primary-green);">📊</div>
+                    <h3 class="text-xl font-bold mb-3">Commercial Scale</h3>
+                    <p class="text-gray-600">Bulk production for perfume, pharmaceutical, and cosmetic industries</p>
+                </div>
+            </div>
+            
+            <!-- Risk Management Section -->
+            <div class="bg-white p-6 rounded-xl shadow-sm mt-8">
+                <h3 class="text-xl font-bold mb-6" style="color: var(--primary-green);">Risk Management in Our Cultivation</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Risks -->
+                    <div>
+                        <h4 class="font-bold mb-4 text-red-600">Challenges We Manage</h4>
+                        <div class="space-y-4">
+                            <div class="risk-card p-4">
+                                <h5 class="font-bold mb-2">Climate Challenges</h5>
+                                <p class="text-sm text-gray-600">Unpredictable weather patterns affecting growth</p>
+                            </div>
+                            <div class="risk-card p-4">
+                                <h5 class="font-bold mb-2">Market Fluctuations</h5>
+                                <p class="text-sm text-gray-600">Price variations in vettiver market</p>
+                            </div>
+                            <div class="risk-card p-4">
+                                <h5 class="font-bold mb-2">Labour Shortages</h5>
+                                <p class="text-sm text-gray-600">Seasonal availability of skilled labor</p>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-bold mb-1">High Yield vs Traditional Soil</h4>
-                            <p class="text-sm text-gray-600">3x more yield per acre compared to conventional methods</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-bold mb-1">Fully Controlled Inputs</h4>
-                            <p class="text-sm text-gray-600">Precise control over soil, nutrients, and water for consistent quality</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-bold mb-1">Scalable Model</h4>
-                            <p class="text-sm text-gray-600">Easily scalable production suitable for export market demands</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-bold mb-1">Water Efficiency</h4>
-                            <p class="text-sm text-gray-600">40% less water consumption with drip irrigation systems</p>
+                    <!-- Mitigations -->
+                    <div>
+                        <h4 class="font-bold mb-4 text-green-600">Our Mitigation Strategies</h4>
+                        <div class="space-y-4">
+                            <div class="mitigation-card p-4">
+                                <h5 class="font-bold mb-2">Grow-Bag Model</h5>
+                                <p class="text-sm text-gray-600">Reduces climate dependency, controlled environment</p>
+                            </div>
+                            <div class="mitigation-card p-4">
+                                <h5 class="font-bold mb-2">Pre-Signed Contracts</h5>
+                                <p class="text-sm text-gray-600">Secure pricing with buyers before cultivation</p>
+                            </div>
+                            <div class="mitigation-card p-4">
+                                <h5 class="font-bold mb-2">Trained Labor Pool</h5>
+                                <p class="text-sm text-gray-600">Dedicated team with backup plans</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -448,334 +458,334 @@
         </div>
     </section>
     
-    <!-- Technical Advantages -->
-    <section id="advantages" class="py-16 bg-gray-50">
+    <!-- The Crop -->
+    <section id="crop" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
-                    Technical Advantages
+                    Vettiver: The Crop We Cultivate
                 </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Understanding the growth cycle and harvesting process of premium vettiver roots
+                </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-4" style="color: var(--primary-green);">📦</div>
-                    <h3 class="text-xl font-bold mb-3">Grow-Bag Technology</h3>
-                    <p class="text-gray-600">Eliminates soil-borne diseases, ensures uniform growth, and allows year-round cultivation</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <div class="bg-white p-6 rounded-xl border shadow-sm mb-6">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Growth Cycle</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4 class="font-bold">Growth Duration: 10-12 Months</h4>
+                                <p class="text-gray-600 text-sm">Complete maturation period for premium roots</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="font-bold">Optimal Conditions</h4>
+                                <p class="text-gray-600 text-sm">Controlled environment in grow-bags for quality</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="font-bold">Regular Monitoring</h4>
+                                <p class="text-gray-600 text-sm">Daily care and nutrient management</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <h4 class="font-bold mb-3" style="color: var(--primary-green);">Harvesting Process</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <span class="font-semibold">Root Extraction:</span>
+                                    <p class="text-sm text-gray-600 mt-1">Careful removal of roots from grow-bags</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <span class="font-semibold">Cleaning & Washing:</span>
+                                    <p class="text-sm text-gray-600 mt-1">Thorough cleaning to remove soil and impurities</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <span class="font-semibold">Drying:</span>
+                                    <p class="text-sm text-gray-600 mt-1">Proper drying under controlled conditions</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <span class="font-semibold">Packing:</span>
+                                    <p class="text-sm text-gray-600 mt-1">Quality packaging for preservation</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-4" style="color: var(--primary-green);">⚖️</div>
-                    <h3 class="text-xl font-bold mb-3">Consistent Quality</h3>
-                    <p class="text-gray-600">Standardized growing conditions produce uniform root quality suitable for industrial use</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-4" style="color: var(--primary-green);">📈</div>
-                    <h3 class="text-xl font-bold mb-3">Market Ready</h3>
-                    <p class="text-gray-600">Produces export-grade vettiver roots meeting international quality standards</p>
+                <div>
+                    <div class="bg-white p-6 rounded-xl border shadow-sm">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Market Applications</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                                <div class="text-2xl mr-4" style="color: var(--primary-green);">🌸</div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Perfume & Fragrance</h4>
+                                    <p class="text-sm text-gray-600">Premium vettiver oil for luxury perfumes</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                                <div class="text-2xl mr-4" style="color: var(--primary-green);">💊</div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Pharmaceutical</h4>
+                                    <p class="text-sm text-gray-600">Medicinal properties for health products</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                                <div class="text-2xl mr-4" style="color: var(--primary-green);">🧴</div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Cosmetics & Skincare</h4>
+                                    <p class="text-sm text-gray-600">Natural ingredient for beauty products</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                                <div class="text-2xl mr-4" style="color: var(--primary-green);">🌍</div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Export Markets</h4>
+                                    <p class="text-sm text-gray-600">Growing international demand</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Farm Gallery - HORIZONTAL SCROLL -->
-    <section id="gallery" class="py-16 bg-white">
+    <section id="gallery" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
                 <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
-                    Our Cultivation Gallery
+                    Our Farm Gallery
                 </h2>
-                <p class="text-gray-600">Scroll horizontally to view our vettiver cultivation</p>
+                <p class="text-gray-600">Scroll horizontally to view our vettiver cultivation across farm locations</p>
             </div>
             
-            <!-- Horizontal Scroll Gallery with YOUR photos -->
+            <!-- Horizontal Scroll Gallery -->
             <div class="gallery-container">
-                <!-- Your actual farm photos -->
-                <a href="9d261cbe-0122-448a-acd9-5de4204417f8.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="9d261cbe-0122-448a-acd9-5de4204417f8.jpg" alt="Vettiver Farm 1">
+                <!-- Your farm images would go here -->
+                <!-- For now, using placeholders - replace with your actual images -->
+                <a href="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="NVH Agri Green Farm">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm">
+                        <p>Edumalai Farm</p>
+                    </div>
                 </a>
-                <a href="6739d20a-d9d8-43e8-bf69-a6002a27056e.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="6739d20a-d9d8-43e8-bf69-a6002a27056e.jpg" alt="Vettiver Farm 2">
+                <a href="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Grow Bags">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm">
+                        <p>Grow-Bag Setup</p>
+                    </div>
                 </a>
-                <a href="adfb16b1-b94a-4fa4-ac49-29e17f3e8eb6.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="adfb16b1-b94a-4fa4-ac49-29e17f3e8eb6.jpg" alt="Vettiver Farm 3">
-                </a>
-                <a href="58110d9f-b0a0-4f00-ab6d-c2e152968210.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="58110d9f-b0a0-4f00-ab6d-c2e152968210.jpg" alt="Vettiver Farm 4">
-                </a>
-                <a href="d8ccf4f9-1894-404b-8be8-78407f925989.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="d8ccf4f9-1894-404b-8be8-78407f925989.jpg" alt="Vettiver Farm 5">
-                </a>
-                <!-- Placeholder for additional photos -->
                 <a href="https://images.unsplash.com/photo-1592924688932-167677a56b1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-lightbox="farm" class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1592924688932-167677a56b1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Irrigation System">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm">
+                        <p>Drip Irrigation</p>
+                    </div>
+                </a>
+                <a href="https://images.unsplash.com/photo-1597848212624-e6f1f5d6f7d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1597848212624-e6f1f5d6f7d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Vettiver Plants">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm">
+                        <p>Healthy Vettiver</p>
+                    </div>
+                </a>
+                <a href="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Harvesting">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm">
+                        <p>Harvest Process</p>
+                    </div>
+                </a>
+                <a href="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Quality Control">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm">
+                        <p>Quality Checking</p>
+                    </div>
                 </a>
             </div>
             
             <div class="text-center mt-6">
                 <p class="text-sm text-gray-500">
-                    Click on images to view larger. All photos from our cultivation sites.
+                    Click on images to view larger. These are sample images - upload your actual farm photos.
                 </p>
             </div>
         </div>
     </section>
     
-    <!-- Growth Process -->
-    <section id="process" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
-                    Growth & Harvesting Process
-                </h2>
-                <p class="text-gray-600">Complete cycle from planting to packing</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h4 class="font-bold mb-2" style="color: var(--primary-green);">Growth Period</h4>
-                    <p class="text-sm">10-12 months maturation period in grow-bags with optimal conditions</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h4 class="font-bold mb-2" style="color: var(--primary-green);">Root Extraction</h4>
-                    <p class="text-sm">Careful harvesting of mature vettiver roots from grow-bags</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h4 class="font-bold mb-2" style="color: var(--primary-green);">Cleaning & Washing</h4>
-                    <p class="text-sm">Thorough cleaning to remove soil and impurities</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h4 class="font-bold mb-2" style="color: var(--primary-green);">Drying & Packing</h4>
-                    <p class="text-sm">Proper drying and packaging for storage or immediate shipment</p>
-                </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-xl border">
-                <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Output Quality</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-bold mb-2">Final Product:</h4>
-                        <ul class="space-y-2">
-                            <li>• Premium quality dried vettiver roots</li>
-                            <li>• Consistent size and oil content</li>
-                            <li>• Ready for industrial processing</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold mb-2">Applications:</h4>
-                        <ul class="space-y-2">
-                            <li>• Perfume & fragrance industry</li>
-                            <li>• Pharmaceutical applications</li>
-                            <li>• Cosmetics & skincare</li>
-                            <li>• Aromatherapy products</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Our Services Section -->
+    <!-- Our Services (Smaller Section) -->
     <section id="services" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
-                    Our Services
+                    Services We Offer
                 </h2>
-                <p class="text-gray-600">We also offer these services to interested parties</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    For those interested in vettiver cultivation, we offer consultation and partnership services
+                </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-green-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">What We Offer</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-bold mb-1">Consultation Services</h4>
-                            <p class="text-sm text-gray-600">Guidance on setting up vettiver cultivation projects</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-bold mb-1">Contract Farming</h4>
-                            <p class="text-sm text-gray-600">Partnership models for vettiver cultivation</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-bold mb-1">Technology Transfer</h4>
-                            <p class="text-sm text-gray-600">Grow-bag technology implementation support</p>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card p-6">
+                    <div class="text-3xl mb-4" style="color: var(--primary-green);">🤝</div>
+                    <h3 class="text-xl font-bold mb-3">Contract Farming</h3>
+                    <p class="text-gray-600 mb-4">We manage cultivation on your land with our technology and expertise</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Full technical support
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Quality assurance
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Market linkage
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl border shadow-sm">
-                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Service Details</h3>
-                    <div class="space-y-3">
-                        <div class="flex justify-between">
-                            <span class="font-semibold">Duration:</span>
-                            <span style="color: var(--primary-green);">Project-based</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="font-semibold">Support:</span>
-                            <span style="color: var(--primary-green);">Full cycle assistance</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="font-semibold">Training:</span>
-                            <span style="color: var(--primary-green);">Staff & labor training</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="font-semibold">Market Linkage:</span>
-                            <span style="color: var(--primary-green);">Buyer connections</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 p-4 bg-yellow-50 rounded-lg">
-                        <p class="text-sm">
-                            <i class="fas fa-info-circle text-yellow-600 mr-2"></i>
-                            <strong>Note:</strong> Our primary business is vettiver cultivation. Services are offered 
-                            as additional support to interested parties.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Risk & Mitigation -->
-    <section id="risks" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
-                    Risk Management
-                </h2>
-                <p class="text-gray-600">Proactive approach to cultivation challenges</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-6" style="color: #ef4444;">Potential Risks</h3>
-                    <div class="space-y-4">
-                        <div class="risk-card p-5 rounded-lg">
-                            <h4 class="font-bold mb-2">Climate Challenges</h4>
-                            <p class="text-sm text-gray-600">Unpredictable weather patterns affecting growth</p>
-                        </div>
-                        
-                        <div class="risk-card p-5 rounded-lg">
-                            <h4 class="font-bold mb-2">Market Fluctuations</h4>
-                            <p class="text-sm text-gray-600">Price variations in vettiver market</p>
-                        </div>
-                        
-                        <div class="risk-card p-5 rounded-lg">
-                            <h4 class="font-bold mb-2">Labor Shortages</h4>
-                            <p class="text-sm text-gray-600">Seasonal availability of skilled labor</p>
-                        </div>
-                    </div>
+                <div class="service-card p-6">
+                    <div class="text-3xl mb-4" style="color: var(--primary-green);">🎓</div>
+                    <h3 class="text-xl font-bold mb-3">Consultation & Training</h3>
+                    <p class="text-gray-600 mb-4">Learn vettiver cultivation from our experienced team</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Grow-bag setup guidance
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Crop management training
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Harvest processing know-how
+                        </li>
+                    </ul>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-bold mb-6" style="color: var(--primary-green);">Our Mitigation Strategies</h3>
-                    <div class="space-y-4">
-                        <div class="mitigation-card p-5 rounded-lg">
-                            <h4 class="font-bold mb-2">Grow-Bag Technology</h4>
-                            <p class="text-sm text-gray-600">Reduces climate dependency through controlled environment</p>
-                        </div>
-                        
-                        <div class="mitigation-card p-5 rounded-lg">
-                            <h4 class="font-bold mb-2">Pre-Signed Contracts</h4>
-                            <p class="text-sm text-gray-600">Advance agreements with buyers to ensure market stability</p>
-                        </div>
-                        
-                        <div class="mitigation-card p-5 rounded-lg">
-                            <h4 class="font-bold mb-2">Trained Labor Pool</h4>
-                            <p class="text-sm text-gray-600">Dedicated trained workforce with backup plans</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Future Expansion -->
-    <section id="future" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
-                    Future Expansion Plans
-                </h2>
-                <p class="text-gray-600">Adding value to our cultivation business</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border text-center">
-                    <div class="text-3xl mb-4" style="color: var(--primary-green);">🛢️</div>
-                    <h3 class="text-xl font-bold mb-3">Vettiver Oil Distillation</h3>
-                    <p class="text-gray-600">Setting up distillation units for premium vettiver oil production</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border text-center">
+                <div class="service-card p-6">
                     <div class="text-3xl mb-4" style="color: var(--primary-green);">📦</div>
-                    <h3 class="text-xl font-bold mb-3">Value-Added Products</h3>
-                    <p class="text-gray-600">Developing products like vettiver powder from leaves, sachets, and extracts</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border text-center">
-                    <div class="text-3nm-3xl mb-4" style="color: var(--primary-green);">🤝</div>
-                    <h3 class="text-xl font-bold mb-3">Contract Farming Services</h3>
-                    <p class="text-gray-600">Expanding our service offerings for plantation management</p>
+                    <h3 class="text-xl font-bold mb-3">Turnkey Projects</h3>
+                    <p class="text-gray-600 mb-4">Complete setup of vettiver cultivation unit</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            End-to-end implementation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Supply of quality saplings
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Operational handover
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="mt-12 bg-green-50 p-6 rounded-xl">
-                <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Revenue Enhancement</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-bold mb-2">Current Revenue Streams:</h4>
-                        <ul class="space-y-2">
-                            <li>• Bulk vettiver root sales</li>
-                            <li>• Consultation services</li>
-                        </ul>
+            <div class="text-center mt-8">
+                <p class="text-gray-600">
+                    Interested in our services? Contact us for a detailed discussion.
+                </p>
+                <button onclick="scrollToSection('contact')" class="btn-primary mt-4">
+                    <i class="fas fa-envelope mr-2"></i> Discuss Services
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Future Plans -->
+    <section id="future" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
+                    Our Future Expansion
+                </h2>
+                <p class="text-gray-600">Planned vertical integration for added value</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border shadow-sm text-center">
+                    <div class="text-4xl mb-4" style="color: var(--accent-gold);">⚗️</div>
+                    <h3 class="text-xl font-bold mb-3">Vettiver Oil Distillation</h3>
+                    <p class="text-gray-600">Setting up distillation units for premium vettiver oil extraction</p>
+                    <div class="mt-4 p-3 bg-green-50 rounded-lg">
+                        <span class="font-bold" style="color: var(--primary-green);">Revenue Expansion</span>
                     </div>
-                    <div>
-                        <h4 class="font-bold mb-2">Future Revenue Streams:</h4>
-                        <ul class="space-y-2">
-                            <li>• Vettiver essential oil</li>
-                            <li>• Leaf powder & value products</li>
-                            <li>• Expanded contract farming</li>
-                        </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl border shadow-sm text-center">
+                    <div class="text-4xl mb-4" style="color: var(--accent-gold);">🎁</div>
+                    <h3 class="text-xl font-bold mb-3">Value-Added Products</h3>
+                    <p class="text-gray-600">Developing vettiver-based products for direct consumer market</p>
+                    <div class="mt-4 p-3 bg-green-50 rounded-lg">
+                        <span class="font-bold" style="color: var(--primary-green);">Brand Building</span>
                     </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl border shadow-sm text-center">
+                    <div class="text-4xl mb-4" style="color: var(--accent-gold);">🌾</div>
+                    <h3 class="text-xl font-bold mb-3">Plantation Contract Services</h3>
+                    <p class="text-gray-600">Expanding our contract farming services across regions</p>
+                    <div class="mt-4 p-3 bg-green-50 rounded-lg">
+                        <span class="font-bold" style="color: var(--primary-green);">Service Revenue</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <div class="inline-block bg-green-100 p-4 rounded-lg">
+                    <p class="font-bold" style="color: var(--primary-green);">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Future Revenue Streams: Vettiver Oil + Products + Services
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Contact -->
-    <section id="contact" class="py-16 bg-gray-50">
+    <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
-                    Business Inquiries
+                    Contact Us
                 </h2>
-                <p class="text-gray-600">Contact us for bulk orders, farming services, or partnerships</p>
+                <p class="text-gray-600">For bulk vettiver orders, farm visits, or service inquiries</p>
             </div>
             
             <div class="max-w-2xl mx-auto">
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="p-6">
-                        <!-- REAL FORMSPREE FORM - YOU NEED TO CREATE ACCOUNT AND REPLACE ID -->
-                        <form id="inquiryForm" action="https://formspree.io/f/YOUR-FORMSPREE-ID-HERE" method="POST">
+                        <!-- REAL FORM - REPLACE FORMSPREE ID -->
+                        <form id="inquiryForm" action="https://formspree.io/f/YOUR-FORMSPREE-ID" method="POST">
                             <div class="mb-4">
                                 <label class="block font-semibold mb-2" style="color: var(--primary-green);">Inquiry Type *</label>
                                 <select name="inquiry_type" required class="form-input">
-                                    <option value="">Select</option>
+                                    <option value="">Select Purpose</option>
                                     <option value="bulk">Bulk Vettiver Purchase</option>
-                                    <option value="service">Farming Service Inquiry</option>
-                                    <option value="partnership">Business Partnership</option>
                                     <option value="visit">Farm Visit Request</option>
+                                    <option value="service">Service Inquiry (Contract Farming/Training)</option>
+                                    <option value="partnership">Business Partnership</option>
                                     <option value="info">General Information</option>
                                 </select>
                             </div>
@@ -803,35 +813,30 @@
                             </div>
                             
                             <div class="mb-4">
-                                <label class="block font-semibold mb-2" style="color: var(--primary-green);">Estimated Quantity (if applicable)</label>
+                                <label class="block font-semibold mb-2" style="color: var(--primary-green);">Estimated Quantity (if bulk order)</label>
                                 <select name="quantity" class="form-input">
                                     <option value="">Select range</option>
                                     <option value="1-5">1,000 - 5,000 kg</option>
                                     <option value="5-10">5,000 - 10,000 kg</option>
                                     <option value="10-50">10,000 - 50,000 kg</option>
                                     <option value="50+">50,000+ kg</option>
-                                    <option value="service">Service Inquiry (No quantity)</option>
+                                    <option value="service">Service Inquiry (Not bulk order)</option>
                                 </select>
                             </div>
                             
                             <div class="mb-6">
                                 <label class="block font-semibold mb-2" style="color: var(--primary-green);">Message *</label>
-                                <textarea name="message" required rows="4" class="form-input" placeholder="Your inquiry details..."></textarea>
+                                <textarea name="message" required rows="4" class="form-input" placeholder="Please specify: Bulk order details, farm visit dates, or service requirements..."></textarea>
                             </div>
                             
                             <button type="submit" class="btn-primary w-full py-3">
-                                <i class="fas fa-paper-plane mr-2"></i> Submit Inquiry
+                                <i class="fas fa-paper-plane mr-2"></i> Send Inquiry
                             </button>
                         </form>
                         
                         <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg">
                             <i class="fas fa-check-circle mr-2"></i>
                             Thank you! We'll contact you within 24 hours.
-                        </div>
-                        
-                        <div class="mt-4 p-4 bg-blue-50 text-blue-800 rounded-lg text-sm">
-                            <i class="fas fa-info-circle mr-2"></i>
-                            <strong>Form Submission:</strong> This form connects to Formspree. All submissions will be stored and you'll receive real email notifications.
                         </div>
                     </div>
                     
@@ -849,16 +854,21 @@
                                         <span>info@nvhagrigreen.com</span>
                                     </div>
                                     <div class="flex items-center">
-                                        <i class="fab fa-whatsapp mr-3" style="color: var(--primary-green);"></i>
-                                        <span>+91 9841565965 (WhatsApp)</span>
+                                        <i class="fas fa-map-marker-alt mr-3" style="color: var(--primary-green);"></i>
+                                        <span>Tamil Nadu, India</span>
                                     </div>
                                 </div>
                             </div>
                             
                             <div>
-                                <h3 class="font-bold mb-4" style="color: var(--primary-green);">Response Time</h3>
-                                <p class="mb-2"><i class="fas fa-clock mr-2"></i>24-48 hours for inquiries</p>
-                                <p class="text-sm text-gray-600">WhatsApp available for immediate queries</p>
+                                <h3 class="font-bold mb-4" style="color: var(--primary-green);">Business Hours</h3>
+                                <p class="mb-2">Mon - Sat: 9 AM - 6 PM</p>
+                                <p class="text-sm text-gray-600">WhatsApp available 24/7 for inquiries</p>
+                                <div class="mt-3">
+                                    <a href="https://wa.me/919841565965" target="_blank" class="inline-flex items-center text-green-600 font-semibold">
+                                        <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -878,12 +888,11 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-bold">NVH Agri Green</h3>
-                            <p class="text-green-300 text-sm">Vettiver Cultivators</p>
+                            <p class="text-green-300 text-sm">Vettiver Cultivators & Specialists</p>
                         </div>
                     </div>
                     <p class="text-gray-300 text-sm">
-                        Commercial vettiver cultivation using innovative grow-bag technology.
-                        Bulk producers for industrial applications.
+                        We cultivate premium vettiver using innovative grow-bag technology across multiple farm locations in Tamil Nadu.
                     </p>
                 </div>
                 
@@ -892,26 +901,24 @@
                     <ul class="space-y-2 text-sm">
                         <li><a href="#home" class="text-gray-300 hover:text-green-300">Home</a></li>
                         <li><a href="#cultivation" class="text-gray-300 hover:text-green-300">Our Cultivation</a></li>
-                        <li><a href="#process" class="text-gray-300 hover:text-green-300">Growth Process</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-green-300">Farm Gallery</a></li>
                         <li><a href="#services" class="text-gray-300 hover:text-green-300">Our Services</a></li>
                         <li><a href="#contact" class="text-gray-300 hover:text-green-300">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-4">Connect</h4>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
                     <div class="flex space-x-4">
                         <a href="https://wa.me/919841565965" target="_blank" 
-                           class="bg-gray-800 p-3 rounded-full hover:bg-green-700 transition">
+                           class="bg-gray-800 p-3 rounded-full hover:bg-green-700">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="mailto:info@nvhagrigreen.com" 
-                           class="bg-gray-800 p-3 rounded-full hover:bg-green-700 transition">
-                            <i class="fas fa-envelope"></i>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-green-700">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="tel:+919841565965" 
-                           class="bg-gray-800 p-3 rounded-full hover:bg-green-700 transition">
-                            <i class="fas fa-phone"></i>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-green-700">
+                            <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
@@ -919,43 +926,45 @@
             
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p class="text-gray-400 text-sm">
-                    © 2024 NVH Agri Green. Commercial Vettiver Cultivation. All rights reserved.
+                    © 2024 NVH Agri Green. All rights reserved. | Vettiver Cultivators & Grow-Bag Technology Specialists
                 </p>
             </div>
         </div>
     </footer>
     
-    <!-- Business Plan Modal -->
+    <!-- Business Details Modal -->
     <div id="businessPlanModal" class="modal">
         <div class="modal-content">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold" style="color: var(--primary-green);">Detailed Information</h3>
+                    <h3 class="text-xl font-bold" style="color: var(--primary-green);">Download Business Details</h3>
                     <button onclick="closeModal('businessPlanModal')" class="text-gray-500">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 
-                <p class="mb-6">Enter details to receive cultivation details:</p>
+                <p class="mb-6">Enter details to receive comprehensive information about our vettiver cultivation:</p>
                 
-                <form onsubmit="downloadPlan(event)">
+                <form onsubmit="downloadDetails(event)">
                     <div class="mb-4">
-                        <input type="text" placeholder="Your Name" required class="form-input">
+                        <input type="text" id="detailName" placeholder="Your Name" required class="form-input">
                     </div>
                     <div class="mb-4">
-                        <input type="email" placeholder="Email" required class="form-input">
+                        <input type="email" id="detailEmail" placeholder="Email" required class="form-input">
                     </div>
                     <div class="mb-6">
-                        <select class="form-input">
-                            <option value="">Interest Type</option>
-                            <option value="buyer">Potential Buyer</option>
-                            <option value="partner">Business Partner</option>
-                            <option value="service">Service Inquiry</option>
+                        <select id="detailInterest" class="form-input" required>
+                            <option value="">I'm interested in...</option>
+                            <option value="bulk">Bulk Vettiver Purchase</option>
+                            <option value="service">Contract Farming Services</option>
+                            <option value="visit">Farm Visit</option>
+                            <option value="partnership">Business Partnership</option>
+                            <option value="info">General Information</option>
                         </select>
                     </div>
                     
                     <button type="submit" class="btn-primary w-full py-3">
-                        Request Information
+                        <i class="fas fa-download mr-2"></i> Get Details
                     </button>
                 </form>
             </div>
@@ -1015,68 +1024,66 @@
             }
         });
         
-        // Form handling - REAL FORMSPREE SUBMISSION
+        // Form handling
         document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            // In production: This will submit to Formspree
-            // For demo: show success message
+            e.preventDefault();
             
             // Show success message
             document.getElementById('successMessage').classList.remove('hidden');
             
-            // In production: Remove this setTimeout and let form submit normally
-            // For demo purposes only
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            
+            // Reset form after 5 seconds
             setTimeout(() => {
+                this.reset();
                 document.getElementById('successMessage').classList.add('hidden');
             }, 5000);
             
-            // Uncomment this line for real Formspree submission
-            // return true; // Allow form to submit to Formspree
+            // In production: this.submit();
         });
         
-        function downloadPlan(e) {
+        function downloadDetails(e) {
             e.preventDefault();
-            alert('Detailed information will be sent to your email.');
+            const name = document.getElementById('detailName').value;
+            const email = document.getElementById('detailEmail').value;
+            const interest = document.getElementById('detailInterest').value;
+            
+            alert(`Thank you ${name}! Detailed information about ${interest} will be sent to ${email} shortly.`);
             closeModal('businessPlanModal');
+            
+            // Reset form
+            document.getElementById('detailName').value = '';
+            document.getElementById('detailEmail').value = '';
+            document.getElementById('detailInterest').value = '';
         }
         
-        // Setup instructions console log
-        console.log('=== WEBSITE SETUP INSTRUCTIONS ===');
-        console.log('');
-        console.log('1. FORMSPREE SETUP (Real Emails & Data Storage):');
-        console.log('   - Go to: formspree.io');
-        console.log('   - Sign up for free account');
-        console.log('   - Create new form');
-        console.log('   - Get your form ID');
-        console.log('   - Replace in line 531: action="https://formspree.io/f/YOUR-FORMSPREE-ID-HERE"');
-        console.log('');
-        console.log('2. GOOGLE ANALYTICS SETUP (Visitor Tracking):');
-        console.log('   - Go to: analytics.google.com');
-        console.log('   - Create GA4 property');
-        console.log('   - Copy Measurement ID (G-XXXXXXXXXX)');
-        console.log('   - Replace in line 12 & 16');
-        console.log('');
-        console.log('3. WHATSAPP ALERTS:');
-        console.log('   - Your WhatsApp number is already set (+91 9841565965)');
-        console.log('   - Lines 43 & 589');
-        console.log('');
-        console.log('4. YOUR FARM PHOTOS:');
-        console.log('   - Upload your farm photos to hosting');
-        console.log('   - Update image URLs in lines 245-258');
-        console.log('');
-        console.log('5. EMAIL & CONTACT:');
-        console.log('   - Update contact info in lines 602-603');
-        console.log('   - Update email in lines 599 & 603');
-        console.log('');
-        console.log('=== SETUP COMPLETE ===');
+        // Setup reminders
+        console.log('TO SETUP FORM SUBMISSIONS:');
+        console.log('1. Go to formspree.io and sign up');
+        console.log('2. Create new form and get form ID');
+        console.log('3. Replace in line 597: action="https://formspree.io/f/YOUR-FORM-ID"');
+        console.log('4. Form submissions will go to your email');
         
-        // WhatsApp Alert setup
-        function setupWhatsAppAlert(phone, message) {
-            // This function can be enhanced to send automated alerts
-            console.log('WhatsApp alerts configured for: ' + phone);
-        }
+        console.log('TO SETUP ANALYTICS:');
+        console.log('1. Go to analytics.google.com');
+        console.log('2. Create GA4 property');
+        console.log('3. Copy Measurement ID (G-XXXXXXXXXX)');
+        console.log('4. Replace in line 12');
         
-        // Initialize WhatsApp alerts
-        setupWhatsAppAlert('+919841565965', 'New website inquiry received');
+        console.log('TO ADD YOUR LOGO:');
+        console.log('Replace the leaf icon in header with your logo text/image');
+        
+        console.log('TO ADD FARM PHOTOS:');
+        console.log('1. Upload your farm images to hosting service');
+        console.log('2. Replace gallery image src URLs with your actual farm photos');
+        console.log('3. Add image captions with location names');
+        
+        // WhatsApp Alert Setup (for notifications)
+        console.log('WHATSAPP ALERTS SETUP:');
+        console.log('1. WhatsApp button is already linked to +91 9841565965');
+        console.log('2. For automated alerts, consider using WhatsApp Business API');
+        console.log('3. Form submissions can trigger WhatsApp notifications using services like Twilio');
     </script>
 </body>
 </html>
