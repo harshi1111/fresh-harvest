@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NVH Agri Green - Premium Vettiver Cultivation using Grow-Bag Technology">
+    <meta name="description" content="NVH Agri Green - Premium Vettiver Cultivation using Grow-Bag Technology. Bulk orders, farm visits, business partnerships.">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-49NLN7CFLT"></script>
@@ -19,7 +19,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,667 +27,568 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Three.js for 3D effects -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Lightbox for Gallery -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
     
-    <!-- GSAP for advanced animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
-    <!-- Custom Styles -->
     <style>
         :root {
             --primary-green: #1a5f1a;
-            --dark-green: #0d3b0d;
+            --dark-green: #0d4d0d;
             --light-green: #e8f5e8;
-            --accent-gold: #ffd700;
-            --gradient-1: linear-gradient(135deg, #0d3b0d 0%, #1a5f1a 50%, #2e8b57 100%);
-            --gradient-2: linear-gradient(135deg, #1a5f1a 0%, #2e8b57 50%, #4caf50 100%);
+            --accent-gold: #d4af37;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
             overflow-x: hidden;
-            background: #000;
-            color: white;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
         }
         
-        /* NEON GLOW EFFECTS */
-        .neon-glow {
-            text-shadow: 
-                0 0 10px rgba(26, 95, 26, 0.8),
-                0 0 20px rgba(26, 95, 26, 0.6),
-                0 0 30px rgba(26, 95, 26, 0.4);
+        /* Custom Container Width */
+        .container-custom {
+            max-width: 1280px;
+            margin: 0 auto;
         }
         
-        .neon-border {
+        /* Unique Hero Section */
+        .hero-section {
             position: relative;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            border-radius: 15px;
-        }
-        
-        .neon-border::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, 
-                #1a5f1a, #2e8b57, #4caf50, 
-                #1a5f1a, #2e8b57, #4caf50);
-            border-radius: 17px;
-            z-index: -1;
-            animation: borderGlow 3s linear infinite;
-            background-size: 400%;
-        }
-        
-        @keyframes borderGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        /* PARALLAX LAYERS */
-        .parallax-layer {
-            transform-style: preserve-3d;
-        }
-        
-        .layer-1 { transform: translateZ(-100px) scale(2); }
-        .layer-2 { transform: translateZ(-50px) scale(1.5); }
-        .layer-3 { transform: translateZ(0) scale(1); }
-        
-        /* GLASS MORPHISM */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* LIQUID EFFECT */
-        .liquid-bg {
-            background: linear-gradient(45deg, 
-                #0d3b0d 25%, 
-                #1a5f1a 50%, 
-                #2e8b57 75%);
-            background-size: 400% 400%;
-            animation: liquidShift 15s ease infinite;
-        }
-        
-        @keyframes liquidShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        /* HOLOGRAM EFFECT */
-        .hologram-card {
-            position: relative;
+            background: linear-gradient(135deg, #0d4d0d 0%, #1a5f1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             overflow: hidden;
         }
         
-        .hologram-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                transparent 30%,
-                rgba(255, 255, 255, 0.1) 50%,
-                transparent 70%
-            );
-            transform: rotate(30deg);
-            animation: hologramScan 3s linear infinite;
-        }
-        
-        @keyframes hologramScan {
-            0% { transform: translateY(-100%) rotate(30deg); }
-            100% { transform: translateY(100%) rotate(30deg); }
-        }
-        
-        /* FLOATING ISLANDS LAYOUT */
-        .floating-island {
-            position: relative;
-            border-radius: 30px;
-            overflow: hidden;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .floating-island:hover {
-            transform: translateY(-20px) rotateX(10deg) rotateY(-10deg);
-            box-shadow: 
-                0 50px 100px rgba(26, 95, 26, 0.4),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
-        }
-        
-        /* NEUMORPHISM */
-        .neumorphic {
-            border-radius: 30px;
-            background: linear-gradient(145deg, #0d3b0d, #0a2f0a);
-            box-shadow: 
-                20px 20px 60px #0a2a0a,
-                -20px -20px 60px #104c10;
-        }
-        
-        /* CYBERPUNK GRID */
-        .cyber-grid {
-            position: relative;
-            background-image: 
-                linear-gradient(rgba(26, 95, 26, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(26, 95, 26, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-        }
-        
-        @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 50px 50px; }
-        }
-        
-        /* BIOLUMINESCENT EFFECT */
-        .bioluminescent {
-            position: relative;
-        }
-        
-        .bioluminescent::after {
-            content: '';
+        .hero-bg-pattern {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #d4ffd4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Unique Cards */
+        .flip-card {
+            perspective: 1000px;
+            height: 300px;
+            cursor: pointer;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flip-card-front {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+        }
+        
+        .flip-card-back {
+            background: white;
+            color: var(--dark-green);
+            transform: rotateY(180deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Timeline with Circles */
+        .process-timeline {
+            position: relative;
+            padding-left: 60px;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
             bottom: 0;
-            background: radial-gradient(
-                circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                rgba(26, 95, 26, 0.3) 0%,
-                transparent 50%
-            );
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-green), var(--dark-green));
         }
         
-        .bioluminescent:hover::after {
-            opacity: 1;
+        .process-step {
+            position: relative;
+            margin-bottom: 40px;
         }
         
-        /* INFINITE SCROLLING TEXT */
-        .infinite-scroll {
-            animation: scrollText 30s linear infinite;
-            white-space: nowrap;
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 4px solid var(--primary-green);
+            border-radius: 50%;
+            z-index: 2;
         }
         
-        @keyframes scrollText {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        .process-step:nth-child(odd)::before {
+            background: var(--primary-green);
+            border-color: white;
         }
         
-        /* MAGNETIC BUTTONS */
-        .magnetic-btn {
+        /* Market Applications Grid */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .market-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .market-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-green);
+            box-shadow: 0 20px 40px rgba(26, 95, 26, 0.1);
+        }
+        
+        /* Unique Button Styles */
+        .btn-magnetic {
             position: relative;
             overflow: hidden;
             transition: all 0.3s;
         }
         
-        .magnetic-btn::before {
+        .btn-magnetic:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(26, 95, 26, 0.2);
+        }
+        
+        /* Floating Elements */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        /* Form Styling */
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            background: transparent;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: var(--primary-green);
+        }
+        
+        /* Navigation Styles */
+        .nav-link {
+            position: relative;
+            padding: 10px 20px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link::after {
             content: '';
             position: absolute;
-            top: 50%;
+            bottom: 0;
             left: 50%;
             width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            height: 3px;
+            background: var(--primary-green);
+            transition: all 0.3s;
+            transform: translateX(-50%);
         }
         
-        .magnetic-btn:hover::before {
-            width: 300px;
-            height: 300px;
+        .nav-link:hover::after {
+            width: 100%;
         }
         
-        /* HORIZONTAL SCROLL SECTION */
-        .horizontal-scroll {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .horizontal-scroll > * {
-            flex: 0 0 auto;
-            scroll-snap-align: start;
-            width: 80vw;
-        }
-        
-        /* 3D TRANSFORM CARD */
-        .card-3d {
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .card-3d:hover {
-            transform: rotateY(20deg) rotateX(10deg) translateZ(50px);
-        }
-        
-        /* LOADING ANIMATION */
-        .loading-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .loading-dots span {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #1a5f1a;
-            animation: pulse 1.4s ease-in-out infinite;
-        }
-        
-        .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
-        .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(0.5); opacity: 0.5; }
-            50% { transform: scale(1); opacity: 1; }
-        }
-        
-        /* CUSTOM SCROLLBAR */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #0d3b0d;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #1a5f1a, #2e8b57);
-            border-radius: 10px;
-            border: 3px solid #0d3b0d;
-        }
-        
-        /* RESPONSIVE DESIGN */
+        /* Responsive */
         @media (max-width: 768px) {
-            .horizontal-scroll > * {
-                width: 90vw;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .floating-island {
-                margin: 0 -20px;
-                border-radius: 20px;
+            .flip-card {
+                height: 250px;
             }
+            
+            .process-timeline {
+                padding-left: 40px;
+            }
+            
+            .process-timeline::before {
+                left: 15px;
+            }
+            
+            .process-step::before {
+                left: -35px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(255,255,255,0.1);
+            border-top: 8px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
-<body class="bg-black text-white overflow-x-hidden">
+<body class="bg-white">
     
-    <!-- 3D BACKGROUND CANVAS -->
-    <canvas id="bgCanvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
-    
-    <!-- PARTICLES BACKGROUND -->
-    <div id="particles-js" class="fixed top-0 left-0 w-full h-full -z-10"></div>
-    
-    <!-- LOADING SCREEN -->
-    <div id="loadingScreen" class="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center">
-        <div class="mb-8">
-            <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
-                 alt="Logo" class="h-32 animate-pulse">
-        </div>
-        <div class="loading-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
     </div>
     
-    <!-- NAVIGATION - FLOATING NEON -->
-    <nav class="fixed top-0 w-full z-40 py-6 px-6">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
-                     alt="Logo" class="h-16 neon-glow">
-                <img src="https://image2url.com/r2/bucket3/images/1766859953126-13721dcd-c0cf-4918-8e13-9a8840f63051.png" 
-                     alt="NVH Agri Green" class="h-12">
-            </div>
-            
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link text-lg font-semibold hover:text-green-400 transition-all duration-300">HOME</a>
-                <a href="#experience" class="nav-link text-lg font-semibold hover:text-green-400 transition-all duration-300">EXPERIENCE</a>
-                <a href="#innovation" class="nav-link text-lg font-semibold hover:text-green-400 transition-all duration-300">INNOVATION</a>
-                <a href="#gallery" class="nav-link text-lg font-semibold hover:text-green-400 transition-all duration-300">GALLERY</a>
-                <a href="#contact" class="nav-link text-lg font-semibold hover:text-green-400 transition-all duration-300">CONTACT</a>
-            </div>
-            
-            <button id="menuBtn" class="text-3xl md:hidden">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919841565965" target="_blank" 
+       class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50 hover:bg-green-600 transition-all duration-300 floating">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
     
-    <!-- HERO SECTION - 3D PARALLAX -->
-    <section id="home" class="min-h-screen relative flex items-center overflow-hidden">
-        <!-- Parallax layers -->
-        <div class="absolute inset-0 liquid-bg opacity-30"></div>
-        <div class="absolute inset-0 cyber-grid opacity-20"></div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-10">
-                    <div class="inline-block">
-                        <div class="neon-border px-8 py-3 rounded-full">
-                            <span class="text-green-400 font-bold text-sm tracking-widest">
-                                <i class="fas fa-crown mr-2"></i> PREMIUM VETTIVER
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <h1 class="text-6xl md:text-8xl font-bold leading-tight">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">
-                            GROWING
-                        </span>
-                        <br>
-                        <span class="text-white">
-                            THE FUTURE
-                        </span>
-                    </h1>
-                    
-                    <p class="text-xl text-gray-300 max-w-2xl">
-                        Where ancient wisdom meets cutting-edge technology. 
-                        We're revolutionizing vettiver cultivation with quantum farming techniques 
-                        and sustainable innovation.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-6 pt-8">
-                        <button onclick="exploreJourney()" 
-                                class="magnetic-btn glass-card px-12 py-5 rounded-full text-lg font-bold group relative overflow-hidden">
-                            <span class="relative z-10">BEGIN JOURNEY <i class="fas fa-arrow-right ml-2"></i></span>
-                            <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </button>
-                        
-                        <button onclick="playVideo()" 
-                                class="border-2 border-green-500/30 hover:border-green-400 px-12 py-5 rounded-full text-lg font-bold transition-all duration-300 hover:scale-105">
-                            <i class="fas fa-play mr-3"></i> WATCH STORY
-                        </button>
-                    </div>
+    <!-- Header with Big Logo -->
+    <header class="sticky top-0 z-40 bg-white shadow-lg">
+        <div class="container-custom px-6">
+            <div class="flex justify-between items-center py-4">
+                <!-- Big Logo on Left -->
+                <div class="flex items-center space-x-4">
+                    <!-- Logo Image - BIG -->
+                    <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
+                        alt="NVH Agri Green Logo" 
+                        class="h-16 md:h-20">
+                    <!-- Logo Text - BIG -->
+                    <img src="https://image2url.com/r2/bucket3/images/1766859953126-13721dcd-c0cf-4918-8e13-9a8840f63051.png" 
+                        alt="NVH Agri Green" 
+                        class="h-12 md:h-16">
                 </div>
                 
-                <!-- 3D Model Container -->
-                <div class="relative">
-                    <div class="hologram-card glass-card rounded-3xl p-8">
-                        <div id="plantModel" class="h-96 w-full flex items-center justify-center">
-                            <div class="text-center">
-                                <i class="fas fa-seedling text-9xl text-green-400 animate-pulse"></i>
-                                <p class="mt-4 text-green-300">3D PLANT MODEL LOADING...</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Navigation on Right -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#home" class="nav-link font-semibold text-gray-700 hover:text-green-600">Home</a>
+                    <a href="#cultivation" class="nav-link font-semibold text-gray-700 hover:text-green-600">Cultivation</a>
+                    <a href="#process" class="nav-link font-semibold text-gray-700 hover:text-green-600">Process</a>
+                    <a href="#gallery" class="nav-link font-semibold text-gray-700 hover:text-green-600">Gallery</a>
+                    <a href="#contact" class="nav-link font-semibold text-gray-700 hover:text-green-600">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-2xl text-gray-700">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden py-6 border-t border-gray-100 hidden">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="font-semibold text-lg hover:text-green-600 py-2">Home</a>
+                    <a href="#cultivation" class="font-semibold text-lg hover:text-green-600 py-2">Cultivation</a>
+                    <a href="#process" class="font-semibold text-lg hover:text-green-600 py-2">Process</a>
+                    <a href="#gallery" class="font-semibold text-lg hover:text-green-600 py-2">Gallery</a>
+                    <a href="#contact" class="font-semibold text-lg hover:text-green-600 py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Unique Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="container-custom px-6">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="inline-block bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full mb-8">
+                    <span class="text-white font-semibold">
+                        <i class="fas fa-leaf mr-2"></i> PREMIUM VETTIVER CULTIVATORS
+                    </span>
+                </div>
+                
+                <h1 class="hero-title mb-8">
+                    Cultivating Excellence<br>
+                    <span style="font-size: 3.5rem;">in Every Vettiver Root</span>
+                </h1>
+                
+                <p class="text-xl text-white/90 mb-12 max-w-3xl">
+                    Pioneering commercial vettiver cultivation using innovative grow-bag technology. 
+                    Delivering premium quality roots for global markets with sustainable farming practices.
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-6">
+                    <button onclick="scrollToSection('contact')" 
+                            class="btn-magnetic bg-white text-green-700 font-bold py-4 px-10 rounded-full text-lg hover:bg-green-50">
+                        <i class="fas fa-calendar-alt mr-3"></i> Schedule Farm Visit
+                    </button>
+                    <button onclick="openModal('businessPlanModal')" 
+                            class="btn-magnetic border-2 border-white text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-white/10">
+                        <i class="fas fa-download mr-3"></i> Download Details
+                    </button>
                 </div>
             </div>
         </div>
         
-        <!-- Scrolling Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-            <div class="animate-bounce">
-                <i class="fas fa-chevron-down text-3xl text-green-400"></i>
+        <!-- Floating Elements -->
+        <div class="absolute bottom-20 left-10 floating" style="animation-delay: 1s;">
+            <div class="bg-white/10 p-4 rounded-full">
+                <i class="fas fa-seedling text-white text-2xl"></i>
+            </div>
+        </div>
+        <div class="absolute top-20 right-10 floating" style="animation-delay: 2s;">
+            <div class="bg-white/10 p-4 rounded-full">
+                <i class="fas fa-leaf text-white text-2xl"></i>
             </div>
         </div>
     </section>
     
-    <!-- IMMERSIVE EXPERIENCE SECTION -->
-    <section id="experience" class="py-32 relative">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
-        
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl md:text-7xl font-bold mb-6">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-yellow-300">
-                        THE
-                    </span>
-                    <span class="text-white"> EXPERIENCE</span>
+    <!-- Unique Our Cultivation Section -->
+    <section id="cultivation" class="py-24 bg-gray-50">
+        <div class="container-custom px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+                    Our <span class="text-green-600">Premium</span> Cultivation
                 </h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Step into our world of sustainable innovation
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Advanced grow-bag technology with strategic farm locations across Tamil Nadu
                 </p>
             </div>
             
-            <!-- Horizontal Scrolling Cards -->
-            <div class="horizontal-scroll py-10 -mx-6">
-                <div class="mr-10">
-                    <div class="floating-island glass-card p-10 h-full">
-                        <div class="text-6xl mb-6">🌍</div>
-                        <h3 class="text-2xl font-bold mb-4">GLOBAL REACH</h3>
-                        <p class="text-gray-300">Supplying premium vettiver to 15+ countries worldwide</p>
-                    </div>
-                </div>
-                
-                <div class="mr-10">
-                    <div class="floating-island neumorphic p-10 h-full">
-                        <div class="text-6xl mb-6">⚡</div>
-                        <h3 class="text-2xl font-bold mb-4">QUANTUM GROWTH</h3>
-                        <p class="text-gray-300">300% faster growth with our proprietary technology</p>
-                    </div>
-                </div>
-                
-                <div class="mr-10">
-                    <div class="floating-island liquid-bg p-10 h-full">
-                        <div class="text-6xl mb-6">♻️</div>
-                        <h3 class="text-2xl font-bold mb-4">SUSTAINABLE</h3>
-                        <p class="text-gray-300">Zero-waste, carbon-negative operations</p>
-                    </div>
-                </div>
-                
-                <div class="mr-10">
-                    <div class="floating-island neon-border p-10 h-full">
-                        <div class="text-6xl mb-6">🏆</div>
-                        <h3 class="text-2xl font-bold mb-4">PREMIUM QUALITY</h3>
-                        <p class="text-gray-300">Grade A++ vettiver for luxury markets</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- INNOVATION SECTION - 3D TRANSFORM -->
-    <section id="innovation" class="py-32 bg-gradient-to-b from-black to-green-900/20">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div>
-                    <h2 class="text-5xl md:text-7xl font-bold mb-10">
-                        <span class="text-white">TECHNOLOGY</span>
-                        <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-                            MEETS NATURE
-                        </span>
-                    </h2>
-                    
-                    <div class="space-y-8">
-                        <div class="card-3d glass-card p-8 rounded-3xl">
-                            <div class="flex items-start space-x-6">
-                                <div class="text-4xl text-green-400">🤖</div>
-                                <div>
-                                    <h4 class="text-xl font-bold mb-2">AI-Powered Monitoring</h4>
-                                    <p class="text-gray-300">Real-time analysis of every plant's health and growth patterns</p>
-                                </div>
-                            </div>
+            <!-- Flip Cards for Cultivation -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
+                <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="text-5xl mb-6">📍</div>
+                            <h3 class="text-2xl font-bold mb-4">Farm Locations</h3>
+                            <p class="text-white/80">Strategic Tamil Nadu Locations</p>
                         </div>
-                        
-                        <div class="card-3d glass-card p-8 rounded-3xl" style="transform-origin: center right;">
-                            <div class="flex items-start space-x-6">
-                                <div class="text-4xl text-cyan-400">💧</div>
-                                <div>
-                                    <h4 class="text-xl font-bold mb-2">Hydro-Nano Irrigation</h4>
-                                    <p class="text-gray-300">95% water reduction with targeted nutrient delivery</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card-3d glass-card p-8 rounded-3xl" style="transform-origin: center left;">
-                            <div class="flex items-start space-x-6">
-                                <div class="text-4xl text-yellow-400">📡</div>
-                                <div>
-                                    <h4 class="text-xl font-bold mb-2">IoT Sensors Network</h4>
-                                    <p class="text-gray-300">500+ sensors monitoring soil, air, and plant biometrics</p>
-                                </div>
-                            </div>
+                        <div class="flip-card-back">
+                            <ul class="space-y-4 text-left">
+                                <li class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-green-600 mr-3"></i>
+                                    <span class="font-semibold">Edumalai, Tamil Nadu</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-green-600 mr-3"></i>
+                                    <span class="font-semibold">Cholavaram, Vellore</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-green-600 mr-3"></i>
+                                    <span class="font-semibold">Peravallur, Tamil Nadu</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Data Visualization -->
-                <div class="relative">
-                    <div class="hologram-card rounded-3xl overflow-hidden">
-                        <div class="p-10 bg-gradient-to-br from-green-900/50 to-black">
-                            <h3 class="text-2xl font-bold mb-8 text-center">REAL-TIME DATA STREAM</h3>
-                            <div class="space-y-6">
-                                <div class="flex justify-between items-center">
-                                    <span>Growth Rate</span>
-                                    <div class="w-48 h-3 bg-gray-800 rounded-full overflow-hidden">
-                                        <div class="h-full bg-gradient-to-r from-green-500 to-emerald-400 animate-pulse" style="width: 87%"></div>
-                                    </div>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span>Nutrient Efficiency</span>
-                                    <div class="w-48 h-3 bg-gray-800 rounded-full overflow-hidden">
-                                        <div class="h-full bg-gradient-to-r from-green-500 to-emerald-400" style="width: 94%"></div>
-                                    </div>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span>Carbon Capture</span>
-                                    <div class="w-48 h-3 bg-gray-800 rounded-full overflow-hidden">
-                                        <div class="h-full bg-gradient-to-r from-green-500 to-emerald-400" style="width: 99%"></div>
-                                    </div>
-                                </div>
+                <div class="flip-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="text-5xl mb-6">🌱</div>
+                            <h3 class="text-2xl font-bold mb-4">Grow-Bag Tech</h3>
+                            <p class="text-white/80">Innovative Cultivation</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                                    3x Higher Yield
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                                    40% Less Water
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                                    Better Quality Roots
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="text-5xl mb-6">📊</div>
+                            <h3 class="text-2xl font-bold mb-4">Commercial Scale</h3>
+                            <p class="text-white/80">Bulk Production</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Perfume</span>
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Pharma</span>
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Cosmetics</span>
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Export</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- GALLERY - IMMERSIVE 3D GRID -->
-    <section id="gallery" class="py-32">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl md:text-7xl font-bold mb-6">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-300">
-                        IMMERSIVE
-                    </span>
-                    <span class="text-white"> GALLERY</span>
-                </h2>
             </div>
             
-            <!-- 3D Grid Gallery -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 perspective-1000">
-                <div class="col-span-2 row-span-2">
-                    <div class="gallery-item bioluminescent rounded-3xl overflow-hidden transform-gpu hover:scale-105 transition-transform duration-700">
-                        <img src="https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg" 
-                             alt="Farm" class="w-full h-96 object-cover">
-                    </div>
-                </div>
+            <!-- Risk Management in Unique Layout -->
+            <div class="bg-white rounded-3xl p-10 shadow-xl" data-aos="fade-up">
+                <h3 class="text-3xl font-bold mb-10 text-center text-gray-800">Risk Management Excellence</h3>
                 
-                <div class="col-span-1 row-span-1">
-                    <div class="gallery-item bioluminescent rounded-3xl overflow-hidden transform-gpu hover:scale-105 transition-transform duration-700">
-                        <img src="https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg" 
-                             alt="Farm" class="w-full h-48 object-cover">
-                    </div>
-                </div>
-                
-                <div class="col-span-1 row-span-1">
-                    <div class="gallery-item bioluminescent rounded-3xl overflow-hidden transform-gpu hover:scale-105 transition-transform duration-700">
-                        <img src="https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg" 
-                             alt="Farm" class="w-full h-48 object-cover">
-                    </div>
-                </div>
-                
-                <div class="col-span-2 row-span-2">
-                    <div class="gallery-item bioluminescent rounded-3xl overflow-hidden transform-gpu hover:scale-105 transition-transform duration-700">
-                        <img src="https://image2url.com/r2/bucket3/images/1766860059644-563b866e-2550-44c3-b6d4-1ea4970395bc.jpg" 
-                             alt="Farm" class="w-full h-96 object-cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CONTACT - CYBERPUNK STYLE -->
-    <section id="contact" class="py-32 relative overflow-hidden">
-        <div class="cyber-grid absolute inset-0 opacity-10"></div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-20">
-                    <!-- Holographic Contact Form -->
-                    <div class="hologram-card glass-card rounded-3xl p-10">
-                        <h3 class="text-3xl font-bold mb-8 text-center">SEND TRANSMISSION</h3>
-                        
-                        <form class="space-y-6">
-                            <div class="form-group relative">
-                                <input type="text" 
-                                       class="w-full bg-transparent border-b-2 border-green-500/30 py-4 px-2 focus:border-green-400 outline-none transition-all"
-                                       placeholder="YOUR NAME">
-                                <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 transition-all duration-500 group-focus-within:w-full"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <div class="bg-red-50 p-8 rounded-2xl">
+                            <h4 class="text-xl font-bold mb-6 text-red-700">Challenges Managed</h4>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-cloud-sun text-red-600"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold mb-2">Climate Challenges</h5>
+                                        <p class="text-gray-600">Weather pattern management</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-chart-line text-red-600"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold mb-2">Market Fluctuations</h5>
+                                        <p class="text-gray-600">Price stability strategies</p>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="form-group relative">
-                                <input type="email" 
-                                       class="w-full bg-transparent border-b-2 border-green-500/30 py-4 px-2 focus:border-green-400 outline-none transition-all"
-                                       placeholder="QUANTUM ADDRESS">
-                            </div>
-                            
-                            <div class="form-group relative">
-                                <textarea 
-                                    class="w-full bg-transparent border-b-2 border-green-500/30 py-4 px-2 focus:border-green-400 outline-none transition-all h-32"
-                                    placeholder="YOUR MESSAGE"></textarea>
-                            </div>
-                            
-                            <button type="submit" 
-                                    class="w-full magnetic-btn py-5 rounded-full text-lg font-bold bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-500 hover:to-emerald-400 transition-all duration-300">
-                                TRANSMIT MESSAGE <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </form>
+                        </div>
                     </div>
                     
-                    <!-- Contact Info with Glitch Effect -->
-                    <div class="space-y-10">
-                        <div>
-                            <h3 class="text-4xl font-bold mb-6">CONNECT WITH US</h3>
-                            <p class="text-gray-400 text-lg">Join our mission to revolutionize agriculture</p>
-                        </div>
-                        
-                        <div class="space-y-8">
-                            <div class="flex items-center space-x-6">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 flex items-center justify-center">
-                                    <i class="fas fa-phone text-xl"></i>
+                    <div>
+                        <div class="bg-green-50 p-8 rounded-2xl">
+                            <h4 class="text-xl font-bold mb-6 text-green-700">Our Solutions</h4>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-seedling text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold mb-2">Grow-Bag Technology</h5>
+                                        <p class="text-gray-600">Climate-controlled environment</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p class="text-gray-400">QUANTUM COMMUNICATION</p>
-                                    <p class="text-2xl font-bold">+91 9841565965</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-6">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 flex items-center justify-center">
-                                    <i class="fab fa-whatsapp text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-gray-400">INSTANT TRANSMISSION</p>
-                                    <a href="https://wa.me/919841565965" class="text-2xl font-bold hover:text-green-400 transition">WhatsApp</a>
+                                <div class="flex items-start">
+                                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-file-contract text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold mb-2">Pre-Signed Contracts</h5>
+                                        <p class="text-gray-600">Secure buyer agreements</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -697,197 +598,378 @@
         </div>
     </section>
     
-    <!-- FOOTER - NEON FUTURISTIC -->
-    <footer class="py-16 border-t border-green-900/30">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <div class="flex justify-center items-center space-x-4 mb-8">
-                    <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
-                         alt="Logo" class="h-12">
-                    <span class="text-2xl font-bold">NVH AGRI GREEN</span>
+    <!-- Unique Process & Market Section -->
+    <section id="process" class="py-24 bg-white">
+        <div class="container-custom px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <!-- Left: Growth & Harvesting Timeline -->
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-10 text-gray-800">
+                        Growth & <span class="text-green-600">Harvesting</span> Process
+                    </h2>
+                    
+                    <div class="process-timeline">
+                        <div class="process-step">
+                            <h3 class="text-xl font-bold mb-3">10-12 Month Growth Cycle</h3>
+                            <p class="text-gray-600">Complete maturation for premium roots with optimal aroma and oil content</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h3 class="text-xl font-bold mb-3">Root Extraction</h3>
+                            <p class="text-gray-600">Careful removal from grow-bags using specialized techniques</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h3 class="text-xl font-bold mb-3">Cleaning & Washing</h3>
+                            <p class="text-gray-600">Thorough cleaning to remove soil and impurities</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h3 class="text-xl font-bold mb-3">Drying & Packing</h3>
+                            <p class="text-gray-600">Controlled drying and quality packaging for preservation</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="flex justify-center space-x-8 mb-8">
-                    <a href="#" class="text-gray-400 hover:text-green-400 transition text-lg">TERMS</a>
-                    <a href="#" class="text-gray-400 hover:text-green-400 transition text-lg">PRIVACY</a>
-                    <a href="#" class="text-gray-400 hover:text-green-400 transition text-lg">MISSION</a>
+                <!-- Right: Market Applications -->
+                <div data-aos="fade-left">
+                    <h2 class="text-4xl font-bold mb-10 text-gray-800">
+                        Market <span class="text-green-600">Applications</span>
+                    </h2>
+                    
+                    <div class="market-grid">
+                        <div class="market-card">
+                            <div class="text-4xl mb-4 text-green-600">⚗️</div>
+                            <h3 class="text-xl font-bold mb-3">Vettiver Oil & Powder</h3>
+                            <p class="text-gray-600">Premium essential oil extraction and root powder</p>
+                        </div>
+                        
+                        <div class="market-card">
+                            <div class="text-4xl mb-4 text-green-600">🌸</div>
+                            <h3 class="text-xl font-bold mb-3">Perfume Industry</h3>
+                            <p class="text-gray-600">Luxury fragrance and perfume manufacturing</p>
+                        </div>
+                        
+                        <div class="market-card">
+                            <div class="text-4xl mb-4 text-green-600">🧴</div>
+                            <h3 class="text-xl font-bold mb-3">Cosmetics</h3>
+                            <p class="text-gray-600">Skincare and beauty products</p>
+                        </div>
+                        
+                        <div class="market-card">
+                            <div class="text-4xl mb-4 text-green-600">🌍</div>
+                            <h3 class="text-xl font-bold mb-3">Export Markets</h3>
+                            <p class="text-gray-600">Global demand from multiple regions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Unique Gallery Section -->
+    <section id="gallery" class="py-24 bg-gray-50">
+        <div class="container-custom px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+                    Our <span class="text-green-600">Farm</span> Gallery
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Premium vettiver cultivation across our farm locations
+                </p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Your farm images -->
+                <a href="https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg" 
+                   data-lightbox="farm" class="gallery-item" data-aos="zoom-in">
+                    <img src="https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg" 
+                         alt="Farm 1" class="w-full h-64 object-cover">
+                </a>
+                <a href="https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg" 
+                   data-lightbox="farm" class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg" 
+                         alt="Farm 2" class="w-full h-64 object-cover">
+                </a>
+                <a href="https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg" 
+                   data-lightbox="farm" class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg" 
+                         alt="Farm 3" class="w-full h-64 object-cover">
+                </a>
+                <a href="https://image2url.com/r2/bucket3/images/1766860059644-563b866e-2550-44c3-b6d4-1ea4970395bc.jpg" 
+                   data-lightbox="farm" class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://image2url.com/r2/bucket3/images/1766860059644-563b866e-2550-44c3-b6d4-1ea4970395bc.jpg" 
+                         alt="Farm 4" class="w-full h-64 object-cover">
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Unique Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container-custom px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <!-- Contact Form -->
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-10 text-gray-800">
+                        Get In <span class="text-green-600">Touch</span>
+                    </h2>
+                    
+                    <form id="inquiryForm" action="https://formspree.io/f/mvzokwwg" method="POST" class="space-y-8">
+                        <div class="form-group">
+                            <input type="text" name="name" required 
+                                   class="form-input" placeholder="Your Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="email" required 
+                                   class="form-input" placeholder="Email Address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" name="phone" required 
+                                   class="form-input" placeholder="Phone Number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <select name="inquiry_type" required class="form-input">
+                                <option value="">Inquiry Type</option>
+                                <option value="bulk">Bulk Purchase</option>
+                                <option value="visit">Farm Visit</option>
+                                <option value="service">Services</option>
+                                <option value="partnership">Partnership</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="message" required rows="4" 
+                                      class="form-input" placeholder="Your Message"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="btn-magnetic bg-green-600 text-white font-bold py-4 px-10 rounded-full text-lg w-full hover:bg-green-700">
+                            <i class="fas fa-paper-plane mr-3"></i> Send Message
+                        </button>
+                    </form>
                 </div>
                 
-                <p class="text-gray-500">
-                    © 2024 NVH AGRI GREEN. ALL RIGHTS RESERVED. 
-                    <span class="block mt-2 text-green-400/50">THE FUTURE OF AGRICULTURE IS HERE</span>
+                <!-- Contact Info -->
+                <div data-aos="fade-left">
+                    <div class="bg-green-50 p-10 rounded-3xl h-full">
+                        <h3 class="text-3xl font-bold mb-8 text-gray-800">Contact Information</h3>
+                        
+                        <div class="space-y-10">
+                            <div class="flex items-start">
+                                <div class="bg-white p-4 rounded-2xl mr-6">
+                                    <i class="fas fa-phone text-green-600 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Phone & WhatsApp</h4>
+                                    <p class="text-gray-700 text-lg">+91 9841565965</p>
+                                    <a href="https://wa.me/919841565965" target="_blank" 
+                                       class="text-green-600 font-medium inline-flex items-center mt-2">
+                                        <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-white p-4 rounded-2xl mr-6">
+                                    <i class="fas fa-envelope text-green-600 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Email</h4>
+                                    <p class="text-gray-700 text-lg">info@nvhagrigreen.com</p>
+                                    <p class="text-gray-500">Response within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-white p-4 rounded-2xl mr-6">
+                                    <i class="fas fa-map-marker-alt text-green-600 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Location</h4>
+                                    <p class="text-gray-700">Tamil Nadu, India</p>
+                                    <p class="text-gray-500">Multiple farm locations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container-custom px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
+                             alt="Logo" class="h-12">
+                        <h3 class="text-2xl font-bold">NVH Agri Green</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Premium vettiver cultivation using innovative grow-bag technology.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-gray-400 hover:text-white">Home</a>
+                        <a href="#cultivation" class="block text-gray-400 hover:text-white">Cultivation</a>
+                        <a href="#gallery" class="block text-gray-400 hover:text-white">Gallery</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-white">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/919841565965" target="_blank" 
+                           class="bg-gray-800 hover:bg-green-700 p-3 rounded-full transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-green-700 p-3 rounded-full transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 NVH Agri Green. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
     
-    <!-- SCRIPTS -->
+    <!-- Business Plan Modal -->
+    <div id="businessPlanModal" class="modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800">Download Business Details</h3>
+                    <button onclick="closeModal('businessPlanModal')" class="text-gray-500">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <form onsubmit="downloadDetails(event)" class="space-y-6">
+                    <input type="text" placeholder="Your Name" required 
+                           class="w-full p-3 border rounded-lg">
+                    <input type="email" placeholder="Email" required 
+                           class="w-full p-3 border rounded-lg">
+                    <select class="w-full p-3 border rounded-lg">
+                        <option>Interest Type</option>
+                        <option>Bulk Purchase</option>
+                        <option>Partnership</option>
+                        <option>Information</option>
+                    </select>
+                    
+                    <button type="submit" 
+                            class="w-full bg-green-600 text-white py-3 rounded-lg font-bold">
+                        Download Details
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    
     <script>
-        // Initialize everything
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hide loading screen
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Hide loading screen
+        window.addEventListener('load', function() {
             setTimeout(() => {
                 document.getElementById('loadingScreen').style.opacity = '0';
                 setTimeout(() => {
                     document.getElementById('loadingScreen').style.display = 'none';
                 }, 500);
-            }, 2000);
-            
-            // Initialize Particles.js
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 80, density: { enable: true, value_area: 800 } },
-                    color: { value: "#1a5f1a" },
-                    shape: { type: "circle" },
-                    opacity: { value: 0.5, random: true },
-                    size: { value: 3, random: true },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: "#1a5f1a",
-                        opacity: 0.4,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 2,
-                        direction: "none",
-                        random: true,
-                        straight: false,
-                        out_mode: "out",
-                        bounce: false
-                    }
-                },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: { enable: true, mode: "repulse" },
-                        onclick: { enable: true, mode: "push" }
-                    }
-                }
-            });
-            
-            // Initialize GSAP animations
-            gsap.registerPlugin(ScrollTrigger);
-            
-            // Animate sections on scroll
-            gsap.utils.toArray('section').forEach(section => {
-                gsap.from(section, {
-                    opacity: 0,
-                    y: 100,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top 80%",
-                        end: "top 20%",
-                        toggleActions: "play none none reverse"
-                    }
-                });
-            });
-            
-            // Magnetic button effect
-            document.querySelectorAll('.magnetic-btn').forEach(btn => {
-                btn.addEventListener('mousemove', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    this.style.setProperty('--mouse-x', `${x}px`);
-                    this.style.setProperty('--mouse-y', `${y}px`);
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const deltaX = (x - centerX) / centerX * 10;
-                    const deltaY = (y - centerY) / centerY * 10;
-                    
-                    this.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-                });
-                
-                btn.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translate(0, 0)';
-                });
-            });
-            
-            // Bioluminescent effect
-            document.querySelectorAll('.bioluminescent').forEach(el => {
-                el.addEventListener('mousemove', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    this.style.setProperty('--mouse-x', `${x}px`);
-                    this.style.setProperty('--mouse-y', `${y}px`);
-                });
-            });
-            
-            // 3D card effect
-            document.querySelectorAll('.card-3d').forEach(card => {
-                card.addEventListener('mousemove', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateY = ((x - centerX) / centerX) * 10;
-                    const rotateX = ((centerY - y) / centerY) * 10;
-                    
-                    this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-                });
-            });
-            
-            // Infinite scrolling text
-            const scrollText = document.createElement('div');
-            scrollText.className = 'infinite-scroll fixed bottom-0 left-0 w-full py-4 bg-black/50 backdrop-blur-sm z-30';
-            scrollText.innerHTML = `
-                <span class="text-green-400 font-bold mx-8">✦</span>
-                <span class="text-white mx-4">PREMIUM VETTIVER CULTIVATION</span>
-                <span class="text-green-400 font-bold mx-8">✦</span>
-                <span class="text-white mx-4">QUANTUM FARMING TECHNOLOGY</span>
-                <span class="text-green-400 font-bold mx-8">✦</span>
-                <span class="text-white mx-4">GLOBAL EXPORT NETWORK</span>
-                <span class="text-green-400 font-bold mx-8">✦</span>
-                <span class="text-white mx-4">SUSTAINABLE INNOVATION</span>
-            `;
-            document.body.appendChild(scrollText);
+            }, 1000);
         });
         
-        // Interactive functions
-        function exploreJourney() {
-            gsap.to(window, { duration: 1, scrollTo: "#experience", ease: "power2.inOut" });
-        }
-        
-        function playVideo() {
-            alert("Immersive experience video would play here!");
-        }
-        
-        // Mobile menu toggle
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            const nav = document.querySelector('nav .hidden.md\\:flex');
-            nav.classList.toggle('mobile-show');
-            nav.classList.toggle('hidden');
+        // Mobile menu
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
         });
         
-        // Smooth scroll for navigation
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    gsap.to(window, {
-                        duration: 1,
-                        scrollTo: { y: target, offsetY: 100 },
-                        ease: "power2.inOut"
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    window.scrollTo({
+                        top: target.offsetTop - headerHeight,
+                        behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu
+                    document.getElementById('mobileMenu').classList.add('hidden');
                 }
             });
         });
+        
+        // Scroll to section
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                window.scrollTo({
+                    top: el.offsetTop - headerHeight,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Modal functions
+        function openModal(id) {
+            document.getElementById(id).classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal on outside click
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Form handling
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We will contact you shortly.');
+            this.reset();
+        });
+        
+        function downloadDetails(e) {
+            e.preventDefault();
+            alert('Business details will be sent to your email.');
+            closeModal('businessPlanModal');
+        }
     </script>
 </body>
 </html>
