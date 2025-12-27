@@ -143,21 +143,6 @@
             display: none;
         }
         
-        .risk-card {
-            border-left: 4px solid #e53e3e;
-            background-color: #fff5f5;
-        }
-        
-        .mitigation-card {
-            border-left: 4px solid #38a169;
-            background-color: #f0fff4;
-        }
-        
-        .process-card {
-            background: linear-gradient(135deg, #f7fafc, #edf2f7);
-            border: 1px solid #e2e8f0;
-        }
-        
         /* Fade in animation */
         .fade-in {
             opacity: 0;
@@ -168,12 +153,6 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-        
-        /* Perfect width container */
-        .perfect-width {
-            max-width: 1200px;
-            margin: 0 auto;
         }
     </style>
 </head>
@@ -186,16 +165,22 @@
     
     <!-- Header with YOUR LOGO -->
     <header class="sticky top-0 z-40 bg-white shadow-md">
-        <div class="perfect-width px-4">
+        <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <!-- Logo - USING YOUR LOGO TEXT -->
+                <!-- Logo - REPLACE WITH YOUR LOGO -->
                 <div class="flex items-center space-x-3">
+                    <!-- Option 1: Use your logo image -->
+                    <!--
+                    <img src="YOUR-LOGO-URL-HERE" alt="NVH Agri Green Logo" class="h-12">
+                    -->
+                    
+                    <!-- Option 2: Current placeholder (delete when adding your logo) -->
                     <div class="bg-green-100 p-2 rounded-full">
                         <i class="fas fa-leaf text-2xl" style="color: var(--primary-green);"></i>
                     </div>
                     <div>
                         <h1 class="text-xl font-bold" style="color: var(--primary-green);">NVH Agri Green</h1>
-                        <p class="text-xs text-gray-600">Stronger roots - Stronger Future</p>
+                        <p class="text-xs text-gray-600">Commercial Vettiver Farming</p>
                     </div>
                 </div>
                 
@@ -204,9 +189,7 @@
                     <a href="#home" class="font-semibold hover:text-green-600 transition-colors">Home</a>
                     <a href="#solution" class="font-semibold hover:text-green-600 transition-colors">Solution</a>
                     <a href="#project" class="font-semibold hover:text-green-600 transition-colors">Project</a>
-                    <a href="#process" class="font-semibold hover:text-green-600 transition-colors">Our Process</a>
                     <a href="#gallery" class="font-semibold hover:text-green-600 transition-colors">Farm Gallery</a>
-                    <a href="#risks" class="font-semibold hover:text-green-600 transition-colors">Risk Management</a>
                     <a href="#financials" class="font-semibold hover:text-green-600 transition-colors">Financials</a>
                     <a href="#contact" class="font-semibold hover:text-green-600 transition-colors">Contact</a>
                 </nav>
@@ -222,9 +205,7 @@
                     <a href="#home" class="font-semibold hover:text-green-600">Home</a>
                     <a href="#solution" class="font-semibold hover:text-green-600">Solution</a>
                     <a href="#project" class="font-semibold hover:text-green-600">Project</a>
-                    <a href="#process" class="font-semibold hover:text-green-600">Our Process</a>
                     <a href="#gallery" class="font-semibold hover:text-green-600">Farm Gallery</a>
-                    <a href="#risks" class="font-semibold hover:text-green-600">Risk Management</a>
                     <a href="#financials" class="font-semibold hover:text-green-600">Financials</a>
                     <a href="#contact" class="font-semibold hover:text-green-600">Contact</a>
                 </div>
@@ -234,7 +215,7 @@
     
     <!-- Hero Section -->
     <section id="home" class="hero-bg text-white py-20 md:py-32">
-        <div class="perfect-width px-4 text-center">
+        <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto fade-in">
                 <div class="inline-block bg-green-800/80 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
                     <span class="text-sm font-semibold">INDIA'S FIRST LARGE-SCALE GROW-BAG VETTIVER FARMING</span>
@@ -282,7 +263,7 @@
     
     <!-- Solution Section -->
     <section id="solution" class="py-20 bg-gray-50">
-        <div class="perfect-width px-4">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
                     Grow-Bag Technology Advantage
@@ -350,7 +331,7 @@
     
     <!-- Project Overview -->
     <section id="project" class="py-20 bg-white">
-        <div class="perfect-width px-4">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
                     Project Specifications
@@ -420,163 +401,75 @@
         </div>
     </section>
     
-    <!-- Our Process Section -->
-    <section id="process" class="py-20 bg-gray-50">
-        <div class="perfect-width px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
-                    Our Cultivation Process
-                </h2>
-                <p class="text-gray-600">Systematic approach to premium vettiver production</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="process-card p-6 rounded-xl text-center">
-                    <div class="text-3xl mb-4" style="color: var(--primary-green);">🌱</div>
-                    <h3 class="font-bold text-lg mb-3">Growth Period</h3>
-                    <p class="text-gray-600">10–12 months in grow bags with optimal conditions</p>
-                </div>
-                
-                <div class="process-card p-6 rounded-xl text-center">
-                    <div class="text-3xl mb-4" style="color: var(--primary-green);">🔍</div>
-                    <h3 class="font-bold text-lg mb-3">Root Extraction</h3>
-                    <p class="text-gray-600">Careful extraction ensuring maximum root length</p>
-                </div>
-                
-                <div class="process-card p-6 rounded-xl text-center">
-                    <div class="text-3xl mb-4" style="color: var(--primary-green);">💧</div>
-                    <h3 class="font-bold text-lg mb-3">Cleaning & Washing</h3>
-                    <p class="text-gray-600">Thorough cleaning to remove soil and impurities</p>
-                </div>
-                
-                <div class="process-card p-6 rounded-xl text-center">
-                    <div class="text-3xl mb-4" style="color: var(--primary-green);">📦</div>
-                    <h3 class="font-bold text-lg mb-3">Drying & Packing</h3>
-                    <p class="text-gray-600">Controlled drying and quality packing for export</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FARM GALLERY SECTION - WITH YOUR ACTUAL FARM IMAGES -->
-    <section id="gallery" class="py-20 bg-white">
-        <div class="perfect-width px-4">
+    <!-- FARM GALLERY SECTION - ADD YOUR IMAGES HERE -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
                     Our Farm Gallery
                 </h2>
-                <p class="text-gray-600">Actual images from our vettiver cultivation farms in Tamil Nadu</p>
+                <p class="text-gray-600">Actual images from our vettiver cultivation project</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Your actual farm images -->
-                <a href="logo text alone.png" data-lightbox="farm-gallery" data-title="NVH Agri Green - Stronger roots - Stronger Future">
-                    <img src="logo text alone.png" 
-                         alt="NVH Agri Green Logo" 
-                         class="gallery-img w-full object-contain bg-gray-100 p-4">
-                </a>
-                
-                <a href="9d261cbe-0122-448a-acd9-5de4204417f8.jpg" data-lightbox="farm-gallery" data-title="Edumalai, Tamil Nadu Farm | 11.052115° 78.734442°">
-                    <img src="9d261cbe-0122-448a-acd9-5de4204417f8.jpg" 
-                         alt="Edumalai Farm Location" 
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Image 1 - Replace with your farm photo -->
+                <a href="YOUR-FARM-PHOTO-1.jpg" data-lightbox="farm-gallery" data-title="Our Vettiver Farm - 15 Acres">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Vettiver Farm" 
                          class="gallery-img w-full">
                 </a>
                 
-                <a href="6739d20a-d9d8-43e8-bf69-a6002a27056e.jpg" data-lightbox="farm-gallery" data-title="Edumalai Farm Close-up | 11.052132° 78.734417°">
-                    <img src="6739d20a-d9d8-43e8-bf69-a6002a27056e.jpg" 
-                         alt="Edumalai Farm Details" 
+                <!-- Image 2 - Replace with your farm photo -->
+                <a href="YOUR-FARM-PHOTO-2.jpg" data-lightbox="farm-gallery" data-title="Grow Bag Setup">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Grow Bags" 
                          class="gallery-img w-full">
                 </a>
                 
-                <a href="adfb16b1-b94a-4fa4-ac49-29e17f3e8eb6.jpg" data-lightbox="farm-gallery" data-title="Edumalai Farm Operations | 11.052142° 78.73453°">
-                    <img src="adfb16b1-b94a-4fa4-ac49-29e17f3e8eb6.jpg" 
-                         alt="Farm Operations" 
+                <!-- Image 3 - Replace with your farm photo -->
+                <a href="YOUR-FARM-PHOTO-3.jpg" data-lightbox="farm-gallery" data-title="Irrigation System">
+                    <img src="https://images.unsplash.com/photo-1592924688932-167677a56b1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Irrigation" 
                          class="gallery-img w-full">
                 </a>
                 
-                <a href="58110d9f-b0a0-4f00-ab6d-c2e152968210.jpg" data-lightbox="farm-gallery" data-title="Vellore Farm Location | 12.811534° 79.083896°">
-                    <img src="58110d9f-b0a0-4f00-ab6d-c2e152968210.jpg" 
-                         alt="Vellore Farm" 
+                <!-- Image 4 - Replace with your farm photo -->
+                <a href="YOUR-FARM-PHOTO-4.jpg" data-lightbox="farm-gallery" data-title="Vettiver Plants Growth">
+                    <img src="https://images.unsplash.com/photo-1597848212624-e6f1f5d6f7d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Plants Growth" 
                          class="gallery-img w-full">
                 </a>
                 
-                <a href="d8ccf4f9-1894-404b-8be8-78407f925989.jpg" data-lightbox="farm-gallery" data-title="Peravallur Farm | 13.310234° 80.156158°">
-                    <img src="d8ccf4f9-1894-404b-8be8-78407f925989.jpg" 
-                         alt="Peravallur Farm" 
+                <!-- Image 5 - Replace with your farm photo -->
+                <a href="YOUR-FARM-PHOTO-5.jpg" data-lightbox="farm-gallery" data-title="Harvesting Process">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Harvesting" 
+                         class="gallery-img w-full">
+                </a>
+                
+                <!-- Image 6 - Replace with your farm photo -->
+                <a href="YOUR-FARM-PHOTO-6.jpg" data-lightbox="farm-gallery" data-title="Quality Control">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Quality Check" 
                          class="gallery-img w-full">
                 </a>
             </div>
             
             <div class="text-center mt-8">
                 <p class="text-gray-600 text-sm">
-                    <i class="fas fa-map-marker-alt mr-2"></i>All photos from our actual farms in Tamil Nadu with GPS verification
+                    Click on any image to view larger. All photos from our actual farm in Tamil Nadu.
                 </p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Risk Management Section -->
-    <section id="risks" class="py-20 bg-gray-50">
-        <div class="perfect-width px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
-                    Risk Management Strategy
-                </h2>
-                <p class="text-gray-600">Proactive measures ensuring project success</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 text-red-600">Potential Risks</h3>
-                    <div class="space-y-4">
-                        <div class="risk-card p-5 rounded-lg">
-                            <h4 class="font-bold text-lg mb-2">Climate Challenges</h4>
-                            <p class="text-gray-700">Extreme weather conditions affecting growth</p>
-                        </div>
-                        
-                        <div class="risk-card p-5 rounded-lg">
-                            <h4 class="font-bold text-lg mb-2">Market Fluctuations</h4>
-                            <p class="text-gray-700">Price volatility in agricultural commodities</p>
-                        </div>
-                        
-                        <div class="risk-card p-5 rounded-lg">
-                            <h4 class="font-bold text-lg mb-2">Labour Shortages</h4>
-                            <p class="text-gray-700">Seasonal availability of skilled farm labor</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-2xl font-bold mb-6" style="color: var(--primary-green);">Our Mitigation Strategies</h3>
-                    <div class="space-y-4">
-                        <div class="mitigation-card p-5 rounded-lg">
-                            <h4 class="font-bold text-lg mb-2">Climate Resilience</h4>
-                            <p class="text-gray-700">Grow bag model reduces climate dependency, protects roots from extreme conditions</p>
-                        </div>
-                        
-                        <div class="mitigation-card p-5 rounded-lg">
-                            <h4 class="font-bold text-lg mb-2">Market Security</h4>
-                            <p class="text-gray-700">Pre-signed contracts with buyers ensuring fixed pricing</p>
-                        </div>
-                        
-                        <div class="mitigation-card p-5 rounded-lg">
-                            <h4 class="font-bold text-lg mb-2">Labor Management</h4>
-                            <p class="text-gray-700">Dedicated trained labor team with backup workforce plan</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     
     <!-- Financials -->
     <section id="financials" class="py-20 bg-white">
-        <div class="perfect-width px-4">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
                     Financial Projections
                 </h2>
-                <p class="text-gray-600">Conservative estimates with adjustable parameters</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -585,11 +478,7 @@
                     <div class="space-y-4">
                         <div class="flex justify-between items-center border-b pb-3">
                             <span class="font-semibold">Total Loan Request</span>
-                            <div class="flex items-center space-x-2">
-                                <button onclick="adjustNumber('loanAmount', -1000000)" class="px-2 py-1 bg-gray-200 rounded">-</button>
-                                <span id="loanAmount" class="text-2xl font-bold" style="color: var(--primary-green);">₹2.5 Crores</span>
-                                <button onclick="adjustNumber('loanAmount', 1000000)" class="px-2 py-1 bg-gray-200 rounded">+</button>
-                            </div>
+                            <span class="text-2xl font-bold" style="color: var(--primary-green);">₹2.5 Crores</span>
                         </div>
                         
                         <div class="space-y-3">
@@ -618,11 +507,7 @@
                     <div class="space-y-4">
                         <div class="flex justify-between items-center border-b pb-3">
                             <span class="font-semibold">Expected Revenue</span>
-                            <div class="flex items-center space-x-2">
-                                <button onclick="adjustNumber('revenueAmount', -500000)" class="px-2 py-1 bg-gray-200 rounded">-</button>
-                                <span id="revenueAmount" class="text-2xl font-bold" style="color: var(--accent-gold);">₹5 Crores</span>
-                                <button onclick="adjustNumber('revenueAmount', 500000)" class="px-2 py-1 bg-gray-200 rounded">+</button>
-                            </div>
+                            <span class="text-2xl font-bold" style="color: var(--accent-gold);">₹5 Crores</span>
                         </div>
                         
                         <div class="space-y-3">
@@ -647,11 +532,11 @@
                         <div class="mt-6 p-4 rounded-lg bg-green-50">
                             <div class="flex justify-between items-center">
                                 <span class="font-bold">Net Profit:</span>
-                                <span id="netProfit" class="text-xl font-bold" style="color: var(--primary-green);">~₹3.5 Crores</span>
+                                <span class="text-xl font-bold" style="color: var(--primary-green);">~₹3.5 Crores</span>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <span class="font-bold">ROI:</span>
-                                <span id="roiPercent" class="text-xl font-bold" style="color: var(--accent-gold);">130%+</span>
+                                <span class="text-xl font-bold" style="color: var(--accent-gold);">130%+</span>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <span class="font-bold">Payback:</span>
@@ -666,7 +551,7 @@
     
     <!-- Contact -->
     <section id="contact" class="py-20 bg-gray-50">
-        <div class="perfect-width px-4">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
                     Business Inquiries
@@ -677,8 +562,7 @@
             <div class="max-w-4xl mx-auto">
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="p-8">
-                        <!-- FORMSPREE FORM - REPLACE YOUR-FORM-ID WITH ACTUAL FORMSPREE ID -->
-                        <form id="businessInquiryForm" action="https://formspree.io/f/YOUR-FORM-ID-HERE" method="POST">
+                        <form id="businessInquiryForm" action="https://formspree.io/f/your-form-id" method="POST">
                             <div class="mb-6">
                                 <label class="block font-semibold mb-2" style="color: var(--primary-green);">Inquiry Type *</label>
                                 <select name="inquiry_type" required class="w-full border rounded-lg p-3">
@@ -687,7 +571,6 @@
                                     <option value="partnership">Business Partnership</option>
                                     <option value="farm_visit">Schedule Farm Visit</option>
                                     <option value="investor">Investor Inquiry</option>
-                                    <option value="supplier">Supplier Inquiry</option>
                                 </select>
                             </div>
                             
@@ -718,36 +601,17 @@
                                 <textarea name="message" required rows="4" class="w-full border rounded-lg p-3" placeholder="Your inquiry details..."></textarea>
                             </div>
                             
-                            <!-- Formspree hidden fields for better tracking -->
-                            <input type="hidden" name="_subject" value="New Business Inquiry - NVH Agri Green">
-                            <input type="hidden" name="_replyto" id="replyToEmail">
-                            <input type="text" name="_gotcha" style="display:none">
-                            
                             <button type="submit" class="btn-primary w-full py-3 text-lg">
                                 <i class="fas fa-paper-plane mr-2"></i> Submit Inquiry
                             </button>
-                            
-                            <p class="text-sm text-gray-500 mt-4 text-center">
-                                <i class="fas fa-shield-alt mr-1"></i>Form submissions go directly to our business email via Formspree
-                            </p>
                         </form>
                         
                         <div id="formSuccess" class="hidden mt-6 p-4 rounded-lg bg-green-100 border border-green-400">
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-green-600 text-xl mr-3"></i>
                                 <div>
-                                    <p class="font-semibold text-green-800">Thank you! Your inquiry has been submitted.</p>
-                                    <p class="text-green-700 text-sm">We will contact you within 24 hours via email and WhatsApp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div id="formError" class="hidden mt-6 p-4 rounded-lg bg-red-100 border border-red-400">
-                            <div class="flex items-center">
-                                <i class="fas fa-exclamation-circle text-red-600 text-xl mr-3"></i>
-                                <div>
-                                    <p class="font-semibold text-red-800">Error submitting form</p>
-                                    <p class="text-red-700 text-sm">Please try again or contact us directly via WhatsApp.</p>
+                                    <p class="font-semibold text-green-800">Thank you!</p>
+                                    <p class="text-green-700 text-sm">We will contact you within 24 hours.</p>
                                 </div>
                             </div>
                         </div>
@@ -761,7 +625,7 @@
                                     <div class="flex items-start">
                                         <i class="fas fa-phone-alt mt-1 mr-4" style="color: var(--primary-green);"></i>
                                         <div>
-                                            <p class="font-semibold">Phone / WhatsApp</p>
+                                            <p class="font-semibold">Phone</p>
                                             <p>+91 9841565965</p>
                                         </div>
                                     </div>
@@ -775,8 +639,8 @@
                                     <div class="flex items-start">
                                         <i class="fas fa-map-marker-alt mt-1 mr-4" style="color: var(--primary-green);"></i>
                                         <div>
-                                            <p class="font-semibold">Farm Locations</p>
-                                            <p>Edumalai, Vellore, Peravallur - Tamil Nadu</p>
+                                            <p class="font-semibold">Location</p>
+                                            <p>Tamil Nadu, India</p>
                                         </div>
                                     </div>
                                 </div>
@@ -786,13 +650,8 @@
                                 <h3 class="text-xl font-bold mb-6" style="color: var(--primary-green);">Business Hours</h3>
                                 <div class="space-y-2">
                                     <p class="font-semibold">Monday - Saturday</p>
-                                    <p>9:00 AM - 6:00 PM IST</p>
-                                    <div class="mt-4">
-                                        <p class="font-semibold text-sm mb-2">WhatsApp Alerts:</p>
-                                        <button onclick="setupWhatsAppAlerts()" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
-                                            <i class="fab fa-whatsapp mr-2"></i>Get Farm Updates
-                                        </button>
-                                    </div>
+                                    <p>9:00 AM - 6:00 PM</p>
+                                    <p class="text-sm text-gray-600 mt-4">For urgent inquiries, WhatsApp available 24/7</p>
                                 </div>
                             </div>
                         </div>
@@ -804,16 +663,17 @@
     
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
-        <div class="perfect-width px-4">
+        <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
+                        <!-- Your Logo Here -->
                         <div class="bg-green-700 p-2 rounded-full">
                             <i class="fas fa-leaf text-xl"></i>
                         </div>
                         <div>
                             <h3 class="text-xl font-bold">NVH Agri Green</h3>
-                            <p class="text-green-300 text-sm">Stronger roots - Stronger Future</p>
+                            <p class="text-green-300 text-sm">Vettiver Farming Specialists</p>
                         </div>
                     </div>
                     <p class="text-gray-300 text-sm">
@@ -824,8 +684,8 @@
                 <div>
                     <h4 class="text-lg font-bold mb-4">Business</h4>
                     <ul class="space-y-2 text-sm text-gray-300">
-                        <li>📍 Multiple locations in Tamil Nadu</li>
-                        <li>📞 +91 9841565965 (24/7 WhatsApp)</li>
+                        <li>📍 Tamil Nadu, India</li>
+                        <li>📞 +91 9841565965</li>
                         <li>🏢 Registered Agricultural Business</li>
                         <li>📜 GST Registered</li>
                     </ul>
@@ -849,12 +709,7 @@
             
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p class="text-gray-400">
-                    © 2024 NVH Agri Green. Commercial Vettiver Farming Project. All GPS locations verified.
-                </p>
-                <p class="text-gray-500 text-sm mt-2">
-                    <i class="fas fa-chart-line mr-1"></i>Visitor tracking active | 
-                    <i class="fas fa-mobile-alt mr-1 ml-3"></i>Mobile optimized |
-                    <i class="fas fa-bolt mr-1 ml-3"></i>Fast loading
+                    © 2024 NVH Agri Green. Commercial Vettiver Farming Project.
                 </p>
             </div>
         </div>
@@ -894,23 +749,9 @@
     
     <!-- JavaScript -->
     <script>
-        // Configure lightbox
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true,
-            'albumLabel': "Image %1 of %2"
-        });
-        
         // Mobile menu toggle
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
         });
         
         // Smooth scrolling
@@ -960,109 +801,21 @@
             }
         });
         
-        // Adjustable financial numbers
-        function adjustNumber(elementId, amount) {
-            const element = document.getElementById(elementId);
-            let currentValue = parseFloat(element.textContent.replace(/[^0-9.-]+/g,""));
-            
-            if (elementId === 'loanAmount') {
-                currentValue = currentValue * 10000000; // Convert crores to actual
-            } else if (elementId === 'revenueAmount') {
-                currentValue = currentValue * 10000000; // Convert crores to actual
-            }
-            
-            currentValue += amount;
-            
-            // Convert back to crores for display
-            if (elementId === 'loanAmount' || elementId === 'revenueAmount') {
-                currentValue = currentValue / 10000000;
-                element.textContent = '₹' + currentValue.toFixed(1) + ' Crores';
-            }
-            
-            // Update calculated fields
-            updateCalculatedFields();
-        }
-        
-        function updateCalculatedFields() {
-            const revenue = parseFloat(document.getElementById('revenueAmount').textContent.replace(/[^0-9.-]+/g,""));
-            const loan = parseFloat(document.getElementById('loanAmount').textContent.replace(/[^0-9.-]+/g,""));
-            
-            const netProfit = revenue - 1.5; // 1.5 crores operational cost
-            const roi = ((netProfit / loan) * 100).toFixed(0);
-            
-            document.getElementById('netProfit').textContent = '~₹' + netProfit.toFixed(1) + ' Crores';
-            document.getElementById('roiPercent').textContent = roi + '%+';
-        }
-        
-        // Form handling with Formspree
-        document.getElementById('businessInquiryForm').addEventListener('submit', async function(e) {
+        // Form handling
+        document.getElementById('businessInquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Set reply-to email
-            const emailInput = this.querySelector('input[name="email"]');
-            document.getElementById('replyToEmail').value = emailInput.value;
-            
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.innerHTML;
-            
-            // Show loading state
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
-            submitButton.disabled = true;
-            
-            try {
-                const formData = new FormData(this);
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    // Show success message
-                    document.getElementById('formSuccess').classList.remove('hidden');
-                    document.getElementById('formError').classList.add('hidden');
-                    
-                    // Also send WhatsApp alert (optional)
-                    const name = formData.get('name');
-                    const inquiryType = formData.get('inquiry_type');
-                    const whatsappMessage = `New inquiry from ${name} - ${inquiryType}. Check your email for details.`;
-                    
-                    // Reset form after 5 seconds
-                    setTimeout(() => {
-                        this.reset();
-                        document.getElementById('formSuccess').classList.add('hidden');
-                    }, 5000);
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                document.getElementById('formError').classList.remove('hidden');
+            document.getElementById('formSuccess').classList.remove('hidden');
+            setTimeout(() => {
+                this.reset();
                 document.getElementById('formSuccess').classList.add('hidden');
-                console.error('Form submission error:', error);
-            } finally {
-                // Reset button state
-                submitButton.innerHTML = originalButtonText;
-                submitButton.disabled = false;
-            }
+            }, 5000);
         });
         
         function downloadBusinessPlan(e) {
             e.preventDefault();
             const name = document.querySelector('input[name="bp_name"]').value;
-            const email = document.querySelector('input[name="bp_email"]').value;
-            
-            // Here you would typically send this to your backend
-            // For now, we'll simulate a download
-            alert(`Thank you ${name}! The business plan PDF download link has been sent to ${email}.`);
+            alert(`Thank you ${name}! Download link sent to your email.`);
             closeModal('businessPlanModal');
-        }
-        
-        function setupWhatsAppAlerts() {
-            const phoneNumber = '919841565965';
-            const message = 'Hi NVH Agri Green, please add me to your WhatsApp alerts list for farm updates and harvest notifications.';
-            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
         
         // Fade in on scroll
@@ -1076,23 +829,8 @@
         
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         
-        // Initialize financial calculations
-        updateCalculatedFields();
-        
-        // WhatsApp alert setup
-        console.log('WhatsApp alerts configured for: +91 9841565965');
-        console.log('Form submissions will go to Formspree (replace YOUR-FORM-ID-HERE)');
-        console.log('Google Analytics configured (replace G-XXXXXXXXXX with your ID)');
-        
-        // SEO optimization - Update page title based on scroll
-        let originalTitle = document.title;
-        window.addEventListener('blur', function() {
-            document.title = "🔥 Vettiver Farming Opportunity - NVH Agri Green";
-        });
-        
-        window.addEventListener('focus', function() {
-            document.title = originalTitle;
-        });
+        // Vercel Analytics (Auto-added if deployed on Vercel)
+        // No need to add anything - Vercel adds it automatically
     </script>
     
     <!-- Vercel Analytics Script (Auto-injected by Vercel) -->
@@ -1101,4 +839,4 @@
     <script defer src="/_vercel/insights/script.js"></script>
     -->
 </body>
-</html>
+</html>  
