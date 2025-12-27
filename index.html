@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NVH Agri Green - Premium Vettiver Cultivation using Grow-Bag Technology. Bulk orders, farm visits, business partnerships.">
+    <meta name="description" content="NVH Agri Green - Premium Vettiver Cultivation using revolutionary Grow-Bag Technology. The future of agriculture is here.">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-49NLN7CFLT"></script>
@@ -14,12 +14,12 @@
         gtag('config', 'G-49NLN7CFLT');
     </script>
     
-    <title>NVH Agri Green | Premium Vettiver Cultivators</title>
+    <title>NVH Agri Green | Revolutionary Vettiver Cultivation</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,757 +30,766 @@
     <!-- Lightbox for Gallery -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
     
+    <!-- GSAP for mind-blowing animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+    
     <style>
         :root {
-            --primary-green: #1a5f1a;
-            --dark-green: #0d4d0d;
-            --light-green: #e8f5e8;
-            --accent-gold: #d4af37;
+            --primary-green: #00ff88;
+            --dark-green: #00cc6a;
+            --neon-green: #00ffaa;
+            --matrix-green: #00ff41;
+            --cyber-green: #39ff14;
+            --deep-black: #0a0a0a;
+            --space-gray: #121212;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+            background-color: var(--deep-black);
+            color: #ffffff;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-weight: 700;
         }
         
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* CYBERPUNK SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--deep-black);
+            border-left: 1px solid rgba(0, 255, 136, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary-green), var(--matrix-green));
+            border-radius: 0;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, var(--neon-green), var(--cyber-green));
         }
         
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        /* MIND-BLOWING ANIMATIONS */
+        @keyframes matrixRain {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
         }
         
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out;
+        @keyframes float3D {
+            0%, 100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg); }
+            33% { transform: translate3d(10px, -10px, 20px) rotateX(5deg) rotateY(5deg); }
+            66% { transform: translate3d(-10px, 5px, -20px) rotateX(-5deg) rotateY(-5deg); }
         }
         
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.5), 0 0 40px rgba(0, 255, 136, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.8), 0 0 80px rgba(0, 255, 136, 0.5), 0 0 120px rgba(0, 255, 136, 0.2); }
         }
         
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
         }
         
-        /* Enhanced Cards */
-        .stat-card {
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            color: white;
-            border-radius: 15px;
-            transition: all 0.4s ease;
-            overflow: hidden;
-            position: relative;
+        @keyframes particleFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
         
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
+        @keyframes hologram {
+            0%, 100% { opacity: 0.3; filter: hue-rotate(0deg); }
+            50% { opacity: 0.8; filter: hue-rotate(90deg); }
         }
         
-        .stat-card:hover::before {
-            left: 100%;
+        @keyframes textGlitch {
+            0% { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 2px); }
+            5% { clip-path: inset(92% 0 1% 0); transform: translate(2px, -2px); }
+            10% { clip-path: inset(43% 0 1% 0); transform: translate(-1px, -1px); }
+            15% { clip-path: inset(25% 0 58% 0); transform: translate(2px, 2px); }
+            20% { clip-path: inset(54% 0 7% 0); transform: translate(-2px, 2px); }
+            45% { clip-path: inset(58% 0 43% 0); transform: translate(2px, -2px); }
+            50% { clip-path: inset(98% 0 1% 0); transform: translate(-1px, 1px); }
+            55% { clip-path: inset(48% 0 13% 0); transform: translate(1px, 1px); }
+            60% { clip-path: inset(45% 0 34% 0); transform: translate(1px, -2px); }
+            65% { clip-path: inset(70% 0 6% 0); transform: translate(-1px, 2px); }
+            70% { clip-path: inset(67% 0 21% 0); transform: translate(2px, -1px); }
+            75% { clip-path: inset(88% 0 1% 0); transform: translate(-2px, -1px); }
+            80% { clip-path: inset(61% 0 20% 0); transform: translate(-1px, 1px); }
+            85% { clip-path: inset(44% 0 6% 0); transform: translate(2px, 2px); }
+            90% { clip-path: inset(20% 0 60% 0); transform: translate(1px, -2px); }
+            95% { clip-path: inset(8% 0 19% 0); transform: translate(-2px, 1px); }
+            100% { clip-path: inset(50% 0 50% 0); transform: translate(0); }
         }
         
-        .stat-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 20px 40px rgba(26, 95, 26, 0.3);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            color: white;
-            padding: 15px 35px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.4s ease;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            font-size: 16px;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(26, 95, 26, 0.3);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--primary-green);
-            padding: 15px 35px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.4s ease;
-            border: 2px solid var(--primary-green);
-            font-size: 16px;
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary-green);
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(26, 95, 26, 0.2);
-        }
-        
-        /* Enhanced Gallery */
-        .gallery-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 25px 0;
-            gap: 25px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--primary-green) #f0f0f0;
-        }
-        
-        .gallery-container::-webkit-scrollbar {
-            height: 10px;
-        }
-        
-        .gallery-container::-webkit-scrollbar-track {
-            background: #f0f0f0;
-            border-radius: 10px;
-        }
-        
-        .gallery-container::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            border-radius: 10px;
-        }
-        
-        .gallery-item {
-            flex: 0 0 auto;
-            width: 320px;
-            height: 220px;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            opacity: 0;
-            transition: 0.4s;
-        }
-        
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        /* Service Cards Enhancement */
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border: 1px solid rgba(26, 95, 26, 0.1);
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-        
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(26, 95, 26, 0.15);
-            border-color: var(--primary-green);
-        }
-        
-        /* Modal Enhancement */
-        .modal {
-            display: none;
+        /* MATRIX BACKGROUND EFFECT */
+        .matrix-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(5px);
+            z-index: -2;
+            background: 
+                linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%),
+                repeating-linear-gradient(0deg, 
+                    transparent 0px, 
+                    transparent 1px, 
+                    rgba(0, 255, 136, 0.03) 1px, 
+                    rgba(0, 255, 136, 0.03) 2px);
+            background-size: 100% 100%, 20px 20px;
         }
         
-        .modal.show {
-            display: flex;
-            animation: fadeInUp 0.3s ease-out;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-        
-        /* Green Accents */
-        .green-highlight {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .green-highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
+        /* SCANLINE EFFECT */
+        .scanline {
+            position: fixed;
+            top: 0;
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            border-radius: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-green), transparent);
+            z-index: 9999;
+            animation: scanline 8s linear infinite;
+            pointer-events: none;
+            opacity: 0.7;
         }
         
-        /* Form Enhancement */
-        .form-input {
+        /* FLOATING PARTICLES */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e5e5e5;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: all 0.3s;
-            background: #f9f9f9;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
         
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-green);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(26, 95, 26, 0.1);
-            transform: translateY(-2px);
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
         }
         
-        /* Location Badges */
-        .location-badge {
-            background: linear-gradient(135deg, var(--light-green), #f0f8f0);
-            color: var(--dark-green);
-            border-radius: 25px;
-            padding: 10px 20px;
-            font-size: 15px;
-            display: inline-flex;
-            align-items: center;
-            margin: 8px;
-            border: 2px solid rgba(26, 95, 26, 0.1);
-            transition: all 0.3s ease;
+        /* 3D CARD EFFECTS */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
-        .location-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(26, 95, 26, 0.1);
-            border-color: var(--primary-green);
+        .card-3d:hover {
+            transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-bg {
-                background-attachment: scroll;
-            }
-            
-            .gallery-item {
-                width: 280px;
-                height: 200px;
-            }
-            
-            .btn-primary, .btn-secondary {
-                padding: 12px 25px;
-                font-size: 15px;
-            }
-        }
-        
-        /* Additional Styles */
-        .section-title {
+        /* CYBERPUNK BUTTONS */
+        .cyber-button {
             position: relative;
-            display: inline-block;
-            margin-bottom: 50px;
+            background: transparent;
+            color: var(--primary-green);
+            padding: 18px 40px;
+            border: 2px solid var(--primary-green);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            z-index: 1;
         }
         
-        .section-title::after {
+        .cyber-button::before {
             content: '';
             position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.3), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+        
+        .cyber-button:hover {
+            background: rgba(0, 255, 136, 0.1);
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--primary-green);
+            box-shadow: 
+                0 0 20px rgba(0, 255, 136, 0.5),
+                inset 0 0 20px rgba(0, 255, 136, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .cyber-button-secondary {
+            background: rgba(0, 255, 136, 0.1);
+            color: white;
+            border: 2px solid var(--matrix-green);
+        }
+        
+        /* NEON TEXT EFFECT */
+        .neon-text {
+            color: #fff;
+            text-shadow: 
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px var(--primary-green),
+                0 0 82px var(--primary-green),
+                0 0 92px var(--primary-green),
+                0 0 102px var(--primary-green),
+                0 0 151px var(--primary-green);
+        }
+        
+        .glitch-text {
+            position: relative;
+            animation: textGlitch 3s infinite;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            animation: textGlitch 3s infinite;
+            color: #ff00ff;
+            z-index: -1;
+        }
+        
+        .glitch-text::after {
+            animation: textGlitch 2s infinite;
+            color: #00ffff;
+            z-index: -2;
+        }
+        
+        /* HOLOGRAM EFFECT */
+        .hologram-card {
+            background: linear-gradient(135deg, 
+                rgba(0, 255, 136, 0.05) 0%, 
+                rgba(0, 255, 170, 0.1) 25%, 
+                rgba(57, 255, 20, 0.05) 50%, 
+                rgba(0, 255, 65, 0.1) 75%, 
+                rgba(0, 255, 136, 0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+            animation: hologram 5s infinite alternate;
+        }
+        
+        .hologram-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(0, 255, 136, 0.1) 50%, 
+                transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* DATA GRID BACKGROUND */
+        .data-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 136, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* PARALLAX SECTIONS */
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transform: translateZ(-1px) scale(2);
+        }
+        
+        /* CYBER FONTS */
+        .cyber-font {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        /* GLOWING BORDERS */
+        .glow-border {
+            position: relative;
+            border: 2px solid transparent;
+            background: linear-gradient(var(--space-gray), var(--space-gray)) padding-box,
+                        linear-gradient(45deg, var(--primary-green), var(--matrix-green), var(--cyber-green)) border-box;
+        }
+        
+        /* PULSE ANIMATION */
+        .pulse {
+            animation: glowPulse 2s infinite;
+        }
+        
+        /* FLOATING ANIMATION */
+        .floating {
+            animation: float3D 6s ease-in-out infinite;
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .cyber-button {
+                padding: 14px 30px;
+                font-size: 14px;
+            }
+            
+            h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            h2 {
+                font-size: 2rem !important;
+            }
+        }
+        
+        /* CUSTOM UTILITIES */
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary-green), var(--matrix-green), var(--cyber-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .bg-gradient-radial {
+            background: radial-gradient(circle at center, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+        }
+        
+        /* LOADING SCREEN */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-black);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 1s ease-out;
+        }
+        
+        .loading-bar {
+            width: 300px;
             height: 4px;
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            background: var(--space-gray);
+            margin-top: 30px;
+            overflow: hidden;
             border-radius: 2px;
         }
         
-        .floating-whatsapp {
-            animation: float 3s ease-in-out infinite;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-green), var(--matrix-green));
+            width: 0%;
+            transition: width 0.3s ease;
         }
         
-        .text-gradient {
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .gradient-border {
-            border: 3px solid transparent;
-            background: linear-gradient(white, white) padding-box,
-                        linear-gradient(135deg, var(--primary-green), var(--dark-green)) border-box;
+        /* TILT EFFECT */
+        .tilt-effect {
+            transition: transform 0.2s ease;
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-black text-white overflow-x-hidden">
     
-    <!-- Enhanced WhatsApp Button -->
-    <a href="https://wa.me/919841565965" target="_blank" 
-       class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-xl z-50 hover:bg-green-600 transition-all duration-300 floating-whatsapp">
-        <i class="fab fa-whatsapp text-3xl"></i>
-    </a>
+    <!-- MATRIX BACKGROUND -->
+    <div class="matrix-bg"></div>
     
-    <!-- Enhanced Header -->
-    <header class="sticky top-0 z-40 bg-white shadow-xl gradient-border">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-center py-5">
-                <!-- Enhanced Logo -->
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-3 bg-gradient-to-r from-green-50 to-white p-3 rounded-2xl">
-                        <!-- Logo Image - Much Bigger -->
+    <!-- SCANLINE -->
+    <div class="scanline"></div>
+    
+    <!-- FLOATING PARTICLES -->
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="text-center">
+            <div class="text-6xl md:text-8xl font-bold mb-8 text-gradient cyber-font glitch-text" data-text="NVH AGRI GREEN">
+                NVH AGRI GREEN
+            </div>
+            <p class="text-xl md:text-2xl text-gray-300 mb-2">INITIALIZING VETTIVER CULTIVATION SYSTEM</p>
+            <p class="text-sm text-gray-500">Revolutionary Grow-Bag Technology v4.2</p>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CYBERPUNK HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 py-4 px-6 bg-black/80 backdrop-blur-lg border-b border-green-500/30">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <!-- ANIMATED LOGO -->
+                <div class="flex items-center space-x-4 floating">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-green-500/20 blur-xl rounded-full"></div>
                         <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
                             alt="NVH Agri Green Logo" 
-                            class="h-16 md:h-20 animate-float">
-                        <!-- Logo Text - Much Bigger -->
-                        <img src="https://image2url.com/r2/bucket3/images/1766859953126-13721dcd-c0cf-4918-8e13-9a8840f63051.png" 
-                            alt="NVH Agri Green" 
-                            class="h-12 md:h-16">
+                            class="h-16 md:h-20 relative z-10 pulse">
                     </div>
-                    <div class="hidden lg:block border-l-2 border-green-100 pl-4">
-                        <p class="text-sm font-semibold text-green-700">Premium Vettiver Cultivators</p>
-                        <p class="text-xs text-gray-600">Since 2024</p>
+                    <div>
+                        <div class="text-2xl md:text-3xl font-bold cyber-font text-gradient">NVH AGRI GREEN</div>
+                        <div class="text-xs md:text-sm text-green-400">SYSTEM STATUS: <span class="text-green-300">OPERATIONAL</span></div>
                     </div>
                 </div>
                 
-                <!-- Enhanced Navigation -->
-                <nav class="hidden lg:flex space-x-10">
-                    <a href="#home" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 relative green-highlight">
-                        Home
+                <!-- CYBER NAVIGATION -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#home" class="cyber-font text-green-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10">[HOME]</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></div>
                     </a>
-                    <a href="#cultivation" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 relative green-highlight">
-                        Our Cultivation
+                    <a href="#cultivation" class="cyber-font text-green-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10">[CULTIVATION]</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></div>
                     </a>
-                    <a href="#gallery" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 relative green-highlight">
-                        Gallery
+                    <a href="#gallery" class="cyber-font text-green-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10">[GALLERY]</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></div>
                     </a>
-                    <a href="#services" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 relative green-highlight">
-                        Services
+                    <a href="#services" class="cyber-font text-green-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10">[SERVICES]</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></div>
                     </a>
-                    <a href="#contact" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 relative green-highlight">
-                        Contact
+                    <a href="#contact" class="cyber-font text-green-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10">[CONTACT]</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></div>
                     </a>
                 </nav>
                 
-                <button id="mobileMenuBtn" class="lg:hidden text-2xl text-green-700">
-                    <i class="fas fa-bars"></i>
+                <!-- MOBILE MENU BUTTON -->
+                <button id="cyberMenuBtn" class="lg:hidden text-2xl text-green-400 hover:text-white transition-all duration-300">
+                    <i class="fas fa-terminal"></i>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="lg:hidden py-6 border-t border-green-100 hidden animate-fadeInUp">
-                <div class="flex flex-col space-y-5">
-                    <a href="#home" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 py-2 px-4 rounded-lg hover:bg-green-50">
-                        <i class="fas fa-home mr-3"></i> Home
-                    </a>
-                    <a href="#cultivation" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 py-2 px-4 rounded-lg hover:bg-green-50">
-                        <i class="fas fa-seedling mr-3"></i> Our Cultivation
-                    </a>
-                    <a href="#gallery" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 py-2 px-4 rounded-lg hover:bg-green-50">
-                        <i class="fas fa-images mr-3"></i> Gallery
-                    </a>
-                    <a href="#services" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 py-2 px-4 rounded-lg hover:bg-green-50">
-                        <i class="fas fa-handshake mr-3"></i> Services
-                    </a>
-                    <a href="#contact" class="font-semibold text-lg hover:text-green-600 transition-all duration-300 py-2 px-4 rounded-lg hover:bg-green-50">
-                        <i class="fas fa-phone mr-3"></i> Contact
-                    </a>
-                </div>
+        </div>
+        
+        <!-- MOBILE CYBER MENU -->
+        <div id="cyberMenu" class="lg:hidden mt-6 py-6 border-t border-green-500/30 hidden animate-fadeInUp">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="cyber-font text-green-300 hover:text-white py-3 px-4 bg-black/50 border border-green-500/30 hover:bg-green-500/10 transition-all duration-300">
+                    <i class="fas fa-home mr-3"></i> [HOME]
+                </a>
+                <a href="#cultivation" class="cyber-font text-green-300 hover:text-white py-3 px-4 bg-black/50 border border-green-500/30 hover:bg-green-500/10 transition-all duration-300">
+                    <i class="fas fa-seedling mr-3"></i> [CULTIVATION]
+                </a>
+                <a href="#gallery" class="cyber-font text-green-300 hover:text-white py-3 px-4 bg-black/50 border border-green-500/30 hover:bg-green-500/10 transition-all duration-300">
+                    <i class="fas fa-images mr-3"></i> [GALLERY]
+                </a>
+                <a href="#services" class="cyber-font text-green-300 hover:text-white py-3 px-4 bg-black/50 border border-green-500/30 hover:bg-green-500/10 transition-all duration-300">
+                    <i class="fas fa-handshake mr-3"></i> [SERVICES]
+                </a>
+                <a href="#contact" class="cyber-font text-green-300 hover:text-white py-3 px-4 bg-black/50 border border-green-500/30 hover:bg-green-500/10 transition-all duration-300">
+                    <i class="fas fa-comment-alt mr-3"></i> [CONTACT]
+                </a>
             </div>
         </div>
     </header>
     
-    <!-- Enhanced Hero Section -->
-    <section id="home" class="hero-bg text-white py-24 md:py-32">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center animate-fadeInUp">
-                <div class="inline-block bg-gradient-to-r from-green-700 to-green-900 px-6 py-3 rounded-full mb-8 shadow-xl">
-                    <span class="text-sm md:text-base font-bold tracking-wider">
-                        <i class="fas fa-crown mr-2"></i> PREMIUM VETTIVER CULTIVATORS
-                    </span>
+    <!-- MIND-BLOWING HERO SECTION -->
+    <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden pt-20">
+        <!-- PARALLAX BACKGROUND -->
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        
+        <!-- DATA GRID OVERLAY -->
+        <div class="data-grid"></div>
+        
+        <!-- HERO CONTENT -->
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block px-6 py-3 mb-10 bg-green-500/10 border border-green-500/30 backdrop-blur-sm">
+                <span class="cyber-font text-green-300 text-sm md:text-base tracking-widest">
+                    <i class="fas fa-bolt mr-2"></i> REVOLUTIONARY VETTIVER TECHNOLOGY
+                </span>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-bold mb-8 leading-tight cyber-font neon-text glitch-text" data-text="THE FUTURE OF AGRICULTURE">
+                THE FUTURE OF<br>AGRICULTURE
+            </h1>
+            
+            <p class="text-xl md:text-3xl mb-12 text-gray-300 max-w-4xl mx-auto cyber-font">
+                Premium vettiver cultivation powered by <span class="text-gradient font-bold">CYBERPUNK GROW-BAG TECHNOLOGY</span>
+            </p>
+            
+            <!-- HERO TAGLINE GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+                <div class="hologram-card p-6 text-center">
+                    <div class="text-3xl mb-4 text-green-400">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 cyber-font">AUTOMATED CULTIVATION</h3>
+                    <p class="text-gray-300 text-sm">AI-powered monitoring systems</p>
                 </div>
-                
-                <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                    Cultivating <span class="text-green-300">Excellence</span> in Every Root
-                </h1>
-                
-                <p class="text-xl md:text-2xl mb-12 text-green-100 max-w-3xl mx-auto">
-                    Premium vettiver cultivation using innovative grow-bag technology for maximum yield and quality
-                </p>
-                
-                <!-- Hero Tagline -->
-                <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <div class="bg-green-800/80 px-5 py-2 rounded-full">
-                        <span class="font-semibold">🌱 Sustainable Farming</span>
+                <div class="hologram-card p-6 text-center">
+                    <div class="text-3xl mb-4 text-green-400">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="bg-green-800/80 px-5 py-2 rounded-full">
-                        <span class="font-semibold">📈 Commercial Scale</span>
-                    </div>
-                    <div class="bg-green-800/80 px-5 py-2 rounded-full">
-                        <span class="font-semibold">✨ Premium Quality</span>
-                    </div>
+                    <h3 class="text-xl font-bold mb-2 cyber-font">MAXIMUM YIELD</h3>
+                    <p class="text-gray-300 text-sm">300% increase with our technology</p>
                 </div>
-                
-                <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
-                    <button onclick="scrollToSection('contact')" class="btn-primary text-lg">
-                        <i class="fas fa-calendar-alt mr-3"></i> Schedule Farm Visit
-                    </button>
-                    <button onclick="openModal('businessPlanModal')" class="btn-secondary text-lg">
-                        <i class="fas fa-file-download mr-3"></i> Download Business Plan
-                    </button>
+                <div class="hologram-card p-6 text-center">
+                    <div class="text-3xl mb-4 text-green-400">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 cyber-font">GLOBAL REACH</h3>
+                    <p class="text-gray-300 text-sm">Export to 20+ countries</p>
                 </div>
-                
-                <!-- Enhanced Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="stat-card p-6">
-                        <div class="text-3xl md:text-4xl font-bold mb-2">10-12</div>
-                        <div class="text-sm md:text-base">Months Growth Cycle</div>
-                        <div class="text-xs text-green-200 mt-2">Optimal Maturation</div>
-                    </div>
-                    <div class="stat-card p-6">
-                        <div class="text-3xl md:text-4xl font-bold mb-2">3X</div>
-                        <div class="text-sm md:text-base">Higher Yield</div>
-                        <div class="text-xs text-green-200 mt-2">Grow-Bag Technology</div>
-                    </div>
-                    <div class="stat-card p-6">
-                        <div class="text-3xl md:text-4xl font-bold mb-2">100%+</div>
-                        <div class="text-sm md:text-base">ROI Potential</div>
-                        <div class="text-xs text-green-200 mt-2">High Returns</div>
-                    </div>
-                    <div class="stat-card p-6">
-                        <div class="text-3xl md:text-4xl font-bold mb-2">24/7</div>
-                        <div class="text-sm md:text-base">Support</div>
-                        <div class="text-xs text-green-200 mt-2">Expert Guidance</div>
-                    </div>
+            </div>
+            
+            <!-- CYBER BUTTONS -->
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-20">
+                <button onclick="scrollToSection('contact')" class="cyber-button text-lg">
+                    <i class="fas fa-satellite-dish mr-3"></i> INITIATE CONNECTION
+                </button>
+                <button onclick="openModal('cyberModal')" class="cyber-button cyber-button-secondary text-lg">
+                    <i class="fas fa-download mr-3"></i> DOWNLOAD DATAPACK
+                </button>
+            </div>
+            
+            <!-- CYBER STATS -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="hologram-card p-6 text-center card-3d">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 cyber-font text-gradient">10-12</div>
+                    <div class="text-sm md:text-base text-gray-300">MONTHS CYCLE</div>
+                    <div class="text-xs text-green-300 mt-2 cyber-font">OPTIMAL MATURATION</div>
+                </div>
+                <div class="hologram-card p-6 text-center card-3d">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 cyber-font text-gradient">3X</div>
+                    <div class="text-sm md:text-base text-gray-300">HIGHER YIELD</div>
+                    <div class="text-xs text-green-300 mt-2 cyber-font">GROW-BAG TECH</div>
+                </div>
+                <div class="hologram-card p-6 text-center card-3d">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 cyber-font text-gradient">100%+</div>
+                    <div class="text-sm md:text-base text-gray-300">ROI POTENTIAL</div>
+                    <div class="text-xs text-green-300 mt-2 cyber-font">HIGH RETURNS</div>
+                </div>
+                <div class="hologram-card p-6 text-center card-3d">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 cyber-font text-gradient">24/7</div>
+                    <div class="text-sm md:text-base text-gray-300">SYSTEM ACTIVE</div>
+                    <div class="text-xs text-green-300 mt-2 cyber-font">AI MONITORING</div>
                 </div>
             </div>
         </div>
+        
+        <!-- FLOATING VETTIVER 3D MODEL (Placeholder) -->
+        <div class="absolute bottom-10 right-10 w-64 h-64 opacity-20">
+            <div class="w-full h-full bg-gradient-radial rounded-full"></div>
+        </div>
     </section>
     
-    <!-- Our Cultivation -->
-    <section id="cultivation" class="py-20 bg-gradient-to-b from-white to-green-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate-fadeInUp">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
-                    <span class="text-gradient">Our Premium Cultivation</span>
+    <!-- CYBER CULTIVATION SECTION -->
+    <section id="cultivation" class="py-32 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 cyber-font text-gradient">
+                    [CYBER CULTIVATION]
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Advanced grow-bag technology across multiple farm locations in Tamil Nadu for superior vettiver quality
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto cyber-font">
+                    Advanced grow-bag technology across multiple strategic farm locations
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <div class="service-card p-8 text-center animate-fadeInUp" style="animation-delay: 0.1s;">
-                    <div class="text-4xl mb-6 text-green-600">
+            <!-- CYBER GRID LAYOUT -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+                <!-- LOCATION CARD -->
+                <div class="hologram-card p-8 card-3d">
+                    <div class="text-4xl mb-6 text-green-400">
                         <i class="fas fa-map-marked-alt"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Strategic Farm Locations</h3>
-                    <div class="space-y-3">
-                        <div class="location-badge">
-                            <i class="fas fa-map-marker-alt mr-3 text-green-600"></i>
-                            <span class="font-semibold">Edumalai, Tamil Nadu</span>
+                    <h3 class="text-2xl font-bold mb-4 cyber-font">STRATEGIC FARM LOCATIONS</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-black/50 border border-green-500/30">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3 text-green-400"></i>
+                                <span class="font-bold cyber-font">EDUMALAI, TN</span>
+                            </div>
+                            <div class="text-sm text-gray-400 mt-2">Primary cultivation zone</div>
                         </div>
-                        <div class="location-badge">
-                            <i class="fas fa-map-marker-alt mr-3 text-green-600"></i>
-                            <span class="font-semibold">Cholavaram, Vellore</span>
+                        <div class="p-4 bg-black/50 border border-green-500/30">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3 text-green-400"></i>
+                                <span class="font-bold cyber-font">CHOLAVARAM, VELLORE</span>
+                            </div>
+                            <div class="text-sm text-gray-400 mt-2">Research & development</div>
                         </div>
-                        <div class="location-badge">
-                            <i class="fas fa-map-marker-alt mr-3 text-green-600"></i>
-                            <span class="font-semibold">Peravallur, Tamil Nadu</span>
+                        <div class="p-4 bg-black/50 border border-green-500/30">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3 text-green-400"></i>
+                                <span class="font-bold cyber-font">PERAVALLUR, TN</span>
+                            </div>
+                            <div class="text-sm text-gray-400 mt-2">Export processing unit</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-card p-8 text-center animate-fadeInUp" style="animation-delay: 0.2s;">
-                    <div class="text-4xl mb-6 text-green-600">
-                        <i class="fas fa-leaf"></i>
+                <!-- TECHNOLOGY CARD -->
+                <div class="hologram-card p-8 card-3d">
+                    <div class="text-4xl mb-6 text-green-400">
+                        <i class="fas fa-microchip"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Grow-Bag Technology</h3>
-                    <p class="text-gray-600 mb-6">Advanced controlled environment cultivation</p>
-                    <ul class="text-left space-y-3">
+                    <h3 class="text-2xl font-bold mb-4 cyber-font">CYBER GROW-BAG TECH</h3>
+                    <p class="text-gray-300 mb-6">AI-controlled environment cultivation systems</p>
+                    <ul class="space-y-4">
                         <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span>3x Higher Yield</span>
+                            <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-green-400"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold">300% Higher Yield</span>
+                                <p class="text-sm text-gray-400">Advanced root optimization</p>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span>40% Less Water Usage</span>
+                            <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-green-400"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold">60% Less Water</span>
+                                <p class="text-sm text-gray-400">Smart irrigation systems</p>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span>Better Root Quality</span>
+                            <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-green-400"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold">Premium Root Quality</span>
+                                <p class="text-sm text-gray-400">AI-monitored growth cycles</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="service-card p-8 text-center animate-fadeInUp" style="animation-delay: 0.3s;">
-                    <div class="text-4xl mb-6 text-green-600">
-                        <i class="fas fa-industry"></i>
+                <!-- MARKET CARD -->
+                <div class="hologram-card p-8 card-3d">
+                    <div class="text-4xl mb-6 text-green-400">
+                        <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Commercial Scale</h3>
-                    <p class="text-gray-600 mb-6">Bulk production for global markets</p>
-                    <div class="bg-green-50 p-4 rounded-xl">
-                        <h4 class="font-bold mb-3 text-green-700">Market Reach</h4>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Perfume Industry</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Pharmaceutical</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Cosmetics</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Export</span>
+                    <h3 class="text-2xl font-bold mb-4 cyber-font">GLOBAL MARKET NETWORK</h3>
+                    <p class="text-gray-300 mb-6">Connected to international supply chains</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="p-3 bg-black/50 border border-green-500/30 text-center">
+                            <div class="text-xl mb-1">⚗️</div>
+                            <div class="text-sm font-bold">PERFUME INDUSTRY</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30 text-center">
+                            <div class="text-xl mb-1">💊</div>
+                            <div class="text-sm font-bold">PHARMACEUTICAL</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30 text-center">
+                            <div class="text-xl mb-1">🧴</div>
+                            <div class="text-sm font-bold">COSMETICS</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30 text-center">
+                            <div class="text-xl mb-1">🌍</div>
+                            <div class="text-sm font-bold">EXPORT</div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Enhanced Risk Management -->
-            <div class="service-card p-8 animate-fadeInUp">
-                <h3 class="text-3xl font-bold mb-8 text-center text-gradient">Risk Management Excellence</h3>
+            <!-- RISK MANAGEMENT MATRIX -->
+            <div class="hologram-card p-8 mb-12">
+                <h3 class="text-3xl font-bold mb-8 text-center cyber-font text-gradient">
+                    RISK MANAGEMENT MATRIX
+                </h3>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Risks -->
+                    <!-- RISKS -->
                     <div>
-                        <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
-                            <h4 class="text-xl font-bold mb-4 text-red-700">
-                                <i class="fas fa-exclamation-triangle mr-3"></i> Challenges We Manage
+                        <div class="p-6 border-l-4 border-red-500 bg-red-500/10">
+                            <h4 class="text-xl font-bold mb-4 cyber-font text-red-400">
+                                <i class="fas fa-exclamation-triangle mr-3"></i> SYSTEM THREATS
                             </h4>
                             <div class="space-y-4">
-                                <div class="risk-card p-4 rounded-lg">
-                                    <h5 class="font-bold mb-2 text-red-600">Climate Challenges</h5>
-                                    <p class="text-gray-600">Unpredictable weather patterns affecting growth cycles</p>
+                                <div class="p-4 bg-black/30 border border-red-500/30">
+                                    <h5 class="font-bold mb-2 cyber-font text-red-300">CLIMATE ANOMALIES</h5>
+                                    <p class="text-gray-300 text-sm">Unpredictable environmental variables</p>
                                 </div>
-                                <div class="risk-card p-4 rounded-lg">
-                                    <h5 class="font-bold mb-2 text-red-600">Market Fluctuations</h5>
-                                    <p class="text-gray-600">Price variations in global vettiver market</p>
+                                <div class="p-4 bg-black/30 border border-red-500/30">
+                                    <h5 class="font-bold mb-2 cyber-font text-red-300">MARKET VOLATILITY</h5>
+                                    <p class="text-gray-300 text-sm">Global price fluctuations</p>
                                 </div>
-                                <div class="risk-card p-4 rounded-lg">
-                                    <h5 class="font-bold mb-2 text-red-600">Labour Management</h5>
-                                    <p class="text-gray-600">Skilled labor availability and training</p>
+                                <div class="p-4 bg-black/30 border border-red-500/30">
+                                    <h5 class="font-bold mb-2 cyber-font text-red-300">RESOURCE ALLOCATION</h5>
+                                    <p class="text-gray-300 text-sm">Optimal labor distribution</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Mitigations -->
+                    <!-- MITIGATIONS -->
                     <div>
-                        <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                            <h4 class="text-xl font-bold mb-4 text-green-700">
-                                <i class="fas fa-shield-alt mr-3"></i> Our Mitigation Strategies
+                        <div class="p-6 border-l-4 border-green-500 bg-green-500/10">
+                            <h4 class="text-xl font-bold mb-4 cyber-font text-green-400">
+                                <i class="fas fa-shield-alt mr-3"></i> COUNTERMEASURES
                             </h4>
                             <div class="space-y-4">
-                                <div class="mitigation-card p-4 rounded-lg">
-                                    <h5 class="font-bold mb-2 text-green-600">Grow-Bag Technology</h5>
-                                    <p class="text-gray-600">Climate-controlled environment reduces dependency</p>
+                                <div class="p-4 bg-black/30 border border-green-500/30">
+                                    <h5 class="font-bold mb-2 cyber-font text-green-300">CONTROLLED ENVIRONMENT</h5>
+                                    <p class="text-gray-300 text-sm">Climate-independent cultivation</p>
                                 </div>
-                                <div class="mitigation-card p-4 rounded-lg">
-                                    <h5 class="font-bold mb-2 text-green-600">Pre-Signed Contracts</h5>
-                                    <p class="text-gray-600">Secure pricing with buyers before cultivation</p>
+                                <div class="p-4 bg-black/30 border border-green-500/30">
+                                    <h5 class="font-bold mb-2 cyber-font text-green-300">PRE-SIGNED CONTRACTS</h5>
+                                    <p class="text-gray-300 text-sm">Price stabilization protocols</p>
                                 </div>
-                                <div class="mitigation-card p-4 rounded-lg">
-                                    <h5 class="font-bold mb-2 text-green-600">Trained Labor Pool</h5>
-                                    <p class="text-gray-600">Dedicated team with continuous training</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- The Crop -->
-    <section id="crop" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate-fadeInUp">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
-                    <span class="text-gradient">Vettiver Excellence</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Premium quality roots cultivated through meticulous care and advanced technology
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div class="animate-fadeInUp" style="animation-delay: 0.1s;">
-                    <div class="service-card p-8 mb-8">
-                        <h3 class="text-2xl font-bold mb-6 text-green-700">
-                            <i class="fas fa-seedling mr-3"></i> Growth Cycle & Process
-                        </h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-green-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-clock text-green-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Growth Duration: 10-12 Months</h4>
-                                    <p class="text-gray-600">Complete maturation period for premium quality roots with optimal aroma and oil content</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-green-50 p-6 rounded-xl">
-                                <h4 class="font-bold mb-4 text-green-700">Harvesting Process</h4>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="text-center p-4 bg-white rounded-lg">
-                                        <div class="text-2xl mb-2">🌿</div>
-                                        <div class="font-semibold">Root Extraction</div>
-                                        <p class="text-xs text-gray-500 mt-1">Precise removal</p>
-                                    </div>
-                                    <div class="text-center p-4 bg-white rounded-lg">
-                                        <div class="text-2xl mb-2">💧</div>
-                                        <div class="font-semibold">Cleaning</div>
-                                        <p class="text-xs text-gray-500 mt-1">Thorough washing</p>
-                                    </div>
-                                    <div class="text-center p-4 bg-white rounded-lg">
-                                        <div class="text-2xl mb-2">☀️</div>
-                                        <div class="font-semibold">Drying</div>
-                                        <p class="text-xs text-gray-500 mt-1">Controlled drying</p>
-                                    </div>
-                                    <div class="text-center p-4 bg-white rounded-lg">
-                                        <div class="text-2xl mb-2">📦</div>
-                                        <div class="font-semibold">Packing</div>
-                                        <p class="text-xs text-gray-500 mt-1">Quality packaging</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="animate-fadeInUp" style="animation-delay: 0.2s;">
-                    <div class="service-card p-8">
-                        <h3 class="text-2xl font-bold mb-6 text-green-700">
-                            <i class="fas fa-chart-line mr-3"></i> Market Applications
-                        </h3>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-start p-4 bg-gradient-to-r from-green-50 to-white rounded-xl hover:shadow-md transition-all duration-300">
-                                <div class="text-3xl mr-4 text-green-600">⚗️</div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Vettiver Oil & Powder</h4>
-                                    <p class="text-gray-600">Premium essential oil extraction and root powder for aromatherapy and health products</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start p-4 bg-gradient-to-r from-green-50 to-white rounded-xl hover:shadow-md transition-all duration-300">
-                                <div class="text-3xl mr-4 text-green-600">🌸</div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Perfume & Fragrance</h4>
-                                    <p class="text-gray-600">High-quality vettiver oil for luxury perfumes and premium fragrance industry</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start p-4 bg-gradient-to-r from-green-50 to-white rounded-xl hover:shadow-md transition-all duration-300">
-                                <div class="text-3xl mr-4 text-green-600">🧴</div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Cosmetics & Skincare</h4>
-                                    <p class="text-gray-600">Natural ingredient for premium beauty, skincare, and cosmetic products</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start p-4 bg-gradient-to-r from-green-50 to-white rounded-xl hover:shadow-md transition-all duration-300">
-                                <div class="text-3xl mr-4 text-green-600">🌍</div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Export Markets</h4>
-                                    <p class="text-gray-600">Growing international demand from Europe, Middle East, and Southeast Asia</p>
+                                <div class="p-4 bg-black/30 border border-green-500/30">
+                                    <h5 class="font-bold mb-2 cyber-font text-green-300">AI OPTIMIZATION</h5>
+                                    <p class="text-gray-300 text-sm">Smart resource management</p>
                                 </div>
                             </div>
                         </div>
@@ -788,341 +797,309 @@
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Enhanced Farm Gallery -->
-    <section id="gallery" class="py-20 bg-gradient-to-b from-green-50 to-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 animate-fadeInUp">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
-                    <span class="text-gradient">Our Farm Gallery</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Experience our premium vettiver cultivation through high-quality farm visuals
-                </p>
-            </div>
-            
-            <!-- Enhanced Gallery Container -->
-            <div class="gallery-container">
-                <!-- Your 7 farm images with enhanced styling -->
-                <a href="https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg" alt="NVH Agri Green Farm">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                        <p class="font-bold text-lg">Premium Vettiver Farm</p>
-                        <p class="text-sm opacity-90">Edumalai Location</p>
-                    </div>
-                </a>
-                <a href="https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg" alt="Grow-Bag Technology">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                        <p class="font-bold text-lg">Advanced Grow-Bag System</p>
-                        <p class="text-sm opacity-90">Technology Implementation</p>
-                    </div>
-                </a>
-                <a href="https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg" alt="Farm Management">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                        <p class="font-bold text-lg">Farm Management</p>
-                        <p class="text-sm opacity-90">Expert Supervision</p>
-                    </div>
-                </a>
-                <a href="https://image2url.com/r2/bucket3/images/1766860059644-563b866e-2550-44c3-b6d4-1ea4970395bc.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="https://image2url.com/r2/bucket3/images/1766860059644-563b866e-2550-44c3-b6d4-1ea4970395bc.jpg" alt="Vettiver Plants">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                        <p class="font-bold text-lg">Healthy Vettiver Plants</p>
-                        <p class="text-sm opacity-90">Premium Quality</p>
-                    </div>
-                </a>
-                <a href="https://image2url.com/r2/bucket3/images/1766860071579-7c33fa8b-4e05-46e5-8eac-28cc471b6771.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="https://image2url.com/r2/bucket3/images/1766860071579-7c33fa8b-4e05-46e5-8eac-28cc471b6771.jpg" alt="Cultivation Process">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                        <p class="font-bold text-lg">Cultivation Process</p>
-                        <p class="text-sm opacity-90">Systematic Approach</p>
-                    </div>
-                </a>
-                <a href="https://image2url.com/r2/bucket3/images/1766860106933-4a7d9d31-c023-47f6-aa49-be34ea111c91.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="https://image2url.com/r2/bucket3/images/1766860106933-4a7d9d31-c023-47f6-aa49-be34ea111c91.jpg" alt="Quality Control">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                        <p class="font-bold text-lg">Quality Assurance</p>
-                        <p class="text-sm opacity-90">Stringent Standards</p>
-                    </div>
-                </a>
-                <a href="https://image2url.com/r2/bucket3/images/1766860133366-5ffd6dc2-c99b-499d-846b-4c41c8d9f640.jpg" data-lightbox="farm" class="gallery-item">
-                    <img src="https://image2url.com/r2/bucket3/images/1766860133366-5ffd6dc2-c99b-499d-846b-4c41c8d9f640.jpg" alt="Harvest">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                        <p class="font-bold text-lg">Harvest Period</p>
-                        <p class="text-sm opacity-90">Optimal Timing</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="text-center mt-10">
-                <p class="text-lg text-gray-600 italic">
-                    "Quality that speaks through every root we cultivate"
-                </p>
-            </div>
+        
+        <!-- ANIMATED BACKGROUND ELEMENTS -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-10 w-32 h-32 border border-green-500/20 animate-spin-slow"></div>
+            <div class="absolute bottom-1/3 right-20 w-48 h-48 border border-green-500/10 rounded-full"></div>
         </div>
     </section>
     
-    <!-- Our Services -->
-    <section id="services" class="py-20 bg-white">
+    <!-- HOLOGRAM GALLERY -->
+    <section id="gallery" class="py-32 relative overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate-fadeInUp">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
-                    <span class="text-gradient">Our Professional Services</span>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 cyber-font text-gradient">
+                    [HOLOGRAM GALLERY]
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Comprehensive solutions for vettiver cultivation and business partnerships
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto cyber-font">
+                    Interactive farm visualization through holographic imaging
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="service-card p-8 animate-fadeInUp" style="animation-delay: 0.1s;">
-                    <div class="text-4xl mb-6 text-green-600">
-                        <i class="fas fa-handshake"></i>
+            <!-- CYBER GALLERY GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- GALLERY ITEMS -->
+                <a href="https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg" 
+                   data-lightbox="cyberfarm" 
+                   class="hologram-card overflow-hidden group relative card-3d">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                    <img src="https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg" 
+                         alt="CYBER FARM ALPHA"
+                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                        <div class="text-green-400 text-sm mb-2 cyber-font">[LOCATION: EDUMALAI]</div>
+                        <h3 class="text-xl font-bold cyber-font">CYBER FARM ALPHA</h3>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Contract Farming</h3>
-                    <p class="text-gray-600 mb-6">We manage complete cultivation on your land using our advanced technology</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Complete Technical Support</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Quality Assurance Program</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Market Linkage & Sales</span>
-                        </li>
-                    </ul>
-                </div>
+                </a>
                 
-                <div class="service-card p-8 animate-fadeInUp" style="animation-delay: 0.2s;">
-                    <div class="text-4xl mb-6 text-green-600">
-                        <i class="fas fa-graduation-cap"></i>
+                <a href="https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg" 
+                   data-lightbox="cyberfarm" 
+                   class="hologram-card overflow-hidden group relative card-3d">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                    <img src="https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg" 
+                         alt="GROW-BAG MATRIX"
+                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                        <div class="text-green-400 text-sm mb-2 cyber-font">[TECH: GROW-BAG V4.2]</div>
+                        <h3 class="text-xl font-bold cyber-font">GROW-BAG MATRIX</h3>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Consultation & Training</h3>
-                    <p class="text-gray-600 mb-6">Expert guidance and comprehensive training programs</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Grow-Bag Setup Guidance</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Crop Management Training</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Harvest Processing Know-how</span>
-                        </li>
-                    </ul>
-                </div>
+                </a>
                 
-                <div class="service-card p-8 animate-fadeInUp" style="animation-delay: 0.3s;">
-                    <div class="text-4xl mb-6 text-green-600">
-                        <i class="fas fa-project-diagram"></i>
+                <a href="https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg" 
+                   data-lightbox="cyberfarm" 
+                   class="hologram-card overflow-hidden group relative card-3d">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                    <img src="https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg" 
+                         alt="AI SUPERVISION"
+                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                        <div class="text-green-400 text-sm mb-2 cyber-font">[SYSTEM: AI MONITORING]</div>
+                        <h3 class="text-xl font-bold cyber-font">AI SUPERVISION</h3>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Turnkey Projects</h3>
-                    <p class="text-gray-600 mb-6">End-to-end vettiver cultivation unit setup</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Complete Implementation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Quality Sapling Supply</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-green-600"></i>
-                            </div>
-                            <span class="font-medium">Operational Handover</span>
-                        </li>
-                    </ul>
-                </div>
+                </a>
             </div>
             
-            <div class="text-center mt-12">
-                <button onclick="scrollToSection('contact')" class="btn-primary text-lg px-10">
-                    <i class="fas fa-comments mr-3"></i> Discuss Your Requirements
+            <!-- GALLERY NAVIGATION -->
+            <div class="flex justify-center mt-12 space-x-4">
+                <button class="cyber-button px-8" onclick="scrollGallery(-1)">
+                    <i class="fas fa-arrow-left mr-3"></i> PREV
+                </button>
+                <button class="cyber-button px-8" onclick="scrollGallery(1)">
+                    NEXT <i class="fas fa-arrow-right ml-3"></i>
                 </button>
             </div>
         </div>
     </section>
     
-    <!-- Enhanced Contact Section -->
-    <section id="contact" class="py-20 bg-gradient-to-b from-white to-green-50">
+    <!-- CYBER SERVICES -->
+    <section id="services" class="py-32 relative">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate-fadeInUp">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
-                    <span class="text-gradient">Get In Touch</span>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 cyber-font text-gradient">
+                    [CYBER SERVICES]
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Contact us for bulk orders, farm visits, or partnership opportunities
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto cyber-font">
+                    Advanced agricultural solutions for the digital age
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Info -->
-                <div class="animate-fadeInUp" style="animation-delay: 0.1s;">
-                    <div class="service-card p-8 h-full">
-                        <h3 class="text-2xl font-bold mb-8 text-green-700">Contact Information</h3>
-                        
-                        <div class="space-y-8">
-                            <div class="flex items-start">
-                                <div class="bg-green-100 p-4 rounded-2xl mr-4">
-                                    <i class="fas fa-phone text-green-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Phone & WhatsApp</h4>
-                                    <p class="text-gray-600 text-lg">+91 9841565965</p>
-                                    <a href="https://wa.me/919841565965" target="_blank" 
-                                       class="inline-flex items-center text-green-600 font-medium mt-2">
-                                        <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-green-100 p-4 rounded-2xl mr-4">
-                                    <i class="fas fa-envelope text-green-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Email</h4>
-                                    <p class="text-gray-600 text-lg">info@nvhagrigreen.com</p>
-                                    <p class="text-sm text-gray-500 mt-1">Response within 24 hours</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-green-100 p-4 rounded-2xl mr-4">
-                                    <i class="fas fa-map-marker-alt text-green-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Farm Locations</h4>
-                                    <p class="text-gray-600">Edumalai, Cholavaram, Peravallur</p>
-                                    <p class="text-gray-600">Tamil Nadu, India</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-green-50 p-6 rounded-xl">
-                                <h4 class="font-bold mb-4 text-green-700">Business Hours</h4>
-                                <p class="mb-2 text-lg">Monday - Saturday: 9:00 AM - 6:00 PM</p>
-                                <p class="text-sm text-gray-600">Sunday: By appointment only</p>
-                                <p class="text-sm text-green-600 font-medium mt-3">
-                                    <i class="fas fa-clock mr-2"></i> WhatsApp available 24/7
-                                </p>
-                            </div>
+            <!-- SERVICES MATRIX -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- SERVICE 1 -->
+                <div class="hologram-card p-8 text-center card-3d hover:scale-105 transition-transform duration-500">
+                    <div class="text-5xl mb-6 text-green-400">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 cyber-font">CONTRACT FARMING NETWORK</h3>
+                    <p class="text-gray-300 mb-6">Complete cultivation management on your infrastructure</p>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">TECH SUPPORT</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">QUALITY ASSURANCE</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">MARKET LINKAGE</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
-                <div class="animate-fadeInUp" style="animation-delay: 0.2s;">
-                    <div class="service-card p-8 h-full">
-                        <h3 class="text-2xl font-bold mb-6 text-green-700">Send Inquiry</h3>
+                <!-- SERVICE 2 -->
+                <div class="hologram-card p-8 text-center card-3d hover:scale-105 transition-transform duration-500">
+                    <div class="text-5xl mb-6 text-green-400">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 cyber-font">AI TRAINING PROGRAMS</h3>
+                    <p class="text-gray-300 mb-6">Expert guidance for modern agricultural systems</p>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">SYSTEM SETUP</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">CROP MANAGEMENT</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">HARVEST PROCESSING</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SERVICE 3 -->
+                <div class="hologram-card p-8 text-center card-3d hover:scale-105 transition-transform duration-500">
+                    <div class="text-5xl mb-6 text-green-400">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 cyber-font">TURNKEY IMPLEMENTATION</h3>
+                    <p class="text-gray-300 mb-6">End-to-end vettiver cultivation system deployment</p>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">FULL IMPLEMENTATION</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">SAPLING SUPPLY</div>
+                        </div>
+                        <div class="p-3 bg-black/50 border border-green-500/30">
+                            <div class="text-sm font-bold cyber-font">SYSTEM HANDOVER</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CALL TO ACTION -->
+            <div class="text-center mt-20">
+                <button onclick="scrollToSection('contact')" class="cyber-button text-xl px-12 py-6">
+                    <i class="fas fa-satellite mr-3"></i> INITIATE COMMUNICATION PROTOCOL
+                </button>
+            </div>
+        </div>
+        
+        <!-- ANIMATED CIRCUITS -->
+        <div class="absolute bottom-0 left-0 w-full h-32 overflow-hidden opacity-10">
+            <div class="flex space-x-4">
+                <div class="w-4 h-full bg-green-500"></div>
+                <div class="w-4 h-full bg-green-500"></div>
+                <div class="w-4 h-full bg-green-500"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CYBER CONTACT FORM -->
+    <section id="contact" class="py-32 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 cyber-font text-gradient">
+                    [COMMUNICATION PROTOCOL]
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto cyber-font">
+                    Establish connection for orders, visits, or partnership opportunities
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- CONTACT INFO -->
+                <div class="hologram-card p-8">
+                    <h3 class="text-2xl font-bold mb-8 cyber-font">SYSTEM INFORMATION</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-green-500/20 p-4 rounded-lg mr-4">
+                                <i class="fas fa-satellite-dish text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 cyber-font">COMMUNICATION CHANNELS</h4>
+                                <p class="text-gray-300 text-xl">+91 9841565965</p>
+                                <a href="https://wa.me/919841565965" target="_blank" 
+                                   class="inline-flex items-center text-green-400 font-medium mt-2 cyber-font">
+                                    <i class="fab fa-whatsapp mr-2"></i> ACTIVATE WHATSAPP LINK
+                                </a>
+                            </div>
+                        </div>
                         
-                        <!-- REAL FORMSPREE FORM -->
-                        <form id="inquiryForm" action="https://formspree.io/f/mvzokwwg" method="POST">
-                            <div class="mb-6">
-                                <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                    <i class="fas fa-question-circle mr-2"></i> Inquiry Type *
-                                </label>
-                                <select name="inquiry_type" required class="form-input">
-                                    <option value="">Select Purpose</option>
-                                    <option value="bulk">Bulk Vettiver Purchase</option>
-                                    <option value="visit">Farm Visit Request</option>
-                                    <option value="service">Contract Farming/Training</option>
-                                    <option value="partnership">Business Partnership</option>
-                                    <option value="info">General Information</option>
-                                </select>
+                        <div class="flex items-start">
+                            <div class="bg-green-500/20 p-4 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-green-400 text-xl"></i>
                             </div>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                        <i class="fas fa-user mr-2"></i> Name *
-                                    </label>
-                                    <input type="text" name="name" required class="form-input" placeholder="Your Full Name">
-                                </div>
-                                <div>
-                                    <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                        <i class="fas fa-building mr-2"></i> Company
-                                    </label>
-                                    <input type="text" name="company" class="form-input" placeholder="Company Name (Optional)">
-                                </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 cyber-font">DATA TRANSMISSION</h4>
+                                <p class="text-gray-300 text-xl">info@nvhagrigreen.com</p>
+                                <p class="text-sm text-gray-500 mt-1 cyber-font">RESPONSE TIME: <24 HOURS</p>
                             </div>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                        <i class="fas fa-envelope mr-2"></i> Email *
-                                    </label>
-                                    <input type="email" name="email" required class="form-input" placeholder="email@example.com">
-                                </div>
-                                <div>
-                                    <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                        <i class="fas fa-phone mr-2"></i> Phone *
-                                    </label>
-                                    <input type="tel" name="phone" required class="form-input" placeholder="+91 9876543210">
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                    <i class="fas fa-weight mr-2"></i> Estimated Quantity
-                                </label>
-                                <select name="quantity" class="form-input">
-                                    <option value="">Select range (Optional)</option>
-                                    <option value="1-5">1,000 - 5,000 kg</option>
-                                    <option value="5-10">5,000 - 10,000 kg</option>
-                                    <option value="10-50">10,000 - 50,000 kg</option>
-                                    <option value="50+">50,000+ kg</option>
-                                    <option value="service">Service Inquiry</option>
-                                </select>
-                            </div>
-                            
-                            <div class="mb-8">
-                                <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                    <i class="fas fa-comment-alt mr-2"></i> Message *
-                                </label>
-                                <textarea name="message" required rows="5" class="form-input" placeholder="Please provide details about your inquiry, requirements, or any specific questions..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn-primary w-full py-4 text-lg">
-                                <i class="fas fa-paper-plane mr-3"></i> Send Inquiry
-                            </button>
-                        </form>
+                        </div>
                         
-                        <div id="successMessage" class="hidden mt-6 p-6 bg-green-100 text-green-800 rounded-xl border border-green-200">
-                            <div class="flex items-center">
-                                <div class="bg-green-500 text-white p-3 rounded-full mr-4">
-                                    <i class="fas fa-check text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg">Thank You!</h4>
-                                    <p>We've received your inquiry and will contact you within 24 hours.</p>
-                                </div>
+                        <div class="bg-black/50 p-6 rounded-xl border border-green-500/30">
+                            <h4 class="font-bold mb-4 cyber-font text-green-400">OPERATIONAL PARAMETERS</h4>
+                            <p class="mb-2 text-lg cyber-font">SYSTEM ACTIVE: 0900 - 1800 HOURS</p>
+                            <p class="text-sm text-gray-500 cyber-font">MONDAY - SATURDAY</p>
+                            <p class="text-sm text-green-400 font-medium mt-3 cyber-font">
+                                <i class="fas fa-bolt mr-2"></i> WHATSAPP PROTOCOL: 24/7 ACTIVE
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CYBER CONTACT FORM -->
+                <div class="hologram-card p-8">
+                    <h3 class="text-2xl font-bold mb-6 cyber-font">INITIATE TRANSMISSION</h3>
+                    
+                    <!-- REAL FORMSPREE FORM -->
+                    <form id="cyberForm" action="https://formspree.io/f/mvzokwwg" method="POST">
+                        <div class="mb-6">
+                            <label class="block font-bold mb-3 cyber-font text-green-400">
+                                <i class="fas fa-terminal mr-2"></i> INQUIRY TYPE *
+                            </label>
+                            <select name="inquiry_type" required class="w-full p-4 bg-black/50 border border-green-500/30 text-white focus:outline-none focus:border-green-500">
+                                <option value="">SELECT TRANSMISSION TYPE</option>
+                                <option value="bulk">BULK VETTIVER ACQUISITION</option>
+                                <option value="visit">FARM VISIT REQUEST</option>
+                                <option value="service">CONTRACT FARMING/TRAINING</option>
+                                <option value="partnership">PARTNERSHIP PROTOCOL</option>
+                                <option value="info">SYSTEM INFORMATION</option>
+                            </select>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block font-bold mb-3 cyber-font text-green-400">
+                                    <i class="fas fa-user mr-2"></i> IDENTIFICATION *
+                                </label>
+                                <input type="text" name="name" required 
+                                       class="w-full p-4 bg-black/50 border border-green-500/30 text-white focus:outline-none focus:border-green-500"
+                                       placeholder="ENTER FULL NAME">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-3 cyber-font text-green-400">
+                                    <i class="fas fa-building mr-2"></i> ORGANIZATION
+                                </label>
+                                <input type="text" name="company" 
+                                       class="w-full p-4 bg-black/50 border border-green-500/30 text-white focus:outline-none focus:border-green-500"
+                                       placeholder="ORGANIZATION (OPTIONAL)">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block font-bold mb-3 cyber-font text-green-400">
+                                    <i class="fas fa-envelope mr-2"></i> EMAIL PROTOCOL *
+                                </label>
+                                <input type="email" name="email" required 
+                                       class="w-full p-4 bg-black/50 border border-green-500/30 text-white focus:outline-none focus:border-green-500"
+                                       placeholder="EMAIL@DOMAIN.COM">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-3 cyber-font text-green-400">
+                                    <i class="fas fa-phone mr-2"></i> COMMUNICATION LINK *
+                                </label>
+                                <input type="tel" name="phone" required 
+                                       class="w-full p-4 bg-black/50 border border-green-500/30 text-white focus:outline-none focus:border-green-500"
+                                       placeholder="+91 9876543210">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <label class="block font-bold mb-3 cyber-font text-green-400">
+                                <i class="fas fa-comment-alt mr-2"></i> MESSAGE TRANSMISSION *
+                            </label>
+                            <textarea name="message" required rows="5" 
+                                      class="w-full p-4 bg-black/50 border border-green-500/30 text-white focus:outline-none focus:border-green-500"
+                                      placeholder="ENTER TRANSMISSION DETAILS..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cyber-button w-full py-4 text-lg">
+                            <i class="fas fa-paper-plane mr-3"></i> INITIATE TRANSMISSION
+                        </button>
+                    </form>
+                    
+                    <!-- SUCCESS MESSAGE -->
+                    <div id="cyberSuccess" class="hidden mt-6 p-6 bg-green-500/10 border border-green-500/30">
+                        <div class="flex items-center">
+                            <div class="bg-green-500 text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-check text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg cyber-font">TRANSMISSION SUCCESSFUL</h4>
+                                <p class="text-gray-300">System response within 24 hours</p>
                             </div>
                         </div>
                     </div>
@@ -1131,162 +1108,176 @@
         </div>
     </section>
     
-    <!-- Enhanced Footer -->
-    <footer class="bg-gradient-to-b from-gray-900 to-black text-white pt-16 pb-8">
+    <!-- CYBER FOOTER -->
+    <footer class="bg-black pt-16 pb-8 border-t border-green-500/30">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- LOGO COLUMN -->
                 <div>
                     <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
-                            alt="NVH Agri Green Logo" 
-                            class="h-14">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-green-500/20 blur-md rounded-full"></div>
+                            <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
+                                alt="NVH Agri Green" 
+                                class="h-14 relative z-10">
+                        </div>
                         <div>
-                            <h3 class="text-2xl font-bold">NVH Agri Green</h3>
-                            <p class="text-green-300 font-medium">Premium Vettiver Specialists</p>
+                            <h3 class="text-xl font-bold cyber-font">NVH AGRI GREEN</h3>
+                            <p class="text-green-400 text-sm cyber-font">SYSTEM ACTIVE</p>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-6">
-                        Leading commercial vettiver cultivation using innovative grow-bag technology. 
-                        Delivering premium quality roots for global markets.
+                    <p class="text-gray-400 mb-6">
+                        Revolutionary vettiver cultivation using cyberpunk grow-bag technology for maximum yield and quality.
                     </p>
                     <div class="flex space-x-4">
                         <a href="https://wa.me/919841565965" target="_blank" 
-                           class="bg-gray-800 hover:bg-green-700 p-3 rounded-full transition-all duration-300">
-                            <i class="fab fa-whatsapp"></i>
+                           class="bg-gray-900 hover:bg-green-700 p-3 rounded-lg transition-all duration-300">
+                            <i class="fab fa-whatsapp text-green-400"></i>
                         </a>
-                        <a href="#" class="bg-gray-800 hover:bg-green-700 p-3 rounded-full transition-all duration-300">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="bg-gray-900 hover:bg-green-700 p-3 rounded-lg transition-all duration-300">
+                            <i class="fab fa-linkedin-in text-green-400"></i>
                         </a>
                     </div>
                 </div>
                 
+                <!-- QUICK LINKS -->
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <h4 class="text-lg font-bold mb-6 cyber-font">NAVIGATION MATRIX</h4>
                     <ul class="space-y-4">
-                        <li><a href="#home" class="text-gray-300 hover:text-green-300 transition-all duration-300 flex items-center">
-                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> Home
+                        <li><a href="#home" class="text-gray-400 hover:text-green-400 transition-all duration-300 cyber-font">
+                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> [HOME]
                         </a></li>
-                        <li><a href="#cultivation" class="text-gray-300 hover:text-green-300 transition-all duration-300 flex items-center">
-                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> Our Cultivation
+                        <li><a href="#cultivation" class="text-gray-400 hover:text-green-400 transition-all duration-300 cyber-font">
+                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> [CULTIVATION]
                         </a></li>
-                        <li><a href="#gallery" class="text-gray-300 hover:text-green-300 transition-all duration-300 flex items-center">
-                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> Farm Gallery
+                        <li><a href="#gallery" class="text-gray-400 hover:text-green-400 transition-all duration-300 cyber-font">
+                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> [GALLERY]
                         </a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-green-300 transition-all duration-300 flex items-center">
-                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> Our Services
+                        <li><a href="#services" class="text-gray-400 hover:text-green-400 transition-all duration-300 cyber-font">
+                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> [SERVICES]
                         </a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-green-300 transition-all duration-300 flex items-center">
-                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> Contact
+                        <li><a href="#contact" class="text-gray-400 hover:text-green-400 transition-all duration-300 cyber-font">
+                            <i class="fas fa-chevron-right mr-3 text-green-500"></i> [CONTACT]
                         </a></li>
                     </ul>
                 </div>
                 
+                <!-- CONTACT INFO -->
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Contact Info</h4>
+                    <h4 class="text-lg font-bold mb-6 cyber-font">SYSTEM DATA</h4>
                     <div class="space-y-4">
                         <div class="flex items-center">
-                            <i class="fas fa-phone text-green-400 mr-4 text-lg"></i>
+                            <i class="fas fa-satellite-dish text-green-400 mr-4"></i>
                             <span class="text-gray-300">+91 9841565965</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-envelope text-green-400 mr-4 text-lg"></i>
+                            <i class="fas fa-envelope text-green-400 mr-4"></i>
                             <span class="text-gray-300">info@nvhagrigreen.com</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-green-400 mr-4 text-lg"></i>
-                            <span class="text-gray-300">Tamil Nadu, India</span>
+                            <i class="fas fa-map-marker-alt text-green-400 mr-4"></i>
+                            <span class="text-gray-300">TAMIL NADU, INDIA</span>
                         </div>
                     </div>
-                    <div class="mt-8 p-4 bg-gray-800 rounded-xl">
-                        <p class="text-sm text-gray-300">
-                            <i class="fas fa-clock text-green-400 mr-2"></i>
-                            Business Hours: Mon-Sat 9AM-6PM
-                        </p>
+                </div>
+                
+                <!-- SYSTEM STATUS -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 cyber-font">SYSTEM STATUS</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-3 pulse"></div>
+                            <span class="text-green-400 cyber-font">OPERATIONAL</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                            <span class="text-gray-400">24/7 MONITORING</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                            <span class="text-gray-400">AI INTEGRATION</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-400">
-                    © 2024 <span class="text-green-400 font-semibold">NVH Agri Green</span>. All rights reserved. | 
-                    Premium Vettiver Cultivation & Grow-Bag Technology Specialists
+            <!-- COPYRIGHT -->
+            <div class="border-t border-green-500/30 pt-8 text-center">
+                <p class="text-gray-500 cyber-font">
+                    © 2024 <span class="text-green-400 font-bold">NVH AGRI GREEN</span> | 
+                    REVOLUTIONARY VETTIVER CULTIVATION SYSTEMS | VERSION 4.2
                 </p>
             </div>
         </div>
     </footer>
     
-    <!-- Enhanced Business Details Modal -->
-    <div id="businessPlanModal" class="modal">
-        <div class="modal-content">
+    <!-- CYBER WHATSAPP BUTTON -->
+    <a href="https://wa.me/919841565965" target="_blank" 
+       class="fixed bottom-8 right-8 bg-green-500 text-white p-5 rounded-full shadow-2xl z-50 hover:bg-green-600 transition-all duration-300 pulse floating">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+    
+    <!-- CYBER MODAL -->
+    <div id="cyberModal" class="fixed inset-0 bg-black/90 z-[100] items-center justify-center hidden backdrop-blur-sm">
+        <div class="bg-gradient-to-b from-gray-900 to-black border-2 border-green-500 rounded-none max-w-2xl w-full mx-4">
             <div class="p-8">
                 <div class="flex justify-between items-center mb-8">
                     <div>
-                        <h3 class="text-2xl font-bold" style="color: var(--primary-green);">Download Business Plan</h3>
-                        <p class="text-gray-600 mt-2">Get comprehensive details about our cultivation</p>
+                        <h3 class="text-2xl font-bold cyber-font text-green-400">DOWNLOAD DATAPACK</h3>
+                        <p class="text-gray-400 mt-2 cyber-font">Complete business intelligence package</p>
                     </div>
-                    <button onclick="closeModal('businessPlanModal')" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <button onclick="closeCyberModal()" class="text-gray-400 hover:text-white text-2xl">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 
                 <div class="mb-8">
-                    <div class="bg-green-50 p-6 rounded-xl mb-6">
-                        <h4 class="font-bold mb-3 text-green-700">What's Included:</h4>
+                    <div class="bg-green-500/10 p-6 border border-green-500/30 mb-6">
+                        <h4 class="font-bold mb-3 cyber-font text-green-400">DATAPACK CONTENTS:</h4>
                         <ul class="space-y-2">
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                Complete Project Details
+                                <span class="cyber-font">COMPLETE PROJECT ANALYSIS</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                Financial Projections
+                                <span class="cyber-font">FINANCIAL PROJECTIONS</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                Market Analysis
+                                <span class="cyber-font">TECHNOLOGY OVERVIEW</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                Technology Overview
+                                <span class="cyber-font">MARKET INTELLIGENCE</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 
-                <form id="downloadForm" onsubmit="downloadBusinessPlan(event)">
+                <form id="datapackForm" onsubmit="downloadDatapack(event)">
                     <div class="mb-6">
-                        <input type="text" id="detailName" placeholder="Your Full Name" required 
-                               class="form-input" autocomplete="name">
+                        <input type="text" id="datapackName" placeholder="ENTER FULL NAME" required 
+                               class="w-full p-4 bg-black/50 border border-green-500/30 text-white cyber-font">
                     </div>
                     <div class="mb-6">
-                        <input type="email" id="detailEmail" placeholder="Email Address" required 
-                               class="form-input" autocomplete="email">
+                        <input type="email" id="datapackEmail" placeholder="EMAIL PROTOCOL" required 
+                               class="w-full p-4 bg-black/50 border border-green-500/30 text-white cyber-font">
                     </div>
                     <div class="mb-8">
-                        <select id="detailInterest" class="form-input" required>
-                            <option value="">I'm interested in...</option>
-                            <option value="bulk">Bulk Vettiver Purchase</option>
-                            <option value="investment">Investment Opportunity</option>
-                            <option value="contract">Contract Farming</option>
-                            <option value="partnership">Business Partnership</option>
-                            <option value="info">General Information</option>
+                        <select id="datapackInterest" class="w-full p-4 bg-black/50 border border-green-500/30 text-white cyber-font" required>
+                            <option value="">SELECT INTEREST TYPE</option>
+                            <option value="bulk">BULK ACQUISITION</option>
+                            <option value="investment">INVESTMENT OPPORTUNITY</option>
+                            <option value="contract">CONTRACT FARMING</option>
+                            <option value="partnership">PARTNERSHIP</option>
                         </select>
                     </div>
                     
-                    <button type="submit" class="btn-primary w-full py-4 text-lg">
-                        <i class="fas fa-download mr-3"></i> Download Business Plan
+                    <button type="submit" class="cyber-button w-full py-4 text-lg">
+                        <i class="fas fa-download mr-3"></i> INITIATE DOWNLOAD
                     </button>
                 </form>
-                
-                <div id="downloadSuccess" class="hidden mt-6 p-6 bg-green-100 text-green-800 rounded-xl">
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-2xl mr-4"></i>
-                        <div>
-                            <h4 class="font-bold">Thank you!</h4>
-                            <p>Business plan download link has been sent to your email.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -1295,16 +1286,145 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     
     <script>
-        // Mobile menu with animation
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            const menu = document.getElementById('mobileMenu');
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+        
+        // Loading screen with progress simulation
+        let progress = 0;
+        const loadingInterval = setInterval(() => {
+            progress += Math.random() * 15;
+            if (progress > 100) progress = 100;
+            document.getElementById('loadingProgress').style.width = progress + '%';
+            
+            if (progress >= 100) {
+                clearInterval(loadingInterval);
+                setTimeout(() => {
+                    gsap.to('#loadingScreen', {
+                        opacity: 0,
+                        duration: 1,
+                        onComplete: () => {
+                            document.getElementById('loadingScreen').style.display = 'none';
+                            initMindBlowingEffects();
+                        }
+                    });
+                }, 500);
+            }
+        }, 200);
+        
+        // Initialize mind-blowing effects
+        function initMindBlowingEffects() {
+            // Create floating particles
+            createParticles();
+            
+            // Parallax effects
+            gsap.utils.toArray('.parallax-bg').forEach(layer => {
+                const depth = layer.getAttribute('data-depth') || 1;
+                const movement = -(layer.offsetHeight * depth * 0.5);
+                
+                gsap.to(layer, {
+                    y: movement,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: layer.parentElement,
+                        scrub: true,
+                        start: "top bottom",
+                        end: "bottom top"
+                    }
+                });
+            });
+            
+            // 3D tilt effect on cards
+            document.querySelectorAll('.card-3d').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateY = (x - centerX) / 25;
+                    const rotateX = (centerY - y) / 25;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                });
+            });
+            
+            // Scroll animations
+            gsap.utils.toArray('.hologram-card').forEach(card => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+            });
+            
+            // Text glitch effect
+            setInterval(() => {
+                const glitchTexts = document.querySelectorAll('.glitch-text');
+                glitchTexts.forEach(text => {
+                    text.style.animation = 'none';
+                    setTimeout(() => {
+                        text.style.animation = 'textGlitch 3s infinite';
+                    }, 10);
+                });
+            }, 5000);
+        }
+        
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 100;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                
+                // Random size
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = duration + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('cyberMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('cyberMenu');
             menu.classList.toggle('hidden');
             if (!menu.classList.contains('hidden')) {
-                menu.classList.add('animate-fadeInUp');
+                gsap.from(menu, {
+                    opacity: 0,
+                    y: -20,
+                    duration: 0.3
+                });
             }
         });
         
-        // Smooth scroll with offset
+        // Smooth scroll with GSAP
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1313,139 +1433,112 @@
                 
                 const target = document.querySelector(targetId);
                 if (target) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    window.scrollTo({
-                        top: target.offsetTop - headerHeight - 20,
-                        behavior: 'smooth'
-                    });
+                    // Close mobile menu
+                    document.getElementById('cyberMenu').classList.add('hidden');
                     
-                    // Close mobile menu if open
-                    document.getElementById('mobileMenu').classList.add('hidden');
+                    // Smooth scroll
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: {
+                            y: target,
+                            offsetY: 100
+                        },
+                        ease: "power3.inOut"
+                    });
                 }
             });
         });
         
-        // Scroll to section
-        function scrollToSection(id) {
-            const el = document.getElementById(id);
-            if (el) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                window.scrollTo({
-                    top: el.offsetTop - headerHeight - 20,
-                    behavior: 'smooth'
-                });
-            }
+        // Modal functions
+        function openCyberModal() {
+            const modal = document.getElementById('cyberModal');
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+            
+            gsap.from(modal, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.3
+            });
         }
         
-        // Enhanced modal functions
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-            modal.style.animation = 'none';
-            setTimeout(() => {
-                modal.style.animation = '';
-            }, 10);
+        function closeCyberModal() {
+            const modal = document.getElementById('cyberModal');
+            gsap.to(modal, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.3,
+                onComplete: () => {
+                    modal.classList.add('hidden');
+                }
+            });
         }
         
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Close modal on outside click
-        window.addEventListener('click', function(e) {
-            if (e.target.classList.contains('modal')) {
-                e.target.classList.remove('show');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Form handling for contact form
-        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+        // Form handling
+        document.getElementById('cyberForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show success message with animation
-            const successMsg = document.getElementById('successMessage');
+            // Show success message
+            const successMsg = document.getElementById('cyberSuccess');
             successMsg.classList.remove('hidden');
-            successMsg.style.animation = 'fadeInUp 0.6s ease-out';
             
-            // Scroll to success message
-            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            gsap.from(successMsg, {
+                opacity: 0,
+                y: 20,
+                duration: 0.5
+            });
             
             // Reset form after 5 seconds
             setTimeout(() => {
                 this.reset();
                 successMsg.classList.add('hidden');
             }, 5000);
-            
-            // In production: this.submit();
         });
         
-        // Business plan download function
-        function downloadBusinessPlan(e) {
+        // Datapack download
+        function downloadDatapack(e) {
             e.preventDefault();
-            const name = document.getElementById('detailName').value;
-            const email = document.getElementById('detailEmail').value;
-            const interest = document.getElementById('detailInterest').value;
             
-            // Show success message
-            const successDiv = document.getElementById('downloadSuccess');
-            successDiv.classList.remove('hidden');
-            successDiv.style.animation = 'fadeInUp 0.6s ease-out';
+            // Show loading effect
+            const button = e.target.querySelector('button');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i> DOWNLOADING...';
+            button.disabled = true;
             
-            // Reset form
-            document.getElementById('detailName').value = '';
-            document.getElementById('detailEmail').value = '';
-            document.getElementById('detailInterest').value = '';
-            
-            // In real implementation, you would:
-            // 1. Send email with download link
-            // 2. Or redirect to PDF download
-            // 3. Or connect to Formspree
-            
-            // For now, show alert and close modal after 3 seconds
+            // Simulate download
             setTimeout(() => {
-                closeModal('businessPlanModal');
+                button.innerHTML = '<i class="fas fa-check mr-3"></i> DOWNLOAD COMPLETE';
+                
+                // Close modal after delay
                 setTimeout(() => {
-                    successDiv.classList.add('hidden');
-                }, 300);
-            }, 3000);
+                    closeCyberModal();
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                    
+                    // Reset form
+                    e.target.reset();
+                }, 1500);
+            }, 2000);
         }
         
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fadeInUp');
+        // Gallery navigation
+        function scrollGallery(direction) {
+            const gallery = document.querySelector('.grid');
+            const scrollAmount = 300;
+            
+            gsap.to(window, {
+                duration: 0.5,
+                scrollTo: {
+                    y: "#gallery",
+                    offsetY: 100
                 }
             });
-        }, observerOptions);
+        }
         
-        // Observe elements for animations
-        document.querySelectorAll('.service-card, .stat-card, .gallery-item').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // WhatsApp button enhancement
-        const whatsappBtn = document.querySelector('.floating-whatsapp');
-        whatsappBtn.addEventListener('mouseenter', () => {
-            whatsappBtn.style.transform = 'scale(1.1)';
-        });
-        whatsappBtn.addEventListener('mouseleave', () => {
-            whatsappBtn.style.transform = 'scale(1)';
-        });
-        
-        // Console log for debugging
-        console.log('NVH Agri Green Website Loaded Successfully');
-        console.log('Formspree ID: mvzokwwg');
-        console.log('Analytics ID: G-49NLN7CFLT');
-        console.log('WhatsApp: +91 9841565965');
+        // System initialization log
+        console.log('%cNVH AGRI GREEN SYSTEM INITIALIZED', 'color: #00ff88; font-size: 24px; font-family: monospace;');
+        console.log('%cVersion: 4.2 | Status: OPERATIONAL', 'color: #00ff88; font-family: monospace;');
+        console.log('%cReady to revolutionize vettiver cultivation', 'color: #00ff88; font-family: monospace;');
     </script>
 </body>
 </html>
