@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NVH Agri Green - India's First Large-Scale Grow-Bag Vettiver Farming. 15 Acres | 10 Lakh Grow Bags | ₹5 Crore Revenue">
+    <meta name="description" content="NVH Agri Green - Commercial Vettiver Farming using Grow-Bag Technology. Bulk orders, farm visits, business partnerships.">
     
-    <!-- Google Analytics (PASTE YOUR ID) -->
+    <!-- Google Analytics - REPLACE WITH YOUR ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX'); // Your GA4 ID here
+        gtag('config', 'G-XXXXXXXXXX'); <!-- YOUR GA4 ID -->
     </script>
     
     <title>NVH Agri Green | Commercial Vettiver Farming</title>
@@ -19,7 +19,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -59,7 +59,7 @@
         .stat-card {
             background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
             color: white;
-            border-radius: 15px;
+            border-radius: 12px;
             transition: transform 0.3s ease;
         }
         
@@ -71,12 +71,11 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
             color: white;
-            padding: 12px 30px;
+            padding: 12px 28px;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
-            display: inline-block;
         }
         
         .btn-primary:hover {
@@ -87,94 +86,166 @@
         .btn-secondary {
             background: white;
             color: var(--primary-green);
-            padding: 12px 30px;
+            padding: 12px 28px;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
             border: 2px solid var(--primary-green);
-            display: inline-block;
         }
         
         .btn-secondary:hover {
-            background-color: var(--primary-green);
+            background: var(--primary-green);
             color: white;
         }
         
-        .gallery-img {
-            height: 250px;
-            object-fit: cover;
+        /* Horizontal Scroll Gallery */
+        .gallery-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            gap: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-green) #f0f0f0;
+        }
+        
+        .gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .gallery-container::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+        
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: var(--primary-green);
+            border-radius: 4px;
+        }
+        
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 200px;
             border-radius: 10px;
-            transition: transform 0.3s ease;
+            overflow: hidden;
             cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
-        .gallery-img:hover {
-            transform: scale(1.03);
+        .gallery-item:hover {
+            transform: scale(1.05);
         }
         
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Timeline */
         .timeline-item {
             position: relative;
-            padding-left: 30px;
-            margin-bottom: 30px;
+            padding-left: 25px;
+            margin-bottom: 25px;
         }
         
         .timeline-item:before {
             content: '';
             position: absolute;
             left: 0;
-            top: 0;
-            width: 15px;
-            height: 15px;
-            background-color: var(--primary-green);
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-green);
             border-radius: 50%;
         }
         
         .timeline-item:after {
             content: '';
             position: absolute;
-            left: 7px;
-            top: 15px;
-            width: 1px;
-            height: calc(100% + 15px);
-            background-color: var(--primary-green);
+            left: 5px;
+            top: 17px;
+            width: 2px;
+            height: calc(100% + 8px);
+            background: var(--primary-green);
         }
         
         .timeline-item:last-child:after {
             display: none;
         }
         
-        /* Fade in animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
         }
         
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .modal.show {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+            
+            .gallery-item {
+                width: 250px;
+                height: 180px;
+            }
+        }
+        
+        /* Form styling */
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px rgba(26, 95, 26, 0.1);
         }
     </style>
 </head>
 <body class="bg-white">
     
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/919841565965" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50 hover:bg-green-600 transition-all duration-300">
+    <a href="https://wa.me/919841565965" target="_blank" 
+       class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg z-50 hover:bg-green-600 transition-all">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
     
-    <!-- Header with YOUR LOGO -->
+    <!-- Header -->
     <header class="sticky top-0 z-40 bg-white shadow-md">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo - REPLACE WITH YOUR LOGO -->
                 <div class="flex items-center space-x-3">
-                    <!-- Option 1: Use your logo image -->
-                    <!--
-                    <img src="YOUR-LOGO-URL-HERE" alt="NVH Agri Green Logo" class="h-12">
-                    -->
-                    
-                    <!-- Option 2: Current placeholder (delete when adding your logo) -->
+                    <!-- YOUR LOGO HERE -->
                     <div class="bg-green-100 p-2 rounded-full">
                         <i class="fas fa-leaf text-2xl" style="color: var(--primary-green);"></i>
                     </div>
@@ -185,27 +256,26 @@
                 </div>
                 
                 <!-- Navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#home" class="font-semibold hover:text-green-600 transition-colors">Home</a>
-                    <a href="#solution" class="font-semibold hover:text-green-600 transition-colors">Solution</a>
-                    <a href="#project" class="font-semibold hover:text-green-600 transition-colors">Project</a>
-                    <a href="#gallery" class="font-semibold hover:text-green-600 transition-colors">Farm Gallery</a>
-                    <a href="#financials" class="font-semibold hover:text-green-600 transition-colors">Financials</a>
-                    <a href="#contact" class="font-semibold hover:text-green-600 transition-colors">Contact</a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="font-semibold hover:text-green-600">Home</a>
+                    <a href="#solution" class="font-semibold hover:text-green-600">Solution</a>
+                    <a href="#project" class="font-semibold hover:text-green-600">Project</a>
+                    <a href="#gallery" class="font-semibold hover:text-green-600">Gallery</a>
+                    <a href="#financials" class="font-semibold hover:text-green-600">Financials</a>
+                    <a href="#contact" class="font-semibold hover:text-green-600">Contact</a>
                 </nav>
                 
-                <!-- Mobile Menu -->
-                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                <button id="mobileMenuBtn" class="md:hidden">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
             
             <div id="mobileMenu" class="hidden md:hidden py-4 border-t">
-                <div class="flex flex-col space-y-4">
+                <div class="flex flex-col space-y-3">
                     <a href="#home" class="font-semibold hover:text-green-600">Home</a>
                     <a href="#solution" class="font-semibold hover:text-green-600">Solution</a>
                     <a href="#project" class="font-semibold hover:text-green-600">Project</a>
-                    <a href="#gallery" class="font-semibold hover:text-green-600">Farm Gallery</a>
+                    <a href="#gallery" class="font-semibold hover:text-green-600">Gallery</a>
                     <a href="#financials" class="font-semibold hover:text-green-600">Financials</a>
                     <a href="#contact" class="font-semibold hover:text-green-600">Contact</a>
                 </div>
@@ -214,19 +284,19 @@
     </header>
     
     <!-- Hero Section -->
-    <section id="home" class="hero-bg text-white py-20 md:py-32">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-4xl mx-auto fade-in">
-                <div class="inline-block bg-green-800/80 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
-                    <span class="text-sm font-semibold">INDIA'S FIRST LARGE-SCALE GROW-BAG VETTIVER FARMING</span>
+    <section id="home" class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="bg-green-800/80 inline-block px-4 py-2 rounded-full mb-6">
+                    <span class="text-sm font-semibold">COMMERCIAL VETTIVER FARMING</span>
                 </div>
                 
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Revolutionizing Vettiver Cultivation
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Grow-Bag Vettiver Cultivation
                 </h1>
                 
-                <p class="text-xl mb-10 max-w-3xl mx-auto">
-                    A ₹5 Crore Revenue Project | 15 Acres | 10 Lakh Grow Bags
+                <p class="text-lg mb-8">
+                    High-yield commercial farming with modern technology
                 </p>
                 
                 <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
@@ -238,22 +308,21 @@
                     </button>
                 </div>
                 
-                <!-- Key Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="stat-card p-4">
-                        <div class="text-3xl font-bold">15</div>
+                        <div class="text-2xl font-bold">Custom</div>
                         <div class="text-sm">Acres</div>
                     </div>
                     <div class="stat-card p-4">
-                        <div class="text-3xl font-bold">10L</div>
+                        <div class="text-2xl font-bold">Custom</div>
                         <div class="text-sm">Grow Bags</div>
                     </div>
                     <div class="stat-card p-4">
-                        <div class="text-3xl font-bold">₹5Cr</div>
+                        <div class="text-2xl font-bold">Custom</div>
                         <div class="text-sm">Revenue</div>
                     </div>
                     <div class="stat-card p-4">
-                        <div class="text-3xl font-bold">130%</div>
+                        <div class="text-2xl font-bold">High</div>
                         <div class="text-sm">ROI</div>
                     </div>
                 </div>
@@ -261,138 +330,133 @@
         </div>
     </section>
     
-    <!-- Solution Section -->
-    <section id="solution" class="py-20 bg-gray-50">
+    <!-- Solution -->
+    <section id="solution" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
-                    Grow-Bag Technology Advantage
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
+                    Grow-Bag Technology
                 </h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">
-                    Why our method outperforms traditional cultivation
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Efficient, scalable vettiver cultivation
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="text-4xl mb-4" style="color: var(--primary-green);">📈</div>
-                    <h3 class="text-xl font-bold mb-3">3x Higher Yield</h3>
-                    <p class="text-gray-600">3kg roots per bag vs 1kg traditional</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-3xl mb-4" style="color: var(--primary-green);">📈</div>
+                    <h3 class="text-xl font-bold mb-3">Higher Yield</h3>
+                    <p class="text-gray-600">3x more yield than traditional methods</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="text-4xl mb-4" style="color: var(--primary-green);">💧</div>
-                    <h3 class="text-xl font-bold mb-3">40% Less Water</h3>
-                    <p class="text-gray-600">Efficient drip irrigation system</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-3xl mb-4" style="color: var(--primary-green);">💧</div>
+                    <h3 class="text-xl font-bold mb-3">Water Efficient</h3>
+                    <p class="text-gray-600">40% less water consumption</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="text-4xl mb-4" style="color: var(--primary-green);">⚡</div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-3xl mb-4" style="color: var(--primary-green);">⚡</div>
                     <h3 class="text-xl font-bold mb-3">Faster Growth</h3>
-                    <p class="text-gray-600">10-12 months vs 18+ months traditional</p>
+                    <p class="text-gray-600">10-12 month harvest cycle</p>
                 </div>
             </div>
             
-            <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6" style="color: var(--primary-green);">Market Opportunity</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                            <span><strong>Perfume Industry:</strong> High demand for premium vettiver oil</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                            <span><strong>Pharma & Ayurveda:</strong> Growing medicinal applications</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                            <span><strong>Cosmetics:</strong> Natural skincare ingredient demand</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-600 mt=1 mr-3"></i>
-                            <span><strong>Export Markets:</strong> US, Europe, Middle East demand increasing</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-green-50 p-8 rounded-xl">
-                    <h4 class="font-bold text-lg mb-4" style="color: var(--primary-green);">The Problem We Solve</h4>
-                    <ul class="space-y-2 text-gray-700">
-                        <li>• Global shortage of quality vettiver roots</li>
-                        <li>• Traditional methods: Slow & inefficient</li>
-                        <li>• Inconsistent yields affect supply chains</li>
-                        <li>• Exporters unable to fulfill bulk orders</li>
-                    </ul>
+            <div class="bg-green-50 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Market Demand</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                <span>Perfume & Fragrance Industry</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                <span>Pharmaceutical Applications</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                <span>Cosmetics & Skincare</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                <span>Export Markets Growing</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Project Overview -->
-    <section id="project" class="py-20 bg-white">
+    <!-- Project -->
+    <section id="project" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
-                    Project Specifications
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
+                    Project Overview
                 </h2>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
-                    <div class="bg-white p-8 rounded-xl shadow-md mb-8 border">
-                        <h3 class="text-2xl font-bold mb-6" style="color: var(--primary-green);">Project Details</h3>
-                        <div class="space-y-4">
-                            <div class="flex justify-between border-b pb-3">
-                                <span class="font-semibold">Land Area</span>
-                                <span class="font-bold" style="color: var(--primary-green);">15 Acres (Leased)</span>
+                    <div class="bg-white p-6 rounded-xl border shadow-sm mb-6">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Project Details</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="font-semibold">Land Area:</span>
+                                <span style="color: var(--primary-green);">Customizable</span>
                             </div>
-                            <div class="flex justify-between border-b pb-3">
-                                <span class="font-semibold">Grow Bags</span>
-                                <span class="font-bold" style="color: var(--primary-green);">10,00,000 Units</span>
+                            <div class="flex justify-between">
+                                <span class="font-semibold">Grow Bags:</span>
+                                <span style="color: var(--primary-green);">Scalable Units</span>
                             </div>
-                            <div class="flex justify-between border-b pb-3">
-                                <span class="font-semibold">Growth Duration</span>
-                                <span class="font-bold" style="color: var(--primary-green);">10-12 Months</span>
+                            <div class="flex justify-between">
+                                <span class="font-semibold">Growth Period:</span>
+                                <span style="color: var(--primary-green);">10-12 Months</span>
                             </div>
-                            <div class="flex justify-between border-b pb-3">
-                                <span class="font-semibold">Expected Yield</span>
-                                <span class="font-bold" style="color: var(--primary-green);">30,00,000 kg</span>
+                            <div class="flex justify-between">
+                                <span class="font-semibold">Expected Yield:</span>
+                                <span style="color: var(--primary-green);">High Volume</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="bg-green-50 p-6 rounded-xl">
-                        <h4 class="font-bold text-lg mb-3" style="color: var(--primary-green);">Infrastructure</h4>
+                        <h4 class="font-bold mb-3" style="color: var(--primary-green);">Infrastructure</h4>
                         <ul class="space-y-2 text-sm">
-                            <li>• Complete drip irrigation system</li>
-                            <li>• Dedicated trained labor team</li>
-                            <li>• Storage & drying facilities</li>
-                            <li>• Quality control setup</li>
-                            <li>• 24/7 water & electricity</li>
+                            <li>• Drip irrigation system</li>
+                            <li>• Trained labor team</li>
+                            <li>• Storage facilities</li>
+                            <li>• Quality control</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div>
-                    <div class="bg-white p-8 rounded-xl shadow-md border">
-                        <h3 class="text-2xl font-bold mb-6" style="color: var(--primary-green);">Project Timeline</h3>
+                    <div class="bg-white p-6 rounded-xl border shadow-sm">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Project Timeline</h3>
                         <div class="timeline">
                             <div class="timeline-item">
-                                <h4 class="font-bold text-lg mb-2">Setup Phase (2 Months)</h4>
-                                <p class="text-gray-600">Land prep, bag installation, irrigation</p>
+                                <h4 class="font-bold">Setup Phase</h4>
+                                <p class="text-gray-600 text-sm">Land preparation & installation</p>
                             </div>
                             <div class="timeline-item">
-                                <h4 class="font-bold text-lg mb-2">Planting (Month 3)</h4>
-                                <p class="text-gray-600">Vettiver sapling plantation</p>
+                                <h4 class="font-bold">Planting</h4>
+                                <p class="text-gray-600 text-sm">Vettiver sapling plantation</p>
                             </div>
                             <div class="timeline-item">
-                                <h4 class="font-bold text-lg mb-2">Growth Period (8 Months)</h4>
-                                <p class="text-gray-600">Maintenance & monitoring</p>
+                                <h4 class="font-bold">Growth Period</h4>
+                                <p class="text-gray-600 text-sm">Maintenance & monitoring</p>
                             </div>
                             <div class="timeline-item">
-                                <h4 class="font-bold text-lg mb-2">Harvest (Months 11-12)</h4>
-                                <p class="text-gray-600">Extraction, cleaning, drying</p>
+                                <h4 class="font-bold">Harvest</h4>
+                                <p class="text-gray-600 text-sm">Processing & packaging</p>
                             </div>
                         </div>
                     </div>
@@ -401,147 +465,112 @@
         </div>
     </section>
     
-    <!-- FARM GALLERY SECTION - ADD YOUR IMAGES HERE -->
-    <section id="gallery" class="py-20 bg-gray-50">
+    <!-- Farm Gallery - HORIZONTAL SCROLL -->
+    <section id="gallery" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
                     Our Farm Gallery
                 </h2>
-                <p class="text-gray-600">Actual images from our vettiver cultivation project</p>
+                <p class="text-gray-600">Scroll horizontally to view farm photos</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Image 1 - Replace with your farm photo -->
-                <a href="YOUR-FARM-PHOTO-1.jpg" data-lightbox="farm-gallery" data-title="Our Vettiver Farm - 15 Acres">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                         alt="Vettiver Farm" 
-                         class="gallery-img w-full">
+            <!-- Horizontal Scroll Gallery -->
+            <div class="gallery-container">
+                <!-- Replace these with YOUR farm photos -->
+                <a href="YOUR-FARM-PHOTO-1.jpg" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Farm">
                 </a>
-                
-                <!-- Image 2 - Replace with your farm photo -->
-                <a href="YOUR-FARM-PHOTO-2.jpg" data-lightbox="farm-gallery" data-title="Grow Bag Setup">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                         alt="Grow Bags" 
-                         class="gallery-img w-full">
+                <a href="YOUR-FARM-PHOTO-2.jpg" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Grow Bags">
                 </a>
-                
-                <!-- Image 3 - Replace with your farm photo -->
-                <a href="YOUR-FARM-PHOTO-3.jpg" data-lightbox="farm-gallery" data-title="Irrigation System">
-                    <img src="https://images.unsplash.com/photo-1592924688932-167677a56b1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                         alt="Irrigation" 
-                         class="gallery-img w-full">
+                <a href="YOUR-FARM-PHOTO-3.jpg" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1592924688932-167677a56b1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Irrigation">
                 </a>
-                
-                <!-- Image 4 - Replace with your farm photo -->
-                <a href="YOUR-FARM-PHOTO-4.jpg" data-lightbox="farm-gallery" data-title="Vettiver Plants Growth">
-                    <img src="https://images.unsplash.com/photo-1597848212624-e6f1f5d6f7d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                         alt="Plants Growth" 
-                         class="gallery-img w-full">
+                <a href="YOUR-FARM-PHOTO-4.jpg" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1597848212624-e6f1f5d6f7d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Plants">
                 </a>
-                
-                <!-- Image 5 - Replace with your farm photo -->
-                <a href="YOUR-FARM-PHOTO-5.jpg" data-lightbox="farm-gallery" data-title="Harvesting Process">
-                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                         alt="Harvesting" 
-                         class="gallery-img w-full">
+                <a href="YOUR-FARM-PHOTO-5.jpg" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Harvest">
                 </a>
-                
-                <!-- Image 6 - Replace with your farm photo -->
-                <a href="YOUR-FARM-PHOTO-6.jpg" data-lightbox="farm-gallery" data-title="Quality Control">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                         alt="Quality Check" 
-                         class="gallery-img w-full">
+                <a href="YOUR-FARM-PHOTO-6.jpg" data-lightbox="farm" class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Quality">
                 </a>
             </div>
             
-            <div class="text-center mt-8">
-                <p class="text-gray-600 text-sm">
-                    Click on any image to view larger. All photos from our actual farm in Tamil Nadu.
+            <div class="text-center mt-6">
+                <p class="text-sm text-gray-500">
+                    Click on images to view larger. Upload your farm photos to replace these.
                 </p>
             </div>
         </div>
     </section>
     
     <!-- Financials -->
-    <section id="financials" class="py-20 bg-white">
+    <section id="financials" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
-                    Financial Projections
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
+                    Financial Overview
                 </h2>
+                <p class="text-gray-600">Customizable based on project scale</p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="bg-white p-8 rounded-xl shadow-md border">
-                    <h3 class="text-2xl font-bold mb-6" style="color: var(--primary-green);">Investment Requirement</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl border shadow-sm">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Investment</h3>
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center border-b pb-3">
-                            <span class="font-semibold">Total Loan Request</span>
-                            <span class="text-2xl font-bold" style="color: var(--primary-green);">₹2.5 Crores</span>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">Project Scale:</span>
+                            <span class="font-bold" style="color: var(--primary-green);">Customizable</span>
                         </div>
                         
-                        <div class="space-y-3">
+                        <div class="space-y-2">
                             <div class="flex justify-between">
-                                <span>Grow Bags (10 lakh units)</span>
-                                <span class="font-semibold">₹1,00,00,000</span>
+                                <span>Grow Bags</span>
+                                <span class="font-semibold">Based on units</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Cultivation & Setup</span>
-                                <span class="font-semibold">₹77,00,000</span>
+                                <span>Cultivation Setup</span>
+                                <span class="font-semibold">As per requirement</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Maintenance & Operations</span>
-                                <span class="font-semibold">₹50,00,000</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Contingency Fund</span>
-                                <span class="font-semibold">₹23,00,000</span>
+                                <span>Operations</span>
+                                <span class="font-semibold">Scalable costs</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-md border">
-                    <h3 class="text-2xl font-bold mb-6" style="color: var(--primary-green);">Year 1 Revenue</h3>
+                <div class="bg-white p-6 rounded-xl border shadow-sm">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-green);">Revenue Projection</h3>
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center border-b pb-3">
-                            <span class="font-semibold">Expected Revenue</span>
-                            <span class="text-2xl font-bold" style="color: var(--accent-gold);">₹5 Crores</span>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">Revenue Potential:</span>
+                            <span class="font-bold" style="color: var(--accent-gold);">High ROI</span>
                         </div>
                         
-                        <div class="space-y-3">
+                        <div class="space-y-2">
                             <div class="flex justify-between">
                                 <span>Yield per bag</span>
-                                <span class="font-semibold">3 kg roots</span>
+                                <span class="font-semibold">3 kg (approx)</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Total yield</span>
-                                <span class="font-semibold">30,00,000 kg</span>
+                                <span>Market price</span>
+                                <span class="font-semibold">Premium rates</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Revenue per bag</span>
-                                <span class="font-semibold">₹500</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Operational Cost</span>
-                                <span class="font-semibold">₹1.5 Crores</span>
+                                <span>Demand</span>
+                                <span class="font-semibold">Growing globally</span>
                             </div>
                         </div>
                         
-                        <div class="mt-6 p-4 rounded-lg bg-green-50">
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold">Net Profit:</span>
-                                <span class="text-xl font-bold" style="color: var(--primary-green);">~₹3.5 Crores</span>
+                        <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                            <div class="flex justify-between">
+                                <span class="font-bold">ROI Potential:</span>
+                                <span class="font-bold" style="color: var(--primary-green);">100%+</span>
                             </div>
-                            <div class="flex justify-between items-center mt-2">
-                                <span class="font-bold">ROI:</span>
-                                <span class="text-xl font-bold" style="color: var(--accent-gold);">130%+</span>
-                            </div>
-                            <div class="flex justify-between items-center mt-2">
-                                <span class="font-bold">Payback:</span>
-                                <span class="text-xl font-bold" style="color: var(--primary-green);">< 12 months</span>
-                            </div>
+                            <p class="text-sm text-gray-600 mt-2">Custom projections available on consultation</p>
                         </div>
                     </div>
                 </div>
@@ -550,109 +579,104 @@
     </section>
     
     <!-- Contact -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--primary-green);">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-green);">
                     Business Inquiries
                 </h2>
-                <p class="text-gray-600">For bulk orders, partnerships, and farm visits</p>
+                <p class="text-gray-600">Get in touch for bulk orders, partnerships, or farm visits</p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-2xl mx-auto">
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="p-8">
-                        <form id="businessInquiryForm" action="https://formspree.io/f/your-form-id" method="POST">
-                            <div class="mb-6">
+                    <div class="p-6">
+                        <!-- REAL FORM - REPLACE FORMSPREE ID -->
+                        <form id="inquiryForm" action="https://formspree.io/f/YOUR-FORMSPREE-ID" method="POST">
+                            <div class="mb-4">
                                 <label class="block font-semibold mb-2" style="color: var(--primary-green);">Inquiry Type *</label>
-                                <select name="inquiry_type" required class="w-full border rounded-lg p-3">
-                                    <option value="">Select Inquiry Type</option>
-                                    <option value="bulk_purchase">Bulk Purchase (Min. 1000kg)</option>
+                                <select name="inquiry_type" required class="form-input">
+                                    <option value="">Select</option>
+                                    <option value="bulk">Bulk Purchase Inquiry</option>
+                                    <option value="visit">Farm Visit Request</option>
                                     <option value="partnership">Business Partnership</option>
-                                    <option value="farm_visit">Schedule Farm Visit</option>
-                                    <option value="investor">Investor Inquiry</option>
+                                    <option value="info">General Information</option>
                                 </select>
                             </div>
                             
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                 <div>
-                                    <label class="block font-semibold mb-2" style="color: var(--primary-green);">Full Name *</label>
-                                    <input type="text" name="name" required class="w-full border rounded-lg p-3" placeholder="Your Name">
+                                    <label class="block font-semibold mb-2" style="color: var(--primary-green);">Name *</label>
+                                    <input type="text" name="name" required class="form-input" placeholder="Your Name">
                                 </div>
                                 <div>
                                     <label class="block font-semibold mb-2" style="color: var(--primary-green);">Company</label>
-                                    <input type="text" name="company" class="w-full border rounded-lg p-3" placeholder="Company Name">
+                                    <input type="text" name="company" class="form-input" placeholder="Company Name">
                                 </div>
                             </div>
                             
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                 <div>
                                     <label class="block font-semibold mb-2" style="color: var(--primary-green);">Email *</label>
-                                    <input type="email" name="email" required class="w-full border rounded-lg p-3" placeholder="email@example.com">
+                                    <input type="email" name="email" required class="form-input" placeholder="email@example.com">
                                 </div>
                                 <div>
                                     <label class="block font-semibold mb-2" style="color: var(--primary-green);">Phone *</label>
-                                    <input type="tel" name="phone" required class="w-full border rounded-lg p-3" placeholder="+91 9876543210">
+                                    <input type="tel" name="phone" required class="form-input" placeholder="+91 9876543210">
                                 </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block font-semibold mb-2" style="color: var(--primary-green);">Estimated Quantity</label>
+                                <select name="quantity" class="form-input">
+                                    <option value="">Select range</option>
+                                    <option value="1-5">1,000 - 5,000 kg</option>
+                                    <option value="5-10">5,000 - 10,000 kg</option>
+                                    <option value="10-50">10,000 - 50,000 kg</option>
+                                    <option value="50+">50,000+ kg</option>
+                                </select>
                             </div>
                             
                             <div class="mb-6">
                                 <label class="block font-semibold mb-2" style="color: var(--primary-green);">Message *</label>
-                                <textarea name="message" required rows="4" class="w-full border rounded-lg p-3" placeholder="Your inquiry details..."></textarea>
+                                <textarea name="message" required rows="4" class="form-input" placeholder="Your inquiry details..."></textarea>
                             </div>
                             
-                            <button type="submit" class="btn-primary w-full py-3 text-lg">
+                            <button type="submit" class="btn-primary w-full py-3">
                                 <i class="fas fa-paper-plane mr-2"></i> Submit Inquiry
                             </button>
                         </form>
                         
-                        <div id="formSuccess" class="hidden mt-6 p-4 rounded-lg bg-green-100 border border-green-400">
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-600 text-xl mr-3"></i>
-                                <div>
-                                    <p class="font-semibold text-green-800">Thank you!</p>
-                                    <p class="text-green-700 text-sm">We will contact you within 24 hours.</p>
-                                </div>
-                            </div>
+                        <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Thank you! We'll contact you within 24 hours.
                         </div>
                     </div>
                     
-                    <div class="bg-gray-50 p-8 border-t">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 border-t">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <h3 class="text-xl font-bold mb-6" style="color: var(--primary-green);">Contact Info</h3>
-                                <div class="space-y-4">
-                                    <div class="flex items-start">
-                                        <i class="fas fa-phone-alt mt-1 mr-4" style="color: var(--primary-green);"></i>
-                                        <div>
-                                            <p class="font-semibold">Phone</p>
-                                            <p>+91 9841565965</p>
-                                        </div>
+                                <h3 class="font-bold mb-4" style="color: var(--primary-green);">Contact</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-phone mr-3" style="color: var(--primary-green);"></i>
+                                        <span>+91 9841565965</span>
                                     </div>
-                                    <div class="flex items-start">
-                                        <i class="fas fa-envelope mt-1 mr-4" style="color: var(--primary-green);"></i>
-                                        <div>
-                                            <p class="font-semibold">Email</p>
-                                            <p>info@nvhagrigreen.com</p>
-                                        </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-envelope mr-3" style="color: var(--primary-green);"></i>
+                                        <span>info@nvhagrigreen.com</span>
                                     </div>
-                                    <div class="flex items-start">
-                                        <i class="fas fa-map-marker-alt mt-1 mr-4" style="color: var(--primary-green);"></i>
-                                        <div>
-                                            <p class="font-semibold">Location</p>
-                                            <p>Tamil Nadu, India</p>
-                                        </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-map-marker-alt mr-3" style="color: var(--primary-green);"></i>
+                                        <span>Tamil Nadu, India</span>
                                     </div>
                                 </div>
                             </div>
                             
                             <div>
-                                <h3 class="text-xl font-bold mb-6" style="color: var(--primary-green);">Business Hours</h3>
-                                <div class="space-y-2">
-                                    <p class="font-semibold">Monday - Saturday</p>
-                                    <p>9:00 AM - 6:00 PM</p>
-                                    <p class="text-sm text-gray-600 mt-4">For urgent inquiries, WhatsApp available 24/7</p>
-                                </div>
+                                <h3 class="font-bold mb-4" style="color: var(--primary-green);">Business Hours</h3>
+                                <p class="mb-2">Mon - Sat: 9 AM - 6 PM</p>
+                                <p class="text-sm text-gray-600">WhatsApp available 24/7</p>
                             </div>
                         </div>
                     </div>
@@ -667,40 +691,40 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <!-- Your Logo Here -->
                         <div class="bg-green-700 p-2 rounded-full">
-                            <i class="fas fa-leaf text-xl"></i>
+                            <i class="fas fa-leaf"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">NVH Agri Green</h3>
-                            <p class="text-green-300 text-sm">Vettiver Farming Specialists</p>
+                            <h3 class="text-lg font-bold">NVH Agri Green</h3>
+                            <p class="text-green-300 text-sm">Vettiver Specialists</p>
                         </div>
                     </div>
                     <p class="text-gray-300 text-sm">
-                        Commercial-scale vettiver cultivation using innovative grow-bag technology.
+                        Commercial vettiver cultivation using innovative grow-bag technology.
                     </p>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Business</h4>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li>📍 Tamil Nadu, India</li>
-                        <li>📞 +91 9841565965</li>
-                        <li>🏢 Registered Agricultural Business</li>
-                        <li>📜 GST Registered</li>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-300 hover:text-green-300">Home</a></li>
+                        <li><a href="#solution" class="text-gray-300 hover:text-green-300">Solution</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-green-300">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-green-300">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Connect</h4>
+                    <h4 class="font-bold mb-4">Connect</h4>
                     <div class="flex space-x-4">
-                        <a href="https://wa.me/919841565965" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-green-700 transition-colors">
+                        <a href="https://wa.me/919841565965" target="_blank" 
+                           class="bg-gray-800 p-3 rounded-full hover:bg-green-700">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-green-700 transition-colors">
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-green-700">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-green-700 transition-colors">
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-green-700">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
@@ -708,36 +732,36 @@
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-400">
-                    © 2024 NVH Agri Green. Commercial Vettiver Farming Project.
+                <p class="text-gray-400 text-sm">
+                    © 2024 NVH Agri Green. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
     
     <!-- Business Plan Modal -->
-    <div id="businessPlanModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-xl max-w-md w-full">
+    <div id="businessPlanModal" class="modal">
+        <div class="modal-content">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-bold" style="color: var(--primary-green);">Business Plan</h3>
-                    <button onclick="closeModal('businessPlanModal')" class="text-gray-500 hover:text-gray-700">
-                        <i class="fas fa-times text-xl"></i>
+                    <h3 class="text-xl font-bold" style="color: var(--primary-green);">Business Plan</h3>
+                    <button onclick="closeModal('businessPlanModal')" class="text-gray-500">
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
                 
-                <p class="mb-6">Enter your details to download the complete business plan PDF:</p>
+                <p class="mb-6">Enter details to download business plan:</p>
                 
-                <form onsubmit="downloadBusinessPlan(event)">
+                <form onsubmit="downloadPlan(event)">
                     <div class="mb-4">
-                        <input type="text" name="bp_name" required class="w-full border rounded-lg p-3" placeholder="Your Name">
+                        <input type="text" placeholder="Your Name" required class="form-input">
                     </div>
-                    <div class="mb-4">
-                        <input type="email" name="bp_email" required class="w-full border rounded-lg p-3" placeholder="Email">
+                    <div class="mb-6">
+                        <input type="email" placeholder="Email" required class="form-input">
                     </div>
                     
                     <button type="submit" class="btn-primary w-full py-3">
-                        <i class="fas fa-download mr-2"></i> Download PDF
+                        Download Business Plan
                     </button>
                 </form>
             </div>
@@ -747,21 +771,17 @@
     <!-- Lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     
-    <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
+        // Mobile menu
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
         });
         
-        // Smooth scrolling
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const target = document.querySelector(targetId);
+                const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
                         top: target.offsetTop - 80,
@@ -772,71 +792,70 @@
         });
         
         // Scroll to section
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
                 window.scrollTo({
-                    top: element.offsetTop - 80,
+                    top: el.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }
         }
         
         // Modal functions
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
+        function openModal(id) {
+            document.getElementById(id).classList.add('show');
             document.body.style.overflow = 'hidden';
         }
         
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('show');
             document.body.style.overflow = 'auto';
         }
         
         // Close modal on outside click
         window.addEventListener('click', function(e) {
-            if (e.target.classList.contains('fixed')) {
-                e.target.classList.add('hidden');
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('show');
                 document.body.style.overflow = 'auto';
             }
         });
         
         // Form handling
-        document.getElementById('businessInquiryForm').addEventListener('submit', function(e) {
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('formSuccess').classList.remove('hidden');
+            
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            
+            // Reset form after 5 seconds
             setTimeout(() => {
                 this.reset();
-                document.getElementById('formSuccess').classList.add('hidden');
+                document.getElementById('successMessage').classList.add('hidden');
             }, 5000);
+            
+            // In production: this.submit();
         });
         
-        function downloadBusinessPlan(e) {
+        function downloadPlan(e) {
             e.preventDefault();
-            const name = document.querySelector('input[name="bp_name"]').value;
-            alert(`Thank you ${name}! Download link sent to your email.`);
+            alert('Business plan download link will be sent to your email.');
             closeModal('businessPlanModal');
         }
         
-        // Fade in on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+        // Formspree setup instructions
+        console.log('TO SETUP FORM SUBMISSIONS:');
+        console.log('1. Go to formspree.io and sign up');
+        console.log('2. Create new form and get form ID');
+        console.log('3. Replace in line 337: action="https://formspree.io/f/YOUR-FORM-ID"');
+        console.log('4. Form submissions will go to your email');
         
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        
-        // Vercel Analytics (Auto-added if deployed on Vercel)
-        // No need to add anything - Vercel adds it automatically
+        // Google Analytics setup reminder
+        console.log('TO SETUP ANALYTICS:');
+        console.log('1. Go to analytics.google.com');
+        console.log('2. Create GA4 property');
+        console.log('3. Copy Measurement ID (G-XXXXXXXXXX)');
+        console.log('4. Replace in line 12');
     </script>
-    
-    <!-- Vercel Analytics Script (Auto-injected by Vercel) -->
-    <!-- 
-    When you deploy on Vercel, it automatically adds:
-    <script defer src="/_vercel/insights/script.js"></script>
-    -->
 </body>
 </html>
