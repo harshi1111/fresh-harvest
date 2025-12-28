@@ -3,1021 +3,565 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NVH Agri Green - Premium Vettiver Cultivation using Grow-Bag Technology. Bulk orders, farm visits, business partnerships.">
+    <meta name="description" content="NVH Agri Green - Premium Vettiver Cultivation. Living farm experience.">
+    <title>NVH Agri Green | Living Vettiver Farm</title>
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49NLN7CFLT"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-49NLN7CFLT');
-    </script>
-    
-    <title>NVH Agri Green | Premium Vettiver Cultivators</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <!-- Critical CSS First -->
     <style>
         :root {
-            --primary-green: #1a5f1a;
-            --dark-green: #0d4d0d;
-            --light-green: #e8f5e8;
-            --soil-brown: #8B4513;
-            --root-brown: #654321;
+            --soil-brown: #4a2c0b;
+            --root-dark: #2d5016;
+            --vine-green: #1a5f1a;
+            --leaf-light: #e8f5e8;
+            --bloom-gold: #d4af37;
         }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: #0a0a0a;
             overflow-x: hidden;
-            background: linear-gradient(to bottom, #f8fff8, #e8f5e8);
+            cursor: none;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        /* Organic Shapes */
-        .organic-shape {
-            clip-path: polygon(
-                0% 15%, 5% 12%, 10% 8%, 15% 5%, 20% 3%,
-                25% 2%, 30% 3%, 35% 5%, 40% 8%, 45% 12%,
-                50% 15%, 55% 18%, 60% 20%, 65% 22%, 70% 23%,
-                75% 22%, 80% 20%, 85% 18%, 90% 15%, 95% 12%,
-                100% 10%, 95% 8%, 90% 7%, 85% 6%, 80% 5%,
-                75% 4%, 70% 3%, 65% 4%, 60% 5%, 55% 7%,
-                50% 10%, 45% 13%, 40% 16%, 35% 18%, 30% 19%,
-                25% 20%, 20% 19%, 15% 18%, 10% 16%, 5% 13%
-            );
-        }
-        
-        .leaf-shape {
-            clip-path: path('M20,0 C40,10 50,30 40,50 C30,70 10,70 0,50 C-10,30 0,10 20,0 Z');
-        }
-        
-        .root-shape {
-            clip-path: path('M0,0 Q20,10 40,5 Q60,0 80,15 Q100,30 90,50 Q80,70 60,65 Q40,60 20,70 Q0,80 10,90 Q20,100 30,95');
-        }
-        
-        /* Animations */
-        @keyframes growFromSoil {
-            0% {
-                transform: translateY(100px) scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes vineGrow {
-            0% {
-                stroke-dashoffset: 1000;
-            }
-            100% {
-                stroke-dashoffset: 0;
-            }
-        }
-        
-        @keyframes leafFloat {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-10px) rotate(2deg);
-            }
-        }
-        
-        @keyframes rootExpand {
-            0% {
-                transform: scale(0) rotate(-45deg);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes photoSprout {
-            0% {
-                transform: translateY(100px) scale(0.5) rotate(-5deg);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0) scale(1) rotate(0deg);
-                opacity: 1;
-            }
-        }
-        
-        .animate-grow {
-            animation: growFromSoil 1.2s ease-out forwards;
-        }
-        
-        .animate-vine {
-            animation: vineGrow 2s ease-out forwards;
-        }
-        
-        .animate-leaf {
-            animation: leafFloat 3s ease-in-out infinite;
-        }
-        
-        .animate-root {
-            animation: rootExpand 1s ease-out forwards;
-        }
-        
-        .animate-sprout {
-            animation: photoSprout 1s ease-out forwards;
-        }
-        
-        /* Hero Section - Text growing from soil */
-        .hero-container {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(to bottom, var(--soil-brown), #5D4037);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .soil-layer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 150px;
-            background: linear-gradient(to top, var(--soil-brown), #5D4037);
-            clip-path: polygon(
-                0% 100%, 5% 95%, 10% 92%, 15% 88%, 20% 85%,
-                25% 83%, 30% 85%, 35% 88%, 40% 92%, 45% 95%,
-                50% 97%, 55% 95%, 60% 92%, 65% 88%, 70% 85%,
-                75% 83%, 80% 85%, 85% 88%, 90% 92%, 95% 95%,
-                100% 97%, 95% 100%, 90% 100%, 85% 100%, 80% 100%,
-                75% 100%, 70% 100%, 65% 100%, 60% 100%, 55% 100%,
-                50% 100%, 45% 100%, 40% 100%, 35% 100%, 30% 100%,
-                25% 100%, 20% 100%, 15% 100%, 10% 100%, 5% 100%
-            );
-        }
-        
-        .growing-text {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            transform-origin: bottom center;
-        }
-        
-        .root-system {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 300px;
+
+        /* LIVING SOIL CANVAS */
+        #soilCanvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100vh;
+            z-index: 1;
             opacity: 0.3;
         }
-        
-        .root-path {
-            stroke: var(--root-brown);
-            stroke-width: 2;
-            fill: none;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
+
+        /* ROOT VEIN NAVIGATION */
+        .root-nav {
+            position: fixed;
+            top: 20px; left: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-        
-        /* Vine Network */
-        .vine-network {
+        .root-nav a {
             position: relative;
-            width: 100%;
-            height: 600px;
-            overflow: hidden;
-        }
-        
-        .vine-path {
-            stroke: var(--primary-green);
-            stroke-width: 3;
-            fill: none;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-        }
-        
-        .vine-node {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle, var(--light-green), var(--primary-green));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            transform-origin: center;
-            transition: all 0.3s ease;
-        }
-        
-        .vine-node:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 30px rgba(26, 95, 26, 0.4);
-        }
-        
-        /* Organic Gallery */
-        .organic-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 60px 20px;
-        }
-        
-        .gallery-sprout {
-            width: 300px;
-            height: 250px;
-            position: relative;
-            transform-origin: bottom center;
-            transition: all 0.4s ease;
-        }
-        
-        .gallery-sprout:hover {
-            transform: translateY(-20px) scale(1.05);
-        }
-        
-        .sprout-stem {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 8px;
-            height: 80px;
-            background: linear-gradient(to top, var(--primary-green), #90EE90);
-            transform: translateX(-50%);
-            border-radius: 4px;
-        }
-        
-        .sprout-photo {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 280px;
-            height: 180px;
-            background-size: cover;
-            background-position: center;
-            clip-path: polygon(
-                50% 0%, 60% 10%, 70% 20%, 80% 30%, 90% 40%,
-                95% 50%, 90% 60%, 80% 70%, 70% 80%, 60% 90%,
-                50% 100%, 40% 90%, 30% 80%, 20% 70%, 10% 60%,
-                5% 50%, 10% 40%, 20% 30%, 30% 20%, 40% 10%
-            );
-            transition: all 0.4s ease;
-        }
-        
-        .sprout-photo:hover {
-            clip-path: polygon(
-                50% 0%, 55% 5%, 60% 10%, 65% 15%, 70% 20%,
-                75% 25%, 80% 30%, 85% 35%, 90% 40%, 95% 45%,
-                100% 50%, 95% 55%, 90% 60%, 85% 65%, 80% 70%,
-                75% 75%, 70% 80%, 65% 85%, 60% 90%, 55% 95%,
-                50% 100%, 45% 95%, 40% 90%, 35% 85%, 30% 80%,
-                25% 75%, 20% 70%, 15% 65%, 10% 60%, 5% 55%,
-                0% 50%, 5% 45%, 10% 40%, 15% 35%, 20% 30%,
-                25% 25%, 30% 20%, 35% 15%, 40% 10%, 45% 5%
-            );
-        }
-        
-        /* Radial Services */
-        .radial-services {
-            position: relative;
-            width: 100%;
-            height: 800px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .service-center {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, var(--primary-green), var(--dark-green));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 32px;
-            z-index: 2;
-            animation: leafFloat 4s ease-in-out infinite;
-        }
-        
-        .service-root {
-            position: absolute;
-            width: 2px;
-            height: 200px;
-            background: linear-gradient(to top, transparent, var(--primary-green));
-            transform-origin: bottom center;
-            transition: all 0.4s ease;
-        }
-        
-        .service-node {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, var(--light-green), var(--primary-green));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            transform-origin: center;
-        }
-        
-        .service-node:hover {
-            transform: scale(1.3);
-            box-shadow: 0 0 40px rgba(26, 95, 26, 0.5);
-        }
-        
-        .service-content {
-            position: absolute;
-            width: 300px;
-            padding: 30px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(232,245,232,0.95));
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-            transform: translateY(20px);
-            border: 2px solid var(--primary-green);
-            clip-path: polygon(
-                0% 20%, 10% 10%, 20% 5%, 30% 3%, 40% 5%,
-                50% 10%, 60% 15%, 70% 20%, 80% 22%, 90% 20%,
-                100% 15%, 90% 25%, 80% 30%, 70% 32%, 60% 30%,
-                50% 25%, 40% 20%, 30% 18%, 20% 20%, 10% 25%
-            );
-        }
-        
-        .service-node.active .service-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        /* Organic Form */
-        .organic-form {
-            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(232,245,232,0.95));
-            padding: 40px;
-            border-radius: 40px;
-            border: 3px solid var(--primary-green);
-            clip-path: polygon(
-                0% 15%, 5% 10%, 10% 5%, 15% 3%, 20% 5%,
-                25% 10%, 30% 15%, 35% 20%, 40% 22%, 45% 20%,
-                50% 15%, 55% 10%, 60% 5%, 65% 3%, 70% 5%,
-                75% 10%, 80% 15%, 85% 20%, 90% 22%, 95% 20%,
-                100% 15%, 95% 25%, 90% 30%, 85% 32%, 80% 30%,
-                75% 25%, 70% 20%, 65% 18%, 60% 20%, 55% 25%,
-                50% 30%, 45% 32%, 40% 30%, 35% 25%, 30% 20%,
-                25% 18%, 20% 20%, 15% 25%, 10% 30%, 5% 32%
-            );
-        }
-        
-        .organic-input {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255,255,255,0.9);
-            border: 2px solid var(--primary-green);
-            border-radius: 20px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            clip-path: polygon(
-                0% 20%, 5% 15%, 10% 10%, 15% 8%, 20% 10%,
-                25% 15%, 30% 20%, 35% 25%, 40% 27%, 45% 25%,
-                50% 20%, 55% 15%, 60% 10%, 65% 8%, 70% 10%,
-                75% 15%, 80% 20%, 85% 25%, 90% 27%, 95% 25%,
-                100% 20%, 95% 30%, 90% 35%, 85% 37%, 80% 35%,
-                75% 30%, 70% 25%, 65% 23%, 60% 25%, 55% 30%,
-                50% 35%, 45% 37%, 40% 35%, 35% 30%, 30% 25%,
-                25% 23%, 20% 25%, 15% 30%, 10% 35%, 5% 37%
-            );
-        }
-        
-        .organic-input:focus {
-            outline: none;
-            background: white;
-            box-shadow: 0 0 20px rgba(26, 95, 26, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        /* Organic Button */
-        .organic-button {
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            color: white;
-            padding: 18px 40px;
-            border: none;
+            color: var(--leaf-light);
             font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.4s ease;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            background: radial-gradient(circle, var(--leaf-light) 0%, transparent 70%);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.25,1,0.5,1);
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: rootSprout 0.6s forwards;
+        }
+        .root-nav a:nth-child(1) { animation-delay: 0.1s; }
+        .root-nav a:nth-child(2) { animation-delay: 0.2s; }
+        .root-nav a:nth-child(3) { animation-delay: 0.3s; }
+        .root-nav a:nth-child(4) { animation-delay: 0.4s; }
+        .root-nav a:nth-child(5) { animation-delay: 0.5s; }
+        .root-nav a:hover {
+            background: radial-gradient(circle, var(--bloom-gold) 0%, var(--leaf-light) 50%);
+            transform: scale(1.1) translateX(10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        @keyframes rootSprout {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* HERO - ROOT BURST */
+        .hero-root {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 100;
+            opacity: 0;
+        }
+        .hero-h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(4rem, 15vw, 12rem);
+            background: linear-gradient(135deg, var(--leaf-light), var(--bloom-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             position: relative;
-            overflow: hidden;
-            clip-path: polygon(
-                0% 20%, 10% 10%, 20% 5%, 30% 3%, 40% 5%,
-                50% 10%, 60% 15%, 70% 20%, 80% 22%, 90% 20%,
-                100% 15%, 90% 25%, 80% 30%, 70% 32%, 60% 30%,
-                50% 25%, 40% 20%, 30% 18%, 20% 20%, 10% 25%
-            );
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 30px rgba(232, 245, 232, 0.5));
         }
-        
-        .organic-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(26, 95, 26, 0.3);
-        }
-        
-        .organic-button::before {
+        .hero-h1::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: 0.5s;
+            bottom: -20px; left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--root-dark), var(--bloom-gold));
+            border-radius: 4px;
+            animation: rootGrow 3s ease-out 1s forwards;
         }
-        
-        .organic-button:hover::before {
-            left: 100%;
+        @keyframes rootGrow {
+            to { width: 300px; }
         }
-        
-        /* Floating Leaves */
-        .floating-leaf {
+
+        /* VINE NETWORK */
+        .vine-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .vine-node {
+            position: absolute;
+            background: radial-gradient(circle, var(--leaf-light) 0%, transparent 70%);
+            border-radius: 50% 50% 50% 0;
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--vine-green);
+            transition: all 0.6s cubic-bezier(0.25,1,0.5,1);
+            opacity: 0;
+            transform: scale(0) rotate(-180deg);
+            cursor: pointer;
+        }
+        .vine-node:hover {
+            transform: scale(1.3) rotate(5deg);
+            box-shadow: 0 30px 60px rgba(26, 95, 26, 0.6);
+            background: radial-gradient(circle, var(--bloom-gold) 0%, var(--leaf-light) 50%);
+        }
+        .vine-node-content {
+            position: absolute;
+            bottom: 120%; left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px;
+            border-radius: 20px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(-50%) translateY(20px);
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        .vine-node:hover .vine-node-content {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* FIELD GALLERY */
+        .field-gallery {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .crop-photo {
+            position: absolute;
+            width: 300px; height: 200px;
+            object-fit: cover;
+            border-radius: 40% 20% 60% 10% / 50% 30% 70% 20%;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+            opacity: 0;
+            transform: scale(0.3) rotate(-15deg);
+            transition: all 1s cubic-bezier(0.25,1,0.5,1);
+            cursor: pointer;
+        }
+        .crop-photo.animate {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+        .crop-photo:hover {
+            transform: scale(1.2) rotate(3deg) translateY(-30px);
+            filter: drop-shadow(0 40px 80px rgba(26, 95, 26, 0.6));
+            z-index: 10;
+        }
+
+        /* ROOT CLUSTER SERVICES */
+        .root-cluster {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .service-root {
+            position: absolute;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--leaf-light), var(--vine-green), var(--root-dark));
+            opacity: 0;
+            transform: scale(0) rotate(0deg);
+            transition: all 0.8s cubic-bezier(0.25,1,0.5,1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--root-dark);
+            text-align: center;
+            padding: 20px;
+            backdrop-filter: blur(20px);
+        }
+        .service-root.animate {
+            opacity: 1;
+            transform: scale(1) rotate(360deg);
+        }
+        .service-root:hover {
+            transform: scale(1.4) rotate(390deg);
+            box-shadow: 0 40px 80px rgba(26, 95, 26, 0.8);
+            z-index: 10;
+        }
+
+        /* GREENHOUSE FORM */
+        .greenhouse {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glass-panel {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(232,245,232,0.1), rgba(26,95,26,0.2));
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.3);
+            opacity: 0;
+            transform: scale(0.5) rotate(0deg);
+            transition: all 1.5s cubic-bezier(0.25,1,0.5,1);
+        }
+        .form-container {
+            position: relative;
+            z-index: 100;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(40px);
+            padding: 60px;
+            border-radius: 40px;
+            border: 2px solid var(--vine-green);
+            max-width: 500px;
+            width: 90%;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 1.5s ease;
+        }
+        .form-container.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .form-input {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: rgba(232,245,232,0.1);
+            border: 2px solid transparent;
+            border-radius: 25px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.4s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--vine-green);
+            background: rgba(232,245,232,0.2);
+            box-shadow: 0 0 30px rgba(26,95,26,0.5);
+            transform: scale(1.02);
+        }
+        .form-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--vine-green), var(--bloom-gold));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .form-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(26,95,26,0.6);
+        }
+
+        /* CUSTOM MOUSE CURSOR */
+        .custom-cursor {
             position: fixed;
-            width: 40px;
-            height: 40px;
-            background: var(--primary-green);
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            opacity: 0.3;
-            animation: leafFloat 5s ease-in-out infinite;
-            z-index: -1;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, var(--leaf-light), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
         }
-        
-        /* Responsive */
+
+        /* SCROLL INDICATOR */
+        .scroll-root {
+            position: fixed;
+            top: 0; left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--vine-green), var(--bloom-gold));
+            z-index: 1001;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.1s ease;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .vine-network {
-                height: 400px;
-            }
-            
-            .radial-services {
-                height: 600px;
-            }
-            
-            .service-content {
-                width: 250px;
-            }
-            
-            .gallery-sprout {
-                width: 250px;
-                height: 200px;
-            }
-            
-            .sprout-photo {
-                width: 230px;
-                height: 150px;
-            }
+            .root-nav { top: 10px; left: 10px; gap: 10px; }
+            .root-nav a { padding: 10px 16px; font-size: 14px; }
+            .hero-h1 { font-size: 3rem; }
+            .vine-node { width: 80px; height: 80px; }
+            .crop-photo { width: 250px; height: 160px; }
+            .service-root { width: 150px; height: 150px; font-size: 14px; }
         }
     </style>
 </head>
 <body>
+    <!-- LIVING SOIL -->
+    <canvas id="soilCanvas"></canvas>
     
-    <!-- Floating Leaves Background -->
-    <div class="floating-leaf" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
-    <div class="floating-leaf" style="top: 20%; right: 10%; animation-delay: 1s; background: var(--dark-green);"></div>
-    <div class="floating-leaf" style="bottom: 30%; left: 15%; animation-delay: 2s; transform: rotate(45deg);"></div>
-    <div class="floating-leaf" style="bottom: 20%; right: 20%; animation-delay: 3s; background: var(--dark-green); transform: rotate(90deg);"></div>
+    <!-- SCROLL ROOT -->
+    <div class="scroll-root" id="scrollRoot"></div>
     
-    <!-- Enhanced WhatsApp Button -->
-    <a href="https://wa.me/919841565965" target="_blank" 
-       class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full shadow-xl z-50 hover:bg-green-600 transition-all duration-300 flex items-center justify-center"
-       style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
-    
-    <!-- Organic Header -->
-    <header class="sticky top-0 z-40 bg-gradient-to-r from-green-50 to-white py-5">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-center">
-                <!-- Organic Logo -->
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-green-200 to-green-100 rounded-full blur-lg opacity-50"></div>
-                        <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
-                            alt="NVH Agri Green Logo" 
-                            class="h-16 relative z-10">
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold" style="color: var(--primary-green);">NVH Agri Green</h1>
-                        <p class="text-sm text-green-600">Premium Vettiver Cultivators</p>
-                    </div>
-                </div>
-                
-                <!-- Organic Navigation -->
-                <nav class="hidden lg:flex space-x-8">
-                    <a href="#home" class="relative group">
-                        <span class="text-lg font-semibold text-green-800 group-hover:text-green-600 transition-all duration-300">
-                            Home
-                        </span>
-                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-green-600 group-hover:w-full transition-all duration-300"
-                             style="clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);"></div>
-                    </a>
-                    <a href="#cultivation" class="relative group">
-                        <span class="text-lg font-semibold text-green-800 group-hover:text-green-600 transition-all duration-300">
-                            Cultivation
-                        </span>
-                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-green-600 group-hover:w-full transition-all duration-300"
-                             style="clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);"></div>
-                    </a>
-                    <a href="#gallery" class="relative group">
-                        <span class="text-lg font-semibold text-green-800 group-hover:text-green-600 transition-all duration-300">
-                            Gallery
-                        </span>
-                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-green-600 group-hover:w-full transition-all duration-300"
-                             style="clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);"></div>
-                    </a>
-                    <a href="#services" class="relative group">
-                        <span class="text-lg font-semibold text-green-800 group-hover:text-green-600 transition-all duration-300">
-                            Services
-                        </span>
-                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-green-600 group-hover:w-full transition-all duration-300"
-                             style="clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);"></div>
-                    </a>
-                    <a href="#contact" class="relative group">
-                        <span class="text-lg font-semibold text-green-800 group-hover:text-green-600 transition-all duration-300">
-                            Contact
-                        </span>
-                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-green-600 group-hover:w-full transition-all duration-300"
-                             style="clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);"></div>
-                    </a>
-                </nav>
-                
-                <button id="mobileMenuBtn" class="lg:hidden text-2xl" style="color: var(--primary-green);">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+    <!-- ROOT NAVIGATION -->
+    <nav class="root-nav">
+        <a href="#hero">🌱 Home</a>
+        <a href="#vine">🌿 Cultivation</a>
+        <a href="#field">📸 Gallery</a>
+        <a href="#cluster">✨ Services</a>
+        <a href="#greenhouse">📞 Contact</a>
+    </nav>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- HERO ROOT BURST -->
+    <section id="hero" class="hero-root" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div>
+            <h1 class="hero-h1">Living Roots</h1>
+            <p style="color: var(--leaf-light); font-size: 1.5rem; opacity: 0.8;">Premium Vettiver Excellence</p>
         </div>
-    </header>
-    
-    <!-- Hero Section - Text Growing from Soil -->
-    <section id="home" class="hero-container">
-        <div class="soil-layer"></div>
-        
-        <svg class="root-system" viewBox="0 0 1200 300">
-            <path class="root-path animate-vine" d="M600,300 Q500,250 400,200 Q300,150 200,100 Q100,50 0,0" />
-            <path class="root-path animate-vine" style="animation-delay: 0.2s;" d="M600,300 Q700,250 800,200 Q900,150 1000,100 Q1100,50 1200,0" />
-            <path class="root-path animate-vine" style="animation-delay: 0.4s;" d="M600,300 Q550,200 500,100 Q450,0 400,-50" />
+    </section>
+
+    <!-- VINE NETWORK -->
+    <section id="vine" class="vine-container">
+        <svg viewBox="0 0 1200 800" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+            <!-- Vine paths will be drawn by JS -->
         </svg>
+        <div class="vine-node" style="top: 20%; left: 20%; width: 120px; height: 120px;" data-delay="0.5">
+            <div class="vine-node-content">
+                <strong>Edumalai Farm</strong><br>
+                <small>3x Yield • Prime Soil</small>
+            </div>
+        </div>
+        <div class="vine-node" style="top: 40%; right: 25%; width: 100px; height: 100px;" data-delay="0.8">
+            <div class="vine-node-content">
+                <strong>Cholavaram</strong><br>
+                <small>Grow-Bag Tech</small>
+            </div>
+        </div>
+        <div class="vine-node" style="bottom: 30%; left: 30%; width: 110px; height: 110px;" data-delay="1.1">
+            <div class="vine-node-content">
+                <strong>Peravallur</strong><br>
+                <small>Export Ready</small>
+            </div>
+        </div>
+        <div class="vine-node" style="top: 60%; left: 60%; width: 90px; height: 90px;" data-delay="1.4">
+            <div class="vine-node-content">
+                <strong>10-12 Mo.</strong><br>
+                <small>Growth Cycle</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIELD GALLERY -->
+    <section id="field" class="field-gallery">
+        <img class="crop-photo" src="https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg" data-x="10%" data-y="20%" data-delay="0.3">
+        <img class="crop-photo" src="https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg" data-x="25%" data-y="60%" data-delay="0.6">
+        <img class="crop-photo" src="https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg" data-x="70%" data-y="30%" data-delay="0.9">
+        <img class="crop-photo" src="https://image2url.com/r2/bucket3/images/1766860059644-563b866e-2550-44c3-b6d4-1ea4970395bc.jpg" data-x="40%" data-y="75%" data-delay="1.2">
+        <img class="crop-photo" src="https://image2url.com/r2/bucket3/images/1766860071579-7c33fa8b-4e05-46e5-8eac-28cc471b6771.jpg" data-x="85%" data-y="50%" data-delay="1.5">
+        <img class="crop-photo" src="https://image2url.com/r2/bucket3/images/1766860106933-4a7d9d31-c023-47f6-aa49-be34ea111c91.jpg" data-x="15%" data-y="45%" data-delay="1.8">
+    </section>
+
+    <!-- ROOT CLUSTER SERVICES -->
+    <section id="cluster" class="root-cluster">
+        <div class="service-root" style="top: 20%; left: 20%;" data-delay="0.4">Contract<br>Farming</div>
+        <div class="service-root" style="top: 10%; right: 20%;" data-delay="0.7">Consultation</div>
+        <div class="service-root" style="bottom: 30%; left: 15%;" data-delay="1.0">Turnkey<br>Projects</div>
+        <div class="service-root" style="bottom: 20%; right: 25%;" data-delay="1.3">Bulk<br>Orders</div>
+        <div class="service-root" style="top: 50%; left: 50%;" data-delay="1.6">
+            <strong>GROW<br>WITH US</strong>
+        </div>
+    </section>
+
+    <!-- GREENHOUSE CONTACT -->
+    <section id="greenhouse" class="greenhouse">
+        <div class="glass-panel" style="top: 10%; left: 10%; width: 200px; height: 300px;" data-delay="0.5"></div>
+        <div class="glass-panel" style="top: 10%; right: 10%; width: 200px; height: 300px;" data-delay="0.7"></div>
+        <div class="glass-panel" style="bottom: 10%; left: 10%; width: 200px; height: 300px;" data-delay="0.9"></div>
+        <div class="glass-panel" style="bottom: 10%; right: 10%; width: 200px; height: 300px;" data-delay="1.1"></div>
         
-        <div class="growing-text animate-grow">
-            <div class="inline-block mb-8 px-6 py-3 rounded-full"
-                 style="background: linear-gradient(135deg, rgba(26,95,26,0.9), rgba(13,77,13,0.9));">
-                <span class="text-sm md:text-base font-bold tracking-wider">
-                    <i class="fas fa-crown mr-2"></i> PREMIUM VETTIVER CULTIVATORS
-                </span>
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                Cultivating <span style="color: #90EE90;">Excellence</span><br>
-                in Every Root
-            </h1>
-            
-            <p class="text-xl md:text-2xl mb-12 text-green-100 max-w-3xl mx-auto">
-                Premium vettiver cultivation using innovative grow-bag technology<br>
-                for maximum yield and quality
-            </p>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <button onclick="scrollToSection('contact')" class="organic-button">
-                    <i class="fas fa-calendar-alt mr-3"></i> Schedule Farm Visit
-                </button>
-                <button onclick="openModal('businessPlanModal')" class="organic-button" style="background: linear-gradient(135deg, #ffffff, #e8f5e8); color: var(--primary-green);">
-                    <i class="fas fa-file-download mr-3"></i> Download Business Plan
-                </button>
-            </div>
-        </div>
+        <form class="form-container" data-delay="1.4">
+            <h2 style="color: var(--leaf-light); margin-bottom: 30px; font-size: 2.5rem; text-align: center;">Grow Together</h2>
+            <input type="text" class="form-input" placeholder="Your Name" required>
+            <input type="email" class="form-input" placeholder="Email Address" required>
+            <input type="tel" class="form-input" placeholder="Phone/WhatsApp" required>
+            <select class="form-input" required>
+                <option>Interested In...</option>
+                <option>Bulk Purchase</option>
+                <option>Farm Visit</option>
+                <option>Partnership</option>
+                <option>Consultation</option>
+            </select>
+            <textarea class="form-input" rows="4" placeholder="Tell us about your vision..." required></textarea>
+            <button type="submit" class="form-btn">🌱 Start Growing</button>
+        </form>
     </section>
-    
-    <!-- Vine Network Cultivation Section -->
-    <section id="cultivation" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: var(--primary-green);">
-                    Our Cultivation Network
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Interconnected vine network of premium vettiver cultivation
-                </p>
-            </div>
-            
-            <div class="vine-network">
-                <svg viewBox="0 0 1200 600" class="absolute inset-0">
-                    <!-- Main vine paths -->
-                    <path class="vine-path" d="M600,300 Q400,250 200,200 Q100,150 50,100" style="animation-delay: 0.2s;" />
-                    <path class="vine-path" d="M600,300 Q800,250 1000,200 Q1100,150 1150,100" style="animation-delay: 0.4s;" />
-                    <path class="vine-path" d="M600,300 Q550,400 500,500 Q450,550 400,600" style="animation-delay: 0.6s;" />
-                </svg>
-                
-                <!-- Vine Nodes -->
-                <div class="vine-node" style="top: 100px; left: 50px;" onmouseover="showVineContent('location')">
-                    <i class="fas fa-map-marked-alt"></i>
-                </div>
-                <div class="vine-node" style="top: 200px; left: 200px;" onmouseover="showVineContent('technology')">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <div class="vine-node" style="top: 100px; right: 150px;" onmouseover="showVineContent('scale')">
-                    <i class="fas fa-industry"></i>
-                </div>
-                <div class="vine-node" style="bottom: 150px; left: 300px;" onmouseover="showVineContent('growth')">
-                    <i class="fas fa-seedling"></i>
-                </div>
-                <div class="vine-node" style="bottom: 100px; right: 300px;" onmouseover="showVineContent('harvest')">
-                    <i class="fas fa-tractor"></i>
-                </div>
-                
-                <!-- Center Node -->
-                <div class="vine-node" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                    <i class="fas fa-tree"></i>
-                </div>
-            </div>
-            
-            <!-- Vine Content Display -->
-            <div id="vineContent" class="mt-12 text-center transition-all duration-300">
-                <div id="locationContent" class="vine-content hidden">
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-green);">Strategic Farm Locations</h3>
-                    <p class="text-gray-600">Edumalai, Cholavaram, Peravallur - Tamil Nadu</p>
-                </div>
-                <div id="technologyContent" class="vine-content hidden">
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-green);">Grow-Bag Technology</h3>
-                    <p class="text-gray-600">3x Higher Yield, 40% Less Water Usage</p>
-                </div>
-                <div id="scaleContent" class="vine-content hidden">
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-green);">Commercial Scale</h3>
-                    <p class="text-gray-600">Bulk production for global markets</p>
-                </div>
-                <div id="growthContent" class="vine-content hidden">
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-green);">Growth Cycle</h3>
-                    <p class="text-gray-600">10-12 months optimal maturation period</p>
-                </div>
-                <div id="harvestContent" class="vine-content hidden">
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-green);">Harvest Process</h3>
-                    <p class="text-gray-600">Precision harvesting for premium quality</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Organic Gallery - Photos Sprouting from Ground -->
-    <section id="gallery" class="py-20 bg-gradient-to-b from-green-50 to-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: var(--primary-green);">
-                    Sprouting Gallery
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Experience our cultivation through naturally sprouting visuals
-                </p>
-            </div>
-            
-            <div class="organic-gallery">
-                <!-- Gallery Sprouts -->
-                <div class="gallery-sprout animate-sprout" style="animation-delay: 0.1s;">
-                    <div class="sprout-stem"></div>
-                    <div class="sprout-photo" 
-                         style="background-image: url('https://image2url.com/r2/bucket3/images/1766859998114-d9627857-11af-4c9e-b789-59a17627dcf6.jpg');"></div>
-                </div>
-                
-                <div class="gallery-sprout animate-sprout" style="animation-delay: 0.2s;">
-                    <div class="sprout-stem"></div>
-                    <div class="sprout-photo" 
-                         style="background-image: url('https://image2url.com/r2/bucket3/images/1766860017831-3310242d-971e-4a6c-9dee-28a1d1074d32.jpg');"></div>
-                </div>
-                
-                <div class="gallery-sprout animate-sprout" style="animation-delay: 0.3s;">
-                    <div class="sprout-stem"></div>
-                    <div class="sprout-photo" 
-                         style="background-image: url('https://image2url.com/r2/bucket3/images/1766860037445-bb07add8-ab21-4244-b7e2-85a49b2b8385.jpg');"></div>
-                </div>
-                
-                <div class="gallery-sprout animate-sprout" style="animation-delay: 0.4s;">
-                    <div class="sprout-stem"></div>
-                    <div class="sprout-photo" 
-                         style="background-image: url('https://image2url.com/r2/bucket3/images/1766860059644-563b866e-2550-44c3-b6d4-1ea4970395bc.jpg');"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Radial Services - Root Expansion -->
-    <section id="services" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: var(--primary-green);">
-                    Our Rooted Services
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Services expanding from our core expertise like root systems
-                </p>
-            </div>
-            
-            <div class="radial-services">
-                <div class="service-center">
-                    <i class="fas fa-tree"></i>
-                </div>
-                
-                <!-- Service Roots and Nodes -->
-                <div class="service-root" style="transform: rotate(0deg);"></div>
-                <div class="service-node" style="transform: rotate(0deg) translateY(-200px);" onclick="activateService(0)">
-                    <i class="fas fa-handshake"></i>
-                    <div class="service-content">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-green);">Contract Farming</h3>
-                        <p class="text-gray-600">Complete cultivation management on your land</p>
-                    </div>
-                </div>
-                
-                <div class="service-root" style="transform: rotate(72deg);"></div>
-                <div class="service-node" style="transform: rotate(72deg) translateY(-200px);" onclick="activateService(1)">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="service-content">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-green);">Consultation & Training</h3>
-                        <p class="text-gray-600">Expert guidance and comprehensive training</p>
-                    </div>
-                </div>
-                
-                <div class="service-root" style="transform: rotate(144deg);"></div>
-                <div class="service-node" style="transform: rotate(144deg) translateY(-200px);" onclick="activateService(2)">
-                    <i class="fas fa-project-diagram"></i>
-                    <div class="service-content">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-green);">Turnkey Projects</h3>
-                        <p class="text-gray-600">End-to-end cultivation unit setup</p>
-                    </div>
-                </div>
-                
-                <div class="service-root" style="transform: rotate(216deg);"></div>
-                <div class="service-node" style="transform: rotate(216deg) translateY(-200px);" onclick="activateService(3)">
-                    <i class="fas fa-seedling"></i>
-                    <div class="service-content">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-green);">Quality Saplings</h3>
-                        <p class="text-gray-600">Premium vettiver sapling supply</p>
-                    </div>
-                </div>
-                
-                <div class="service-root" style="transform: rotate(288deg);"></div>
-                <div class="service-node" style="transform: rotate(288deg) translateY(-200px);" onclick="activateService(4)">
-                    <i class="fas fa-chart-line"></i>
-                    <div class="service-content">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-green);">Market Linkage</h3>
-                        <p class="text-gray-600">Direct connection to buyers and exporters</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Organic Contact Form -->
-    <section id="contact" class="py-20 bg-gradient-to-b from-white to-green-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: var(--primary-green);">
-                    Grow With Us
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Connect with our organic cultivation network
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="organic-form">
-                    <form id="inquiryForm" action="https://formspree.io/f/mvzokwwg" method="POST">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                    <i class="fas fa-user mr-2"></i> Your Name
-                                </label>
-                                <input type="text" name="name" required class="organic-input" placeholder="Full Name">
-                            </div>
-                            <div>
-                                <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                    <i class="fas fa-envelope mr-2"></i> Email Address
-                                </label>
-                                <input type="email" name="email" required class="organic-input" placeholder="email@example.com">
-                            </div>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                <i class="fas fa-question-circle mr-2"></i> Inquiry Type
-                            </label>
-                            <select name="inquiry_type" required class="organic-input">
-                                <option value="">Select Purpose</option>
-                                <option value="bulk">Bulk Vettiver Purchase</option>
-                                <option value="visit">Farm Visit Request</option>
-                                <option value="service">Contract Farming/Training</option>
-                                <option value="partnership">Business Partnership</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-8">
-                            <label class="block font-semibold mb-3" style="color: var(--primary-green);">
-                                <i class="fas fa-comment-alt mr-2"></i> Your Message
-                            </label>
-                            <textarea name="message" required rows="5" class="organic-input" placeholder="Share your thoughts..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="organic-button w-full">
-                            <i class="fas fa-paper-plane mr-3"></i> Send Your Roots
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <div class="inline-flex items-center space-x-6">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                <i class="fas fa-phone text-green-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold">+91 9841565965</p>
-                                <p class="text-sm text-gray-600">Call/WhatsApp</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                <i class="fas fa-envelope text-green-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold">info@nvhagrigreen.com</p>
-                                <p class="text-sm text-gray-600">Email Us</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Organic Footer -->
-    <footer class="py-12 bg-gradient-to-r from-green-900 to-green-800 text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <div class="flex justify-center items-center space-x-4 mb-8">
-                    <img src="https://image2url.com/r2/bucket3/images/1766859896063-c981266a-60aa-4f65-a256-422f62d92866.png" 
-                        alt="NVH Agri Green Logo" 
-                        class="h-12">
-                    <div>
-                        <h3 class="text-2xl font-bold">NVH Agri Green</h3>
-                        <p class="text-green-300">Organic Vettiver Excellence</p>
-                    </div>
-                </div>
-                
-                <p class="mb-8 text-green-200 max-w-2xl mx-auto">
-                    Cultivating premium vettiver through nature-inspired organic methods. 
-                    Growing excellence in every root since 2024.
-                </p>
-                
-                <div class="border-t border-green-700 pt-8">
-                    <p class="text-green-300">
-                        © 2024 <span class="font-semibold">NVH Agri Green</span>. All rights reserved.<br>
-                        Premium Vettiver Cultivation & Organic Technology Specialists
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Business Plan Modal -->
-    <div id="businessPlanModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative organic-form max-w-md w-full">
-            <div class="p-8">
-                <div class="flex justify-between items-center mb-8">
-                    <div>
-                        <h3 class="text-2xl font-bold" style="color: var(--primary-green);">Download Business Plan</h3>
-                        <p class="text-gray-600 mt-2">Grow with our comprehensive guide</p>
-                    </div>
-                    <button onclick="closeModal('businessPlanModal')" class="text-gray-500 hover:text-gray-700 text-2xl">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                
-                <form onsubmit="downloadBusinessPlan(event)">
-                    <div class="mb-6">
-                        <input type="text" placeholder="Your Name" required class="organic-input">
-                    </div>
-                    <div class="mb-6">
-                        <input type="email" placeholder="Email Address" required class="organic-input">
-                    </div>
-                    
-                    <button type="submit" class="organic-button w-full">
-                        <i class="fas fa-download mr-3"></i> Download & Grow
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-    
+
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            // Simple mobile menu implementation
-            alert('Mobile menu would expand organically here');
-        });
-        
-        // Smooth scroll
-        function scrollToSection(id) {
-            const el = document.getElementById(id);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
+        // SOIL CANVAS
+        const canvas = document.getElementById('soilCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        class SoilParticle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + Math.random() * 100;
+                this.vy = Math.random() * 0.5 + 0.2;
+                this.size = Math.random() * 3 + 1;
+                this.life = 1;
+            }
+            update() {
+                this.y -= this.vy;
+                this.life -= 0.005;
+                if (this.y < 0) this.y = canvas.height + 50;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.life;
+                ctx.fillStyle = '#4a2c0b';
+                ctx.shadowColor = '#8b4513';
+                ctx.shadowBlur = 10;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
             }
         }
-        
-        // Vine content display
-        function showVineContent(type) {
-            // Hide all content
-            document.querySelectorAll('.vine-content').forEach(el => {
-                el.classList.add('hidden');
-            });
+
+        function animateSoil() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (particles.length < 100) particles.push(new SoilParticle());
+            particles = particles.filter(p => p.life > 0);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateSoil);
+        }
+        animateSoil();
+
+        // CUSTOM CURSOR
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
             
-            // Show selected content
-            const content = document.getElementById(type + 'Content');
-            if (content) {
-                content.classList.remove('hidden');
-                content.classList.add('animate-grow');
-            }
-        }
-        
-        // Service activation
-        function activateService(index) {
-            // Remove active class from all nodes
-            document.querySelectorAll('.service-node').forEach(node => {
-                node.classList.remove('active');
+            // Wind effect on crops
+            document.querySelectorAll('.crop-photo').forEach(photo => {
+                const rect = photo.getBoundingClientRect();
+                const dx = e.clientX - rect.left - rect.width / 2;
+                const dy = e.clientY - rect.top - rect.height / 2;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                const sway = (Math.sin(Date.now() * 0.001 + dist * 0.01) * 5) * (100 / (dist + 50));
+                photo.style.transform = `scale(1) rotate(${sway}deg) translateY(-30px)`;
             });
-            
-            // Add active class to clicked node
-            const nodes = document.querySelectorAll('.service-node');
-            if (nodes[index]) {
-                nodes[index].classList.add('active');
-            }
-        }
-        
-        // Modal functions
-        function openModal(id) {
-            document.getElementById(id).classList.remove('hidden');
-        }
-        
-        function closeModal(id) {
-            document.getElementById(id).classList.add('hidden');
-        }
-        
-        // Form submission
-        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Your message has been sent! We will contact you soon.');
-            this.reset();
         });
-        
-        // Business plan download
-        function downloadBusinessPlan(e) {
-            e.preventDefault();
-            alert('Business plan download started! Check your email.');
-            closeModal('businessPlanModal');
-        }
-        
-        // Animate elements on scroll
+
+        // SCROLL ROOT
+        window.addEventListener('scroll', () => {
+            const scroll = document.documentElement.scrollTop / (document.documentElement.scrollHeight - window.innerHeight);
+            document.getElementById('scrollRoot').style.transform = `scaleX(${scroll})`;
+        });
+
+        // GROWTH ANIMATIONS
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-grow');
+                    const elements = entry.target.querySelectorAll('[data-delay]');
+                    elements.forEach(el => {
+                        setTimeout(() => {
+                            el.style.opacity = '1';
+                            el.style.transform = 'scale(1) rotate(0deg)';
+                            if (el.classList.contains('crop-photo')) el.classList.add('animate');
+                            if (el.classList.contains('service-root')) el.classList.add('animate');
+                            if (el.classList.contains('form-container')) el.classList.add('animate');
+                            if (el.parentElement.classList.contains('glass-panel')) {
+                                el.style.opacity = '1';
+                                el.style.transform = 'scale(1) rotate(0deg)';
+                            }
+                        }, parseFloat(el.dataset.delay) * 1000);
+                    });
                 }
             });
         }, { threshold: 0.1 });
-        
-        // Observe elements
-        document.querySelectorAll('.gallery-sprout, .vine-node, .service-node').forEach(el => {
-            observer.observe(el);
+
+        // Observe sections
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
-        
-        // Initialize first service as active
-        activateService(0);
+
+        // VINE ANIMATION
+        const vines = document.querySelector('#vine svg');
+        const vinePaths = `
+            <path d="M 200 200 Q 400 100 600 250" stroke="var(--vine-green)" stroke-width="3" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000">
+            </path>
+            <path d="M 300 400 Q 500 500 800 300" stroke="var(--root-dark)" stroke-width="2" fill="none" stroke-dasharray="800" stroke-dashoffset="800">
+            </path>
+        `;
+        vines.innerHTML = vinePaths;
+        const vineElements = vines.querySelectorAll('path');
+        vineElements.forEach((path, i) => {
+            setTimeout(() => {
+                path.style.animation = `draw 2s ease-out forwards`;
+            }, i * 500);
+        });
+
+        // Add draw animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes draw {
+                to { stroke-dashoffset: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // FORM SUBMISSION
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('.form-btn');
+            btn.innerHTML = '🌱 Growing...';
+            btn.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                alert('Thank you! Your growth journey begins. 🌿\nContacting you within 24h.');
+                btn.innerHTML = '🌱 Start Growing';
+                btn.style.transform = 'scale(1)';
+            }, 2000);
+        });
+
+        // RESIZE HANDLER
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
     </script>
 </body>
 </html>
