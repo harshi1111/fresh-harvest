@@ -1,7 +1,7 @@
 # NVH Agri Green  
 *Premium Vettiver Cultivation · Tamil Nadu, India*
 
-A modern, responsive single-page business website representing **NVH Agri Green**, focused on premium vettiver cultivation using innovative grow-bag technology. Designed with clarity, performance, and a calm, natural aesthetic in mind.
+A modern, **dynamic**, and **fully responsive** single-page business website for **NVH Agri Green**, showcasing premium vettiver cultivation using innovative grow-bag technology. The website is actively maintained and optimized to ensure consistent performance, reliability, and an up-to-date digital presence.
 
 ---
 
@@ -13,13 +13,14 @@ A modern, responsive single-page business website representing **NVH Agri Green*
 
 ## 📋 About the Website
 
-This website serves as the official digital presence of **NVH Agri Green** and highlights:
+This website serves as the official digital platform for **NVH Agri Green** and is designed to be **responsive, dynamic, and regularly maintained**. It includes:
 
-- An overview of premium vettiver cultivation practices and farm locations  
-- A curated photo gallery showcasing real farm operations  
-- Service offerings including contract farming, consultation, and turnkey projects  
-- A reliable contact form with WhatsApp integration  
-- A fully responsive layout optimized for mobile, tablet, and desktop devices  
+- A clear overview of premium vettiver cultivation practices and farm locations  
+- A professionally curated photo gallery of real farm operations  
+- Dynamic service sections including contract farming, consultation, and turnkey projects  
+- A functional and secure contact form with WhatsApp integration  
+- A **fully responsive design** that adapts seamlessly across mobile, tablet, and desktop devices  
+- Ongoing updates and maintenance to ensure accuracy, performance, and reliability  
 
 ---
 
@@ -30,14 +31,15 @@ This website serves as the official digital presence of **NVH Agri Green** and h
 | Frontend | HTML, CSS, JavaScript |
 | Styling | Tailwind CSS (CDN) |
 | Media | Font Awesome, Lightbox2 |
-| Form Handling | PHP (Hostinger environment) |
+| Backend / Forms | PHP (Hostinger environment) |
 | Analytics | Google Analytics |
 
 ---
 
-## 🚀 Hosting
+## 🚀 Hosting & Maintenance
 
-The website is hosted on **Hostinger**, providing a stable PHP environment for contact form handling along with secure and reliable performance.
+The website is hosted on **Hostinger**, providing a secure PHP environment for backend functionality.  
+It is **actively monitored, regularly maintained, and updated** to ensure smooth operation, fast load times, and long-term stability.
 
 ---
 
@@ -51,4 +53,4 @@ Premium vettiver cultivation across multiple farms in Tamil Nadu
 
 ---
 
-*NVH Agri Green — Stronger Roots,Stronger Future.*
+*NVH Agri Green — Stronger roots, Stronger future.*
