@@ -1,59 +1,54 @@
-# 🥬 FreshHarvest - Farm-to-Table Web App
+# NVH Agri Green  
+*Premium Vettiver Cultivation · Tamil Nadu, India*
 
-Welcome to **FreshHarvest**, a farm produce website designed to connect farmers and customers directly — promoting fresh, organic produce and healthy living.
-
-🌐 **Live Demo:** [https://harshi1111.github.io/FreshHarvest/](https://harshi1111.github.io/FreshHarvest/)
-
----
-
-## 🧑‍🌾 About the Project
-
-FreshHarvest is a simple, clean, and user-friendly static website built to showcase the concept of selling farm products directly to customers. This helps reduce middlemen and ensures the best quality products reach consumers.
+A modern, responsive single-page business website representing **NVH Agri Green**, focused on premium vettiver cultivation using innovative grow-bag technology. Designed with clarity, performance, and a calm, natural aesthetic in mind.
 
 ---
 
-## 🚀 Features
+## 🌐 Live Website
 
-- Clean and responsive user interface
-- Homepage with banner and mission
-- Product listing
-- Informative sections about farming practices
-- Contact section
-- Footer with social media links
+**https://nvhagrigreen.com**
 
 ---
 
-## 🛠️ Built With
+## 📋 About the Website
 
-- HTML5
-- CSS3
-- JavaScript
-- GitHub Pages (for hosting)
+This website serves as the official digital presence of **NVH Agri Green** and highlights:
 
----
-
-## 🖥️ How to Use / Run Locally
-
-1. Clone this repository  
-   `git clone https://github.com/harshi1111/FreshHarvest.git`
-2. Open `index.html` in your browser.
+- An overview of premium vettiver cultivation practices and farm locations  
+- A curated photo gallery showcasing real farm operations  
+- Service offerings including contract farming, consultation, and turnkey projects  
+- A reliable contact form with WhatsApp integration  
+- A fully responsive layout optimized for mobile, tablet, and desktop devices  
 
 ---
 
-## 📸 Screenshot
+## 🛠️ Technology Stack
 
-> <img width="1902" height="866" alt="image" src="https://github.com/user-attachments/assets/8c26e45f-c924-462b-82bd-413e461054d7" />
-
+| Area | Technology |
+|------|------------|
+| Frontend | HTML, CSS, JavaScript |
+| Styling | Tailwind CSS (CDN) |
+| Media | Font Awesome, Lightbox2 |
+| Form Handling | PHP (Hostinger environment) |
+| Analytics | Google Analytics |
 
 ---
 
-## 🙌 Acknowledgements
+## 🚀 Hosting
 
-Thanks to the [Replit](https://replit.com) and [GitHub Pages](https://pages.github.com/) community for free tools that help bring projects online.
+The website is hosted on **Hostinger**, providing a stable PHP environment for contact form handling along with secure and reliable performance.
 
 ---
 
-## 📬 Contact
+## 📞 Contact
 
-For any queries or suggestions, contact:  
-📧 vharadharajharshitha@gmail.com 
+**NVH Agri Green**  
+Premium vettiver cultivation across multiple farms in Tamil Nadu  
+
+- Phone: +91 98415 65965  
+- Email: info@nvhagrigreen.com  
+
+---
+
+*NVH Agri Green — Stronger Roots,Stronger Future.*
